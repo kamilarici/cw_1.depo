@@ -9,8 +9,17 @@
 
 .images {
   width: 400px;
-}
-/* class etiketlere göre daha seçici old için diğerini ezer */
-/* img {
+
+  /* class etiketlere göre daha seçici old için diğerini ezer */
+  /* img {
   width: 100px;
 } */
+  /* border */
+  border-color: rgb(35, 171, 189);
+  border-width: 4px;
+  border-style: double;
+
+  /* short end */
+  border: 6px solid red;
+  border-radius: 10px;
+}
