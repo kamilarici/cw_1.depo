@@ -1,0 +1,16 @@
+* {
+  /* tüm elementler dış boşluklar sıfırladık */
+  margin: 0;
+  /* tüm elementler iç boşluk sıfırlandı */
+  padding: 0;
+  color: rgb(116, 116, 25);
+  color: #555;
+}
+
+.images {
+  width: 400px;
+}
+/* class etiketlere göre daha seçici old için diğerini ezer */
+/* img {
+  width: 100px;
+} */
