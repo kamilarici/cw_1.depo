@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+h1 {
+  margin: 20px 0;
+  /* el işareti çıkar */
+  cursor: pointer;
+}
+/* nav a {
+  text-decoration: none;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  width: 400px;
+} */
+/* inline elementler içerik kadar yer kaplarlar bu sebebden dolayı marjin padding width ve bottom değeri almazlar.bu özellikler kullanmak için elementler display propertysi inline block haline getirilebilir  */
+.top-nav a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.9);
+}
+.top-nav a:hover {
+  background-color: khaki;
+  opacity: 0.5;
+  color: crimson;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.9);
+}

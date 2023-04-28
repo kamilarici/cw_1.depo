@@ -9,10 +9,116 @@
   <body>
     <h1>FORMS</h1>
 
-    <form action="" method="post">
+    <form action="result.html">
       <section id="name">
+        <!-- NAME -->
         <label for="isim">İsim</label> <br />
-        <input type="text" id="isim" placeholder="Adinizi giriniz" name=""/>
+        <input
+          type="text"
+          id="isim"
+          placeholder="Adinizi giriniz"
+          name="isim"
+          value=""
+          required
+        />
+        <br /><br />
+
+        <!-- EMAIL -->
+        <label for="email">Email</label> <br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email giriniz"
+          required
+        />
+
+        <br /><br />
+
+        <!-- PASSWORD -->
+        <label for="pass">Password</label> <br />
+        <input
+          type="password"
+          id="pass"
+          name="pass"
+          placeholder="En az 8 karakter giriniz"
+          required
+        />
+        <br /><br />
+
+        <!-- AGE -->
+        <label for="age">Age</label> <br />
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="0"
+          max="160"
+          placeholder="Yasininzi giriniz"
+        />
+        <br /><br />
+
+        <!-- GENDER  (RADIO BUTTON) -->
+        <p>Gender</p>
+        <label for="erkek">Erkek</label>
+        <input type="radio" id="erkek" name="gender" value="erkek" />
+
+        <label for="kadın">Kadın</label>
+        <input type="radio" id="kadın" name="gender" value="Kadın" />
+
+        <label for="none">None</label>
+        <input type="radio" id="none" name="gender" value="None" checked />
+        <br /><br />
+
+        <label for="fav-cars">LUTFEN FAVORİ ARABALARINIZI SEÇİNİZ:</label>
+        <br />
+        <input type="checkbox" name="cars1" id="bmw" value="BMW" />
+        <label for="bmw">BMW</label>
+
+        <input type="checkbox" name="cars2" id="mercedes" value="Mercedes" />
+        <label for="mercedes">Mercedes</label>
+
+        <br /><br />
+        <label for="dob">Dogum Tarihi</label> <br />
+        <input type="date" name="dob" id="dob" min="1990-01-01" />
+
+        <br /><br />
+      </section>
+
+      <!-- SELECT -->
+      <section>
+        <select name="tatli" id="tali">
+          <optgroup label="şerbetli tatlilar">
+            <option value="künefe">Künefe</option>
+            <option value="havuç dilimi">H. Dilimi</option>
+          </optgroup>
+
+          <optgroup label="sütlü tatlılar">
+            <option value="sütlaç">Sütlaç</option>
+            <option value="kazandibi">Kazandibi</option>
+          </optgroup>
+        </select>
+      </section>
+
+      <br><br>
+
+      <!-- TEXTAREA -->
+      <section>
+        <label for="yorum">Yorumlarınızı Giriniz:</label>
+        <br />
+        <textarea
+          name="yorum"
+          id="yorum"
+          cols="40"
+          rows="10"
+          style="resize: none"
+          maxlength="100"
+          placeholder="En fazla 100 karakter girilebilir"
+        ></textarea>
+
+      <section id="buttons">
+        <input type="submit" value="Kaydet" />
+        <input type="reset" value="Sil" />
       </section>
     </form>
   </body>

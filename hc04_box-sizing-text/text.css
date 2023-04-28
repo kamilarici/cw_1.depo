@@ -1,0 +1,58 @@
+body {
+  font-family: fantasy;
+  background-color: ;
+}
+.text-style {
+  /* font-family:Arial, Helvetica, sans-serif */
+  font-size: 18px;
+  font-weight: 600;
+  font-weight: lighter;
+  font-style: italic;
+  font-variant: small-caps;
+  text-align: justify;
+}
+/* decendet selektor */
+/* p elementi içindeki spanlar red yap */
+/* p span {
+  color: crimson;
+} */
+.text-style span {
+  color: aqua;
+}
+.decoration {
+  color: darkgreen;
+
+  text-decoration: overline;
+  text-decoration: underline;
+  text-decoration: line-through;
+  text-decoration: none;
+}
+.transformation {
+  color: darkblue;
+  text-transform: capitalize;
+  text-transform: uppercase;
+  text-transform: lowercase;
+  text-transform: none;
+}
+.spacing {
+  color: darkgreen;
+  /* harfler arası mesafe */
+  letter-spacing: 2px;
+  /* kelimeler arası mesfe */
+  word-spacing: 10px;
+  /* satırlar arası mesafe */
+  line-height: 1.8;
+}
+.indent {
+  /* parağraf başi mesafe */
+  text-indent: 30px;
+}
+.text-shadow {
+  text-shadow: 20px 15px rgba(56, 167, 80, 0.2);
+}
+.box-shadow {
+  background-color: bisque;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 2px rgba(205, 5, 5, 0.5);
+}
