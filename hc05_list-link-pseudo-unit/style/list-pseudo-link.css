@@ -1,4 +1,12 @@
-ul {
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "PT Serif", serif;
+  font-family: "Public Sans", sans-serif;
+}
+
+.languages {
+  font-family: "Bruno Ace", cursive;
+
   list-style-type: circle;
   list-style-type: square;
   list-style-type: none;
@@ -15,4 +23,88 @@ h2 i {
 }
 .fa-snowflake {
   color: crimson;
+}
+/* ?PSEUDO CLASSES */
+ul.pseudo li:first-child {
+  color: blue;
+  font-weight: 700;
+}
+ul.pseudo li:last-child {
+  color: green;
+  font-weight: 700;
+}
+ul.pseudo li:nth-child(5) {
+  color: rgb(189, 41, 85);
+  font-weight: 300;
+}
+ul.pseudo li:nth-child(odd) {
+  color: rgb(189, 41, 85);
+  font-weight: 700;
+  background-color: cadetblue;
+}
+ul.pseudo li:nth-child(even) {
+  color: rgb(186, 214, 28);
+  font-weight: 700;
+  background-color: coral;
+}
+ul.pseudo li:first-child:hover {
+  opacity: 0.5;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+ul.pseudo li:active {
+  background-color: darkblue;
+}
+ul.pseudo li:active {
+  background-color: darkblue;
+}
+/* input aktif hale geldiğinde */
+input:focus {
+  background-color: chartreuse;
+  color: red;
+  border: 4px dashed rgb(83, 50, 230);
+  outline: none;
+}
+/* !link pseudo */
+nav.links a:link {
+  color: cyan;
+}
+nav.links a:visited {
+  color: rgb(19, 236, 66);
+}
+nav.links a:active {
+  color: rgb(185, 33, 165);
+}
+nav.links a:hover {
+  color: rgb(116, 215, 240);
+  text-decoration: none;
+}
+/* !pseudo elements */
+.p-elements::first-line {
+  color: darkred;
+}
+.p-elements::first-letter {
+  font-size: 50px;
+}
+.p-elements::first-letter {
+  font-size: 50px;
+}
+ul.before-after li::before {
+  content: "✨";
+}
+ul.before-after li:nth-child(3)::before {
+  content: "🌹";
+}
+ul.before-after li:nth-child(3)::after {
+  content: "🍗";
+}
+ul.before-after li:nth-child(2)::after {
+  content: " NİCE CAR";
+  font-family: "font awesome 6 free";
+  font-weight: 600;
+  content: "\f53a";
+}
+ul.before-after li:nth-child(1):hover::after {
+  content: " 🥩";
 }
