@@ -1,0 +1,18 @@
+ul {
+  list-style-type: circle;
+  list-style-type: square;
+  list-style-type: none;
+  list-style-type: lower-latin;
+  list-style-type: georgian;
+
+  list-style-position: inside;
+  list-style-position: outside;
+  padding: 20px;
+  list-style-image: url("../img/plane-solid.svg");
+}
+h2 i {
+  font-size: 40px;
+}
+.fa-snowflake {
+  color: crimson;
+}
