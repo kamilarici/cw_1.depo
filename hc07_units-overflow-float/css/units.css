@@ -1,0 +1,60 @@
+h1 {
+  color: red;
+  font-size: 30px;
+  /* !mutlak ölçü birimleri */
+}
+p.abs {
+  font-size: 1cm;
+  font-size: 10mm;
+  font-size: 1in;
+  font-size: 10px;
+}
+p.percent {
+  font-size: 200%;
+  font-size: 50%;
+}
+.div1 {
+  background-color: tomato;
+  width: 20%;
+  height: 200%;
+}
+.div2 {
+  background-color: blueviolet;
+  width: 50vw;
+  height: 20vh;
+}
+.div3 {
+  background-color: darkgreen;
+  width: 50%;
+}
+
+.div4 {
+  background-color: chartreuse;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  /* em parente bağlı yani bir üstüne */
+  width: 150px;
+}
+.div5 {
+  background-color: rgb(52, 39, 110);
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+  width: 150px;
+}
+.div6 {
+  background-color: rgb(184, 182, 75);
+  color: rgb(255, 255, 255);
+  font-size: 0.5em;
+  width: 150px;
+}
+
+.div7 {
+  font-size: 1rem;
+  /* defolt font size oranla ilerler  */
+}
+.div8 {
+  font-size: 2rem;
+}
+.div9 {
+  font-size: 3rem;
+}

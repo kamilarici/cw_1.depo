@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 30%;
+  float: left;
+}
+
+/* .text {
+  float: right;
+} */
+.clear {
+  clear: both;
+}
+.box {
+  font-size: 2rem;
+  float: left;
+  text-align: center;
+}
+.box1 {
+  background-color: cadetblue;
+  width: 30%;
+}
+.box2 {
+  background-color: rgb(88, 65, 139);
+  width: 25%;
+}
+.box3 {
+  background-color: rgb(197, 132, 33);
+  width: 35%;
+}
