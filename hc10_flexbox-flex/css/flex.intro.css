@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul.nav {
+  background-color: darkolivegreen;
+  list-style-type: none;
+  padding: 1rem;
+  text-align: center;
+}
+
+ul.nav li {
+  background-color: coral;
+  width: 7rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
