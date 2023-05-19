@@ -9,7 +9,7 @@ body {
   font-family: var(--ff-roboto);
 }
 .container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   max-width: 1200px;
   margin: 2rem auto;
 }
@@ -115,5 +115,30 @@ main .card:nth-child(even) {
   .section-btn button {
     margin: 0.5rem;
     width: 250px;
+  }
+}
+@media screen and (min-width: 576px) {
+  body {
+    background-color: aqua;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-color: chartreuse;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    background-color: cornflowerblue;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: yellow;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    background-color: darksalmon;
   }
 }
