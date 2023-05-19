@@ -1,0 +1,18 @@
+@import "theme.css";
+:root {
+  --white: rgb(230, 230, 224);
+  --black: #111;
+  --green: #1b6d10;
+
+  /* Color Theme Swatches in Hex */
+  --mavi: #03588c;
+  --açikmavi: #048abf;
+  --yeşil: #3c8c3a;
+  --sari: #f2b441;
+  .İllüstrasyon-5-hex {
+    color: #f2f2f2;
+  }
+}
+h1 {
+  color: var(--orange-dark);
+}
