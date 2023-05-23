@@ -109,21 +109,38 @@ salaries
 //? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore
 //? test gerceklestirir.Tum elemanlar icin test basarili ise
 //? true aksi takdirde false deger dondurur.
+const sayı1 = [1, 3, 56, 25, 24, 28, 88];
+console.log(sayı1.every((s) => s <= 80)); //! false ***&& gibi**
 
 //* some()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? En az bir eleman icin bile test basarili ise true aksi
 //? takdirde false deger dondurur.
+const sayı2 = ["bmw", "audi", "mercedes", "ford"];
+console.log(sayı2.some((x) => x === "audi")); //! true || gibi****
 
 //* find(), findLast()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? Kosulu saglayan ilk dizi elemaninin dondurur.
 //? Eger hic bir eleman kosulu saglamazsa undefined dondurur.
+//!yeni değere atanabilir (döndürdüğü değeri)
+const sayı3 = [25, 24, 8, 56, 84, 12];
+
+const yeni3 = sayı3.find((x) => x < 15);
+const yeni4 = sayı3.findLast((x) => x < 15);
+
+console.log(yeni3);
+console.log(yeni4);
 
 //* findIndex()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? Kosulu saglayan ilk dizi elemaninin indeksini dondurur.
 //? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
+
+const sayı5 = [2, 9, 15, 17, 10, 25, 59];
+
+const sayı6 = sayı5.findIndex((x) => x > 25);
+console.log(sayı6); //! 6 indexi dönüyor atama yapılabilir
