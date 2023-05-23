@@ -1,52 +1,76 @@
-//************** */
-// const num1 = [1, 5, 8, 9, 14, 55, 78, 63];
+//* ============================================
+//*                FOR LOOP
+//* ============================================
 
-// let toplam = 0;
-// for (let i = 0; i < num1.length; i++) {
-//   toplam += num1[i];
+console.log("**** LOOPS IN ARRAYS ***");
+
+//?-------------- ÖRNEK -------------------
+//? grades'in ortalamasini hesaplayiniz.
+// const grades = [55, 77, 23, 89, 100, 44, 33, 45]
+
+// let sum = 0
+// for (let i = 0; i < grades.length; i++) {
+//   sum += grades[i]
+//   //   console.log(sum)
 // }
-// console.log(toplam);
-// console.log((toplam / num1.length).toFixed());
-// console.log(29 * 8);
 
-// const num1 = [1, 5, 8, 9, 14, 55, 78, 63];
-// let küçük15 = [];
-// let büyük15 = [];
-// for (let i = 0; i < num1.length; i++) {
-//   if (num1[i] < 15) {
-//     küçük15.push(num1[i]);
+// console.log("AVG:", (sum / grades.length).toFixed(2))
+
+//?-------------- ÖRNEK -------------------
+//? grades dizisindeki notların 50'den kucuk olanları ve buyuk olanları 2 ayri diziye kaydediniz.
+// const grades = [55, 77, 23, 89, 100, 44, 33, 45]
+// const lessThan50 = []
+// const equalOrBiggerThan50 = []
+
+// for (let j = 0; j < grades.length; j++) {
+//   if (grades[j] < 50) {
+//     lessThan50.push(grades[j])
 //   } else {
-//     büyük15.push(num1[i]);
+//     equalOrBiggerThan50.push(grades[j])
 //   }
 // }
-// console.log(küçük15);
-// console.log(büyük15);
+// console.log(lessThan50)
+// console.log(equalOrBiggerThan50)
+// console.log(grades)
 
-// const num1 = [1, 5, 8, 9, 14, 55, 78, 63];
-// let küçük15 = [];
-// let büyük15 = [];
-// for (let i in num1) {
-//   num1[i] < 15 ? küçük15.push(num1[i]) : büyük15.push(num1[i]);
-// }
+//?-------------- ÖRNEK (FOR-IN) -------------------
+//? grades dizisindeki notların 50'den kucuk olanları ve buyuk olanları 2 ayri diziye kaydediniz.
+const grades = [55, 77, 23, 89, 100, 44, 33, 45];
+const lessThan50 = [];
+const equalOrBiggerThan50 = [];
 
-// console.log(küçük15);
-// console.log(büyük15);
+for (let i in grades) {
+  grades[i] < 50
+    ? lessThan50.push(grades[i])
+    : equalOrBiggerThan50.push(grades[i]);
+}
 
-//? -****************
-/* const sut1 = ["mehmet", "Ahmet", "ismet", "Saffet", "kamil", "Ahmet"];
+console.log(lessThan50);
+console.log(equalOrBiggerThan50);
+console.log(grades);
 
-const findsut1 = (name) => {
-  let sayac = 0;
+//*-------------------------------------------------------
+//* SORU: students dizisinde ogrenci isimleri saklanmaktadir.
+//* ogrencileri aramamizi saglayacak ve aranilan ogrenciden
+//* ne kadar sayida bulunuldugunu ana programa dondurecek bir
+//* fonksiyonu yaziniz. Eger aranilan isimde bir ogrenci yok ise
+//* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
+//*--------------------------------------------------------
+const students = ["ahmet", "mehmet", "ismet", "saffet", "ahmet", "saffet"];
 
-  for (let sud of sut1) {
-    sud === name.toLowerCase() && sayac++;
+const findStudent = (name) => {
+  let counter = 0;
+
+  for (let student of students) {
+    student === name.toLowerCase() && counter++; //* aranan, dizinin icindeki elemana esitse
   }
 
-  return sayac === 0
-    ? `${name} bulunamamıştır`
-    : `${name}den ${sayac} adet bulunmuştur`;
+  return counter === 0
+    ? `${name} can not be found`
+    : `${name} found ${counter} times`;
 };
 
-console.log(findsut1("AhmeT"));
-console.log(findsut1("kAmil"));
-console.log(findsut1("ahmeT")); */
+console.log(findStudent("Ahmet"));
+console.log(findStudent("AHMET"));
+console.log(findStudent("ismet"));
+console.log(findStudent("Alihan"));
