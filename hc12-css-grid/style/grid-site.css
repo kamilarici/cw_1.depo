@@ -1,42 +1,42 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 .grid {
   display: grid;
   height: 100vh;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 200px 100px 1fr 100px;
+  grid-template-rows: 150px 100px 1fr 100px;
   text-align: center;
 }
 
 header {
   grid-column: span 12;
 }
-
 header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-nav {
-  grid-column: span 12;
-  background-color: plum;
-}
 
 aside {
   grid-column: span 3;
-  background-color: yellow;
+  background-color: fuchsia;
 }
 main {
   grid-column: span 9;
-  background-color: yellowgreen;
+  background-color: dodgerblue;
 }
 
+nav {
+  grid-column: span 12;
+  background-color: darkcyan;
+}
 footer {
   grid-column: span 12;
-  background-color: violet;
+  background-color: darkgreen;
 }
 
 @media screen and (max-width: 400px) {
