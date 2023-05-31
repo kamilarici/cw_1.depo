@@ -65,3 +65,12 @@ console.log(css.innerText); //? CSS
 
 const django = js.nextElementSibling.nextElementSibling;
 console.log(django.innerHTML); //? Django
+
+const headingYeni = document.getElementById("heading1");
+headingYeni.addEventListener("click", function () {
+  console.log("tıklandı");
+
+  this.style.color == "red"
+    ? (this.style.color = "black")
+    : (this.style.color = "red");
+});
