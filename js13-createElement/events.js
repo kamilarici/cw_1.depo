@@ -38,4 +38,8 @@ addbutton.addEventListener("click", (e) => {
     input.focus();
   }
 });
-document.querySelector("#input").addEventListener("keydown");
+document.querySelector("#input").addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    addbutton.click();
+  }
+});
