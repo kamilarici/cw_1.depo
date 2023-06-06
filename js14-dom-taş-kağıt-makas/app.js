@@ -4,10 +4,18 @@ const selectionArticle = document.querySelector(".selection");
 //? seçilen elemenların taşıyıcıları******
 const yourChoiceDiv = document.getElementById("your-choice");
 const pcChoiceDiv = document.getElementById("pc-choice");
+//? *****message
+const messagePar = document.querySelector(".message");
 
+//? ***score****
+const scoreCardSection = document.querySelector(".score-card");
 //! *******veriables
 let userSelectImg = document.createElement("img");
 let pcSelectImg = document.createElement("img");
+const YELLOW = "#ffc538";
+const RED = "#fb778b";
+const GREEN = "#5ab7ac";
+
 //! **************event listeners
 
 selectionArticle.addEventListener("click", (e) => {
@@ -19,13 +27,27 @@ selectionArticle.addEventListener("click", (e) => {
   yourChoiceDiv.appendChild(userSelectImg);
   createPcSelection();
 });
-
+//! ******function*******
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
   const pcRandom = pcArr[Math.floor(Math.random() * 3)];
   pcSelectImg.src = src = `./assets/${pcRandom}.png`;
-  userSelectImg.alt = pcRandom;
+  pcSelectImg.alt = pcRandom;
   pcChoiceDiv.appendChild(pcSelectImg);
+  calculateResult();
+};
+
+const calculateResult = () => {
+  console.log(userSelectImg.alt);
+  console.log(pcSelectImg.alt);
+  if (userSelectImg.alt === pcSelectImg.alt) {
+    draw();
+  }
+};
+
+const draw = () => {
+  messagePar.textContent = "its a draw";
+  scoreCardSection.getElementsByClassName.color = "YELLOW";
 };
 
 //? *****resimler yakala
