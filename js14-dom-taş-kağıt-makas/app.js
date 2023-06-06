@@ -9,12 +9,16 @@ const messagePar = document.querySelector(".message");
 
 //? ***score****
 const scoreCardSection = document.querySelector(".score-card");
+const pcScoreSpan = document.getElementById("pc-score");
+const yourScoreSpan = document.getElementById("your-score");
+const modalCardSectin = document.querySelector(".modal-card");
 //! *******veriables
 let userSelectImg = document.createElement("img");
 let pcSelectImg = document.createElement("img");
 const YELLOW = "#ffc538";
 const RED = "#fb778b";
 const GREEN = "#5ab7ac";
+let random;
 
 //! **************event listeners
 
@@ -30,7 +34,7 @@ selectionArticle.addEventListener("click", (e) => {
 //! ******function*******
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
-  const pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  pcRandom = pcArr[Math.floor(Math.random() * 3)];
   pcSelectImg.src = src = `./assets/${pcRandom}.png`;
   pcSelectImg.alt = pcRandom;
   pcChoiceDiv.appendChild(pcSelectImg);
@@ -38,16 +42,42 @@ const createPcSelection = () => {
 };
 
 const calculateResult = () => {
-  console.log(userSelectImg.alt);
-  console.log(pcSelectImg.alt);
-  if (userSelectImg.alt === pcSelectImg.alt) {
+  if (userSelectImg.alt === pcRandom) {
     draw();
+  } else {
+    if (userSelectImg.alt === "rock") {
+      pcRandom === "paper" ? youLost() : youWin();
+    } else if (userSelectImg.alt === "scissor") {
+      pcRandom === "rock" ? youLost() : youWin();
+    } else if (userSelectImg.alt === "paper") {
+      pcRandom === "scissor" ? youLost() : youWin();
+    }
+  }
+  if (pcScoreSpan.textContent === "10" || yourScoreSpan.textContent === "10") {
+    openModal();
   }
 };
 
 const draw = () => {
   messagePar.textContent = "its a draw";
-  scoreCardSection.getElementsByClassName.color = "YELLOW";
+  scoreCardSection.style.color = YELLOW;
+  messagePar.style.backgraundColor = YELLOW;
+};
+
+const youLost = () => {
+  messagePar.textContent = "you lost";
+  scoreCardSection.style.color = RED;
+  messagePar.style.backgraundColor = RED;
+  pcScoreSpan.textContent++;
+};
+const youWin = () => {
+  messagePar.textContent = "you win";
+  scoreCardSection.style.color = GREEN;
+  messagePar.style.backgraundColor = GREEN;
+  yourScoreSpan.textContent++;
+};
+const openModal = () => {
+  modalCardSectin.classList.add("show");
 };
 
 //? *****resimler yakala
