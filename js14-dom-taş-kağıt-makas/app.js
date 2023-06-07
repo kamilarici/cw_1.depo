@@ -50,6 +50,7 @@ playAgainBtn.addEventListener("click", () => {
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
   pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  //! ***hile pcRandom = "rock";
   pcSelectImg.src = `./assets/${pcRandom}.png`;
   pcSelectImg.alt = pcRandom;
   pcChoiceDiv.appendChild(pcSelectImg);
@@ -107,6 +108,11 @@ const openModal = () => {
     finalMessagePar.textContent = "💃 You Win🕺";
     document.querySelector(".modal").style.backgroundColor = GREEN;
     playAgainBtn.style.color = GREEN;
+    //! ***************
+    newPcScore = pcScoreSpan.textContent;
+    topScore();
+
+    //! ********
   } else {
     //? eger pc 10 puana ulasti ise pc kazanmistir.
     finalMessagePar.textContent = "☹️ You Lost ☹️";
@@ -114,7 +120,15 @@ const openModal = () => {
     playAgainBtn.style.color = RED;
   }
 };
+//! ******************************top score***
+const pcTopScore = document.querySelector("#top-score");
 
+const topScore = () => {
+  if (newPcScore < pcTopScore.textContent) {
+    pcTopScore.textContent = newPcScore;
+  }
+};
+//! ^^^
 //! Local Storage'a veri yazma ve okuma
 localStorage.setItem("highScore", 5); //? veri yazma
 console.log(localStorage.getItem("highScore")); //? veri okuma
