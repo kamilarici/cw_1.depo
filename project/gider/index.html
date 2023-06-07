@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gelir Gider Hesaplama</title>
+
+    <!-- ----------------- FONTAWESOME ------------- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- -------------- CONTAINER ------------------ -->
+    <div class="container">
+      <!-- -------------- DIV ROW ------------------ -->
+      <div class="row">
+        <!-- -------------- HEADER ------------------ -->
+        <header class="text-center display-3 text-warning p-4">
+          Aylık Gider Takip Uygulaması
+        </header>
+
+        <!-- -------------- ALERT ------------------ -->
+        <div class="d-flex justify-content-center" id="alert"></div>
+
+        <!-- -------------- INPUT - EKLEBUTTON ------------------ -->
+        <div class="d-flex justify-content-center align-items-center mt-3 mb-3">
+          <div class="input-group mb-3 w-50">
+            <input
+              type="number"
+              class="form-control"
+              id="gelir-val"
+              placeholder="Gelirinizi Giriniz"
+              min="0"
+            />
+            <span class="input-group-text bg-warning" id="ekle" role="button"
+              >Ekle</span
+            >
+          </div>
+        </div>
+        <!-- -------------- FORM ------------------ -->
+        <div class="d-flex justify-content-center align-items-center mt-2 col">
+          <form class="row g-3 w-50 border rounded-4" id="giderForm">
+            <legend class="text-center">Harcama Formu</legend>
+
+            <div class="col-md-6">
+              <label for="inputText">Harcama Yapılan Yer</label>
+              <input
+                type="text"
+                name="yer"
+                id="giderText"
+                class="form-control"
+                required
+                placeholder="Manav, market, fatura"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="">Tarih</label>
+              <input
+                type="datetime-local"
+                name="tarih"
+                id="giderTarih"
+                required
+                class="form-control"
+                max="2023-06-06T23:59:00"
+                min="2023-06-01T00:00:00"
+              />
+            </div>
+
+            <div class="col-md-12">
+              <label for="" class="form-label">Harcanan Miktar</label>
+              <input
+                type="text"
+                name="miktar"
+                id="giderMiktar"
+                class="form-control"
+                required
+                placeholder="TL"
+              />
+            </div>
+
+            <div class="col-12 d-flex justify-content-center m-1 p-2">
+              <span
+                class="input-group-text bg-warning"
+                id="kaydet"
+                role="button"
+                >Ekle</span
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- VERİ GİRİLECEK TABLO  -->
+      <div class="container mt-2 d-flex justify-content-center">
+        <table class="table table-striped table-bordered text-center w-50">
+          <thead>
+            <tr>
+              <th>Tarih</th>
+              <th>Harcanan Yer</th>
+              <th>Miktar</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody id="table-body">
+            <!-- <tr id="table-body-tr">
+              <td></td>
+              <td class="text-capitalize"></td>
+              <td id="miktar-td"></td>
+              <td class="silme">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="red"
+                  role="button"
+                  class="bi bi-trash3"
+                  style="display: none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                  ></path>
+                </svg>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- VERİ CIKISI OLAN TABLO -->
+      <div class="mt-2 d-flex justify-content-end w-75">
+        <table class="table table-striped w-25">
+          <tbody id="kalan">
+            <tr>
+              <th>
+                <span>Geliriniz</span>
+              </th>
+              <td>
+                <span id="gelir-eklendi">: </span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>
+                <span>Gideriniz</span>
+              </th>
+              <td>
+                <span id="gider-eklendi">: </span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>
+                <span>Kalan</span>
+              </th>
+              <td>
+                <span id="kalan-para">: </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-12 d-flex justify-content-center mb-3">
+        <button type="button" id="temizle" class="btn btn-warning">
+          Bilgileri Temizle
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
