@@ -1,6 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: pink;
-  font-size: 15px;
+  font-family: "Segoe UI", Tahama, Genova, Verdana, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+}
+
+header {
+  background-color: #30a7c3;
+  display: contents;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+header img {
+  width: 80px;
+  border: 2px solid brown;
+  border-radius: 11px;
+  cursor: pointer;
+}
+header img:hover {
+  scale: 1.1;
 }
 
 /*# sourceMappingURL=style.css.map */
