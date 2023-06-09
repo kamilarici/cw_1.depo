@@ -13,7 +13,7 @@ body {
 
 header {
   background-color: #30a7c3;
-  display: contents;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -26,6 +26,83 @@ header img {
 }
 header img:hover {
   scale: 1.1;
+}
+header ul {
+  list-style-type: none;
+}
+header ul li {
+  padding: 0.5rem;
+  display: inline-block;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
+}
+header ul li a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hotpink;
+  padding: 1rem;
+  line-height: 2rem;
+}
+.banner aside button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 7px;
+  background-color: rgb(255, 157, 150);
+  cursor: pointer;
+}
+.banner aside button:hover {
+  background-color: pink;
+}
+.banner img {
+  width: 30%;
+}
+
+.cards {
+  display: flex;
+  gap: 0.5rem;
+}
+.cards .card1 {
+  background-color: aqua;
+  color: tomato;
+  text-align: center;
+  width: 25%;
+  height: 14rem;
+  border: 2px solid brown;
+  border-radius: 1rem;
+}
+.cards .card2 {
+  background-color: black;
+  color: tomato;
+  text-align: center;
+  width: 25%;
+  height: 14rem;
+  border: 2px solid brown;
+  border-radius: 1rem;
+}
+.cards .card3 {
+  background-color: blue;
+  color: tomato;
+  text-align: center;
+  width: 25%;
+  height: 14rem;
+  border: 2px solid brown;
+  border-radius: 1rem;
+}
+.cards .card4 {
+  background-color: yellow;
+  color: tomato;
+  text-align: center;
+  width: 25%;
+  height: 14rem;
+  border: 2px solid brown;
+  border-radius: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

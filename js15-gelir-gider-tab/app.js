@@ -142,3 +142,28 @@ temizleBtn.addEventListener("click", () => {
   }
   //   location.reload(); //! alternatif yöntem   localStorage.clear() den sonra sadece bunu yazarak sayfadaki diğer yazanların hepsini sıfırlar
 });
+
+//! ************bakılacak.innerhtmlile değil
+// Tablo oluşturma i elementine id ve atribute atama
+/* function giderTablosu(sonHarcamaArr) {
+  const id = sonHarcamaArr[0];
+  sonHarcamaArr.shift();
+  const trTag = document.createElement("tr");
+  for (let i of sonHarcamaArr) {
+    const tdTag = document.createElement("td");
+    const tdText = document.createTextNode(i);
+    tdTag.appendChild(tdText);
+    trTag.appendChild(tdTag);
+  }
+  const tdLastTag = document.createElement("td");
+  const iTag = document.createElement("i");
+  tdLastTag.appendChild(iTag);
+  trTag.appendChild(tdLastTag);
+  tbodyTag.appendChild(trTag);
+  const lastiTag = tbody.lastElementChild.lastElementChild.firstElementChild;
+  lastiTag.setAttribute("class", "fa-solid fa-eraser fa-lg text-danger");
+  lastiTag.setAttribute("type", "button");
+  lastiTag.setAttribute("id", id);
+  tbody.lastElementChild.lastElementChild.setAttribute("class", "text-center");
+} */
+//! *********************
