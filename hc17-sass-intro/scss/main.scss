@@ -1,12 +1,17 @@
+/*/ partial dosyaları @import ifadesiyle ana dosyamıza import edip kullanabiliriz*/
+
+@import "variables";
 @import "reset";
-@import "veriables";
 
 body {
-  background-color: $bgColor;
+  background-color: $bgColor; /*değişkenşi kullanırkende aynı şekilde $ işaretini kullanıyoruz*/
   font-family: $fontFamily;
   font-size: $fontSize;
   color: $fontColor;
 }
+
+/** Nesting */
+
 header {
   background-color: $navBgColor;
   display: flex;
@@ -19,7 +24,8 @@ header {
     border-radius: 11px;
     cursor: pointer;
     &:hover {
-      //   transform: scale(1.1);
+      /*! içinde bulunduğumuz lementi & ile refer edebiliriz*/
+      // transform: scale(1.1);
       scale: 1.1;
     }
   }
@@ -38,13 +44,15 @@ header {
     }
   }
 }
+
 .banner {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: $bannerBgColor;
   padding: 1rem;
   line-height: 2rem;
+
   aside {
     button {
       padding: 0.5rem;
@@ -62,7 +70,9 @@ header {
   }
 }
 
-//! mixin*****
+/*! mixin @include */
+/* fonksiyon tanımlıyoruz aslında. Bu fonksiyon parametre alabilen bir fonksiyon. Parametreleri tanımalrken $ işaretini kullanıyoruz. Mixinler parametre almak zorunda değildir. yani static yapılar da oluşturabiliriz. */
+/*mixinleri çaığırırken @include anahtar kelimesiyle çağırıyoruz.*/
 @mixin myBox($backColor, $color) {
   background-color: $backColor;
   color: $color;
@@ -72,19 +82,104 @@ header {
   border: $myBorder;
   border-radius: 1rem;
 }
+
 .cards {
   display: flex;
   gap: 0.5rem;
   .card1 {
-    @include myBox(aqua, tomato);
+    @include myBox(yellow, darkblue);
   }
   .card2 {
-    @include myBox(black, tomato);
+    @include myBox(red, yellow);
   }
   .card3 {
-    @include myBox(blue, tomato);
+    @include myBox(black, white);
   }
   .card4 {
-    @include myBox(yellow, tomato);
+    @include myBox(maroon, darkblue);
+  }
+}
+
+//*****************
+//! @EXTEND
+//*****************
+
+.articles {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  .article1 {
+    background-color: gray;
+    width: 50%;
+    height: 12rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  .article2 {
+    // width: 50%;
+    // height: 12rem;
+    // border-radius: 5px;
+    // padding: 0.5rem;
+    // background-color: hotpink;
+    @extend .article1; //* üstteki kodları uzun uzun yazmak yerinearticle1 elementinden miras aldık. Değiştirmek istedğimiz değerleride @extend işleminden sonraki satırlara yazıyoruz.
+    // background-color: hotpink;
+  }
+}
+
+// .articles {
+//     display: flex;
+//     padding: 1rem;
+//     gap: 1rem;
+//     @extend .cards; /*diğer elemnetleri miras almak istiyorsak önce ana çatıdaki elemntin kendisini ana çatıya inherit etmemiz lazım.*/
+//     .article1 {
+//         background-color: gray;
+//         width: 50%;
+//         height: 12rem;
+//         border-radius: 5px;
+//         padding: 0.5rem;
+//     }
+//     .article2 {
+//         // width: 50%;
+//         // height: 12rem;
+//         // border-radius: 5px;
+//         // padding: 0.5rem;
+//         // background-color: hotpink;
+//         @extend .card1; //* üstteki kodları uzun uzun yazmak yerinearticle1 elementinden miras aldık. Değiştirmek istedğimiz değerleride @extend işleminden sonraki satırlara yazıyoruz.
+//         // background-color: hotpink;
+//     }
+// }
+
+//! FOR LOOP
+//*************************
+
+//***********************************************
+//! IF-ELSE
+//************************************************
+
+footer {
+  p {
+    background-color: $bannerBgColor;
+  }
+  .social-icons {
+    display: flex;
+    $textColor: black, red, brown, burlywood, tomato; // liste oluşturduk
+
+    @for $i from 1 through 5 {
+      .social#{$i} {
+        width: 20%;
+        padding: 3px * $i;
+        background-color: darken(rgb(154, 154, 180), $i * 5);
+        font-size: $i * 1rem;
+        color: nth(
+          $textColor,
+          $i
+        ); //listenin elemanlarını nth() metoduyla yaklıyoruz.
+        @if 1 * $i / 2 >= 2 {
+          text-decoration: underline;
+        } @else {
+          text-decoration: overline;
+        }
+      }
+    }
   }
 }
