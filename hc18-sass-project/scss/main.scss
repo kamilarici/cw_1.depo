@@ -1,0 +1,9 @@
+@import "./base/reset";
+@import "./abstracts/veriables", "./abstracts/mixin";
+@import "./components/footer", "./components/navbar", "./components/responsive";
+@import "./sections/about", "./sections/destinations", "./sections/guide",
+  "./sections/home";
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Mulish&family=Playfair+Display&family=Rampart+One&display=swap");
