@@ -37,20 +37,23 @@ selectionArticle.addEventListener("click", (e) => {
     createPcSelection();
   }
 });
-
+const pcTopScore = document.querySelector("#top-score");
 playAgainBtn.addEventListener("click", () => {
   // modalCardSection.classList.toggle("show")
   // modalCardSection.classList.toggle("remove")
   modalCardSection.style.display = "none";
   window.location.reload();
+  // topScore.textContent = localStorage.getItem("newTop");
+  // console.log(localStorage.getItem("newTop"));
 });
 
 //* ------- Functions ------- */
 
 const createPcSelection = () => {
   const pcArr = ["rock", "paper", "scissor"];
-  pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  // pcRandom = pcArr[Math.floor(Math.random() * 3)];
   //! ***hile pcRandom = "rock";
+  pcRandom = "rock";
   pcSelectImg.src = `./assets/${pcRandom}.png`;
   pcSelectImg.alt = pcRandom;
   pcChoiceDiv.appendChild(pcSelectImg);
@@ -121,11 +124,11 @@ const openModal = () => {
   }
 };
 //! ******************************top score***
-const pcTopScore = document.querySelector("#top-score");
 
 const topScore = () => {
   if (newPcScore < pcTopScore.textContent) {
     pcTopScore.textContent = newPcScore;
+    localStorage.setItem("newTop", newPcScore);
   }
 };
 //! ^^^
