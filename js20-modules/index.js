@@ -9,8 +9,9 @@ console.log(this); //? undefined
 import { CALISMA_SAATI, maas } from "./mymodule.js";
 // import { arttir , azalt } from "./mymodule.js"
 import { arttir as inc, azalt as dec } from "./mymodule.js";
+// import  mesajVer,{ arttir as inc, azalt as dec } from "./mymodule.js";//?aynı yerde de ayrı yerde de çağırılabilir
 
-//? Bazen farkli modullerden ayni elemanlari import etmemiz gerekebilir. Bunun için as ile isim değişikliği yapmak mantıklı olacaktir.
+//? Bazen farkli modullerden ayni isimli, elemanlari import etmemiz gerekebilir. Bunun için as ile isim değişikliği yapmak mantıklı olacaktir.
 // import { Button } from "react-boostrap"
 // import { Button as TailwindBtn } from "tailwind"
 
