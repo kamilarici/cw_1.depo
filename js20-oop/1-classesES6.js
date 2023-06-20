@@ -54,6 +54,7 @@ class Book {
 //! Book kalibinda yeni bir ornek (instance) olusturduk.
 const book3 = new Book("stupid reseachers", "xyz", 2022);
 const book4 = new Book("dummy reseachers", "abc", 2022);
+const book5 = new Book("yeni ad", "mmö", 2020);
 
 console.log(book3);
 
