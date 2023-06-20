@@ -4,10 +4,9 @@
 
 //* Polymorphism, bir degisken, fonksiyon veya nesnenin çoklu sekiller
 //* alabilmesini tanimlayan bir nesne-yonelimli programlama teknigidir.
-//* Polymorphism, genellikle Overloading ve Overriding gibi alt kavramlar
-//* ile bilinir.
+//* Polymorphism, genellikle Overloading ve Overriding gibi alt kavramlar ile bilinir.
 
-console.log("polymorphisim");
+console.log("Polymorphism");
 
 class Book {
   constructor(title, author, year) {
@@ -17,27 +16,51 @@ class Book {
   }
 
   getSummary() {
-    return `${this.title} waswritten by ${this.author} in ${this.year}`;
+    return `${this.title} was written by ${this.author} in ${this.year}`;
+  }
+
+  setPrice(price) {
+    const taxRate = 1.1;
+    this.price = Math.trunc(price * taxRate);
   }
 }
 //! Book kalibinda yeni bir ornek (instance) olusturduk.
-const book3 = new Book("stupid reseachers", "xyz", 2022);
-const book4 = new Book("dummy reseachers", "abc", 2022);
-const book5 = new Book("yeni ad", "mmö", 2020);
+const book1 = new Book("Stupid Reseaches", "XYZ", 2022);
+const book2 = new Book("Dummy Reseaches", "ABC", 2023);
 
-console.log(book3);
-
-console.log(book3.getSummary());
-console.log(book4.getSummary());
+//? Sub-Class tanimlamasi (Inheritance)
 
 class Magazine extends Book {
   constructor(title, author, year, month) {
     super(title, author, year);
     this.month = month;
   }
+
+  //? overrided method
+  //! Overrided Metot (Parent class'daki bir metodun farkli
+  //! fonksiyonellikle ve ayni parametre listesi ile yeniden tanimlanmasi)
+  getSummary() {
+    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month}`;
+  }
+
+  //? Overloading method
+  //! Overloaded Metot (Parenttaki bir metodun farkli parametreler ile yeniden kullanilmasi)
+  setPrice(price, taxRate = 1.2) {
+    this.price = price * taxRate;
+  }
+
+  //? Parenttaki bir fonksyionu yeniden cagirmak
+  getSummaryParent() {
+    return super.getSummary();
+  }
 }
 
-const mag1 = new Magazine("elle", "allen mcalle", 2023, "june");
+book1.setPrice(100);
+console.log(book1);
 
+const mag1 = new Magazine("Elle", "Allen McElle", 2023, "June");
+mag1.setPrice(50, 1.5); //? overloaded method cagrildi.
 console.log(mag1);
-console.log(mag1.getSummary());
+
+console.log(mag1.getSummary()); //? overrided method cagrildi
+console.log(mag1.getSummaryParent()); //? parent tan gelen method dolaylı yoldan cagrildi
