@@ -60,3 +60,15 @@ console.log(book3);
 
 console.log(book3.getSummary());
 console.log(book4.getSummary());
+
+class Magazine extends Book {
+  constructor(title, author, year, month) {
+    super(title, author, year);
+    this.month = month;
+  }
+}
+
+const mag1 = new Magazine("elle", "allen mcalle", 2023, "june");
+
+console.log(mag1);
+console.log(mag1.getSummary());
