@@ -38,3 +38,17 @@ console.log(book2.getSummary());
 
 //? Bir parent class'in degisken ve fonksiyonelliği extends
 //? keyword'u ile child class'a gecmektedir.(INHERITANCE)
+console.log("****classes****");
+
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+
+  getSummary() {
+    return `${this.title} waswritten by ${this.author} in ${this.year}`;
+  }
+}
+const book3 = new Book("");
