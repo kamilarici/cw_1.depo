@@ -8,7 +8,7 @@
 //* property isimlerinde camelCase kullanimalidir.
 //* class isimleri icin className kullanilir.
 //* Material UI, Styled Component, Sass, Bootstrap, Tailwind, Emotion, Ant Design v.b harici kutuphaneler kullanilabilir.
-
+import img from "./img/img.webp";
 const Content = () => {
   //? Local style objesi (Harici bir dosyadan da import edilebilir)
   const parStyle = {
@@ -41,12 +41,16 @@ const Content = () => {
         src="https://cdn.pixabay.com/photo/2015/11/03/10/23/watercolor-1020509_640.jpg"
         alt=""
       />
+      <img style={imgStyle} src="./assets/img.webp" alt="" />
+      <img style={imgStyle} src={img} alt="" />
 
       <p style={parStyle}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, illum.
       </p>
 
       <h4 style={parStyle}>Bu bir h4</h4>
+
+      <h3 className="content-h3"> bu bir h3 elementtir</h3>
     </main>
   );
 };
