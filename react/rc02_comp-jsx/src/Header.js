@@ -1,8 +1,8 @@
-export function Header() {
+function Header() {
   //? js
   return (
     <>
-      {/*js*/}
+      {/*   JSX   */}
       <h1>Header</h1>
       <p>cw</p>
       {}
@@ -10,4 +10,4 @@ export function Header() {
   );
 }
 
-// export default Header;
+export default Header;
