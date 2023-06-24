@@ -11,7 +11,6 @@ const Cat = ({ name, img, color = "grey" }) => {
     </div>
   );
 };
-
 {
   /* <div>
       <Name name={props.name} />
@@ -19,5 +18,4 @@ const Cat = ({ name, img, color = "grey" }) => {
       <p>Color:{props.color}</p>
     </div> */
 }
-
 export default Cat;
