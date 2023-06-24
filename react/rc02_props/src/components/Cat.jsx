@@ -1,4 +1,4 @@
-import Name from "./Name";
+import Name from "./Appss";
 
 const Cat = ({ name, img, color = "grey" }) => {
   //? Destr.
