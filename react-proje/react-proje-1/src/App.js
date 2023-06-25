@@ -1,9 +1,13 @@
+import Header from "./Header";
+import Main from "./Main";
+import "./app.css";
 function App() {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
+    <div>
+      <Header />
+      <Main />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

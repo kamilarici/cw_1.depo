@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  background-color: coral;
+}
+
+.header1-home a {
+  text-decoration: none;
+  color: black;
+  margin-right: 8px;
+}
+.img img {
+  width: 50px;
+}
+.name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
