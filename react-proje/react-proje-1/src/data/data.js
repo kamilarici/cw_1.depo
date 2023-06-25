@@ -29,7 +29,7 @@ export const data = [
   },
   {
     id: 5,
-    name: "BOOTSTRAP",
+    name: "AUDİ",
     hour: "16:15 pm",
     image: "https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_640.jpg",
   },
