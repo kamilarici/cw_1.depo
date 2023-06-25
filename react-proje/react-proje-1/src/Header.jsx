@@ -1,4 +1,4 @@
-import img from "./img/Clarusway.png";
+import img from "./img/Clarusway.jpg";
 
 const Header = () => {
   return (

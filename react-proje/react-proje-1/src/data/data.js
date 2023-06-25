@@ -1,44 +1,42 @@
-export const data= [
+export const data = [
   {
     id: 1,
-    name: 'HTML',
+    name: "PORSCHE",
     hour: "10:00 am",
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpngGRjYX1ca7qAADU3K6eGLj7ShQE3L2otdzfryl_Y9Ht2QRoQKYQbsXd36XIxMbYOw0&usqp=CAU',
+      "https://cdn.pixabay.com/photo/2016/11/22/23/44/porsche-1851246_640.jpg",
   },
   {
     id: 2,
-    name: 'CSS',
-    hour:" 11:15 am",
+    name: "FİAT",
+    hour: " 11:15 am",
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png',
+      "https://cdn.pixabay.com/photo/2019/07/07/14/03/fiat-500-4322521_640.jpg",
   },
   {
     id: 3,
-    name: 'JAVASCRIPT',
+    name: "FERRARİ",
     hour: "13:00 pm",
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
+      "https://cdn.pixabay.com/photo/2014/09/07/22/34/car-race-438467_640.jpg",
   },
   {
     id: 4,
-    name: 'REACT',
+    name: "MERCEDES",
     hour: "14:15 pm",
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
+      "https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_640.jpg",
   },
   {
     id: 5,
-    name: 'BOOTSTRAP',
+    name: "BOOTSTRAP",
     hour: "16:15 pm",
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png',
+    image: "https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_640.jpg",
   },
   {
     id: 6,
-    name: 'MUI',
+    name: "AUDİ",
     hour: "16:15 pm",
-    image:
-      'https://mui.com/static/logo.png',
+    image: "https://cdn.pixabay.com/photo/2015/06/05/15/02/audi-798530_640.jpg",
   },
 ];

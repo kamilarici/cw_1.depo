@@ -3,7 +3,7 @@ import Card from "./Card";
 const Main = () => {
   return (
     <div>
-      <h1>main</h1>
+      <h1>Trend Arabalar</h1>
       <Card />
     </div>
   );

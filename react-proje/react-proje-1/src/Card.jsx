@@ -2,7 +2,7 @@ import { data } from "./data/data";
 
 const Card = () => {
   return (
-    <div>
+    <div className="container">
       {data.map((item) => {
         const { name, hour, image, id } = item;
         return (
