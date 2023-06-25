@@ -1,4 +1,5 @@
 import Name from "./Appss";
+// name kelimesi sebebiyle yenileme yaptık
 
 const Cat = ({ name, img, color = "grey" }) => {
   //? Destr.
