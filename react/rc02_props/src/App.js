@@ -1,5 +1,5 @@
 import Cat from "./components/Cat";
-
+// veri çekme işlemini biz elle kayıt yaptık
 function App() {
   return (
     <div>
