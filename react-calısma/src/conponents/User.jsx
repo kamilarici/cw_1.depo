@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-// !impt kısayolu ile geliyor
+// !impt kısayolu ile geliyor;
 
 const User = (props) => {
   const { name, department, salary } = props;
+
   return (
     <div className="col-md-8 mb-4">
       <div className="card">
@@ -13,6 +13,7 @@ const User = (props) => {
             style={{ cursor: "pointer" }}
           ></i>
         </div>
+
         <div className="card-body">
           <p className="card-text">Maas:{salary}</p>
           <p className="card-text">department:{department}</p>
@@ -20,17 +21,6 @@ const User = (props) => {
       </div>
     </div>
   );
-};
-
-User.propTypes = {
-  name: PropTypes.string.isRequired,
-  department: PropTypes.string.isRequired,
-  salary: PropTypes.string.isRequired,
-};
-User.defaultProps = {
-  name: "bilgi yok",
-  department: "bilgi yok",
-  salary: "bilgi yok",
 };
 
 export default User;
