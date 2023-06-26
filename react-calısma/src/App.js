@@ -12,8 +12,13 @@ function App() {
       <hr />
       <Nav title="user app 4" />
       <hr />
-      <User name="kamil arici" salary="10000" department="bilisim" />
-      <User name="oguz kalkan" salary="15000" department="backend" />
+      <User
+        name="kamil arici"
+        salary="10000"
+        department="bilisim"
+        salary="15000"
+      />
+      <User name="oguz kalkan" department="backend" />
       <User name="bunyamin deri" salary="12000" department="dewops" />
     </div>
   );

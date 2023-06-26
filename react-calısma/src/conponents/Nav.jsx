@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Nav = (props) => {
   return (
     <div>
@@ -5,5 +7,10 @@ const Nav = (props) => {
     </div>
   );
 };
-
+Nav.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+Nav.defaultProps = {
+  title: "default app",
+};
 export default Nav;
