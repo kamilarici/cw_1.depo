@@ -1,10 +1,11 @@
-const User = () => {
+const User = (props) => {
   return (
     <div>
-      <form action="">
-        <input type="text" />
-        <button>Gönder</button>
-      </form>
+      <ul>
+        <li>isim:{props.name} </li>
+        <li>departman:{props.department}</li>
+        <li>maas: {props.salary}</li>
+      </ul>
     </div>
   );
 };
