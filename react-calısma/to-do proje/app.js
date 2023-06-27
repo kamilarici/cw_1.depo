@@ -9,9 +9,12 @@ const todoInput = document.querySelector(".todoInput");
 const todosConteiner = document.querySelector(".todos");
 
 const toggleComplete = (event) => {
-  event.currentTarget.parentElement.classList.add("completed");
+  event.currentTarget.parentElement.classList.toggle("completed");
 };
 
+const removeItem = (event) => {
+  todosConteiner.removeChild(event.currentTarget.parentElement);
+};
 const renderTodoItem = (todoText) => {
   const todoItemElement = document.createElement("li");
   todoItemElement.classList.add("todoItem");
@@ -25,6 +28,7 @@ const renderTodoItem = (todoText) => {
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("deleteButton");
   todoItemElement.appendChild(deleteButton);
+  deleteButton.addEventListener("click", removeItem);
   deleteButton.innerText = "delete";
 
   const textElement = document.createElement("p");
