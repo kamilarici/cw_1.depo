@@ -114,17 +114,38 @@ const div = document.querySelector("#id");
 //! filter *******
 //**tüm arrayi dönmek yerine bizim istediğimiz şartları sağlayanları döndürmasini istediğimizde kullanırız  */
 
-const kirk = data.filter((datas) => {
-  //   if (datas.age < 40) {
-  //     return datas;
+// const kirk = data.filter((datas) => {
+//   if (datas.age < 40) {
+//     return datas;
 
-  //   }
+//   }
 
-  if (datas.age < 40) {
-    // return datas.image;
+//   if (datas.age < 40) {
+// return datas.image;
 
-    return (div.innerHTML += `<img width="50px" src="${datas.image}" alt="">
-        `);
+//     return (div.innerHTML += `<img width="50px" src="${datas.image}" alt="">
+//         `);
+//   }
+
+//   if (datas.age < 40) {
+//     if (datas.name != "MUI") {
+//       console.log("muı hariç kardeş");
+//       const kml = datas.age * 3;
+//       console.log(kml);
+//     } else {
+//       console.log("muı hariç 40 dan kücükler");
+//       return datas.name;
+//     }
+//   }
+// });
+// console.log(kirk);
+
+//! find methot ******
+
+//* koşulu sağlayan ilk değeri döndürür diğerlerine bakmaz
+const finder = data.find((datas) => {
+  if (datas.age === 25) {
+    return datas;
   }
 });
-console.log(kirk);
+console.log(finder);
