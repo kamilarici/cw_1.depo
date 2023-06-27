@@ -45,3 +45,22 @@ const user = {
 // console.log(rest); //['sql', 'c++', 'c#']
 
 //?SPREAD OPERATOR
+//...
+// const array1 = [1, 2, 3];
+// const array2 = [5, 6, 7];
+// //* arrayleri birleştirmek
+// const newArray = [...array1, ...array2];
+// //*arrayleri clonlamak
+// const yeniArray = [...array1];
+// console.log(yeniArray);
+// console.log(newArray);
+// //*stringi array haline dönüştürmek
+// const ahmet = [..."ahmet"];
+// console.log(ahmet); //['a', 'h', 'm', 'e', 't']
+
+// //
+// function test(name, surname, ...rest) {
+//   console.log(name, surname, rest);
+// }
+
+// test(1, 61, 2, 8, 22, 78);
