@@ -167,9 +167,28 @@ const div = document.querySelector("#id");
 
 //?REDUCE() METHODU
 
-const ürünler = [
+const urunler = [
   { id: 1, name: "kalem", fiyat: 5 },
   { id: 2, name: "defter", fiyat: 10 },
   { id: 3, name: "silgi", fiyat: 2 },
   { id: 4, name: "kalemtraş", fiyat: 7 },
 ];
+//*reduce ürünlri gezerken değerlerini tutar ve oplamamızı sağlar .başlangıç teğeri atayabiliriz
+const urunToplamFiyati = urunler.reduce(
+  (toplam, urun) => toplam + urun.fiyat,
+  0
+);
+console.log({ urunToplamFiyati }); //{urunToplamFiyati: 24}
+
+const toplamString = urunler.reduce(
+  (toplam, urun) => (toplam = toplam + " " + urun.name),
+  "urun isimlari:"
+);
+console.log(toplamString);
+// const toplamDizi = urunler.reduce(
+//   (toplam, urun) => (toplam = [...toplam, urun.name]),
+//   []
+// );
+//? reduce yerine map ile daha kısa şekilde halledilebilir
+const toplamDizi = urunler.map((urun) => urun.name);
+console.log(toplamDizi);
