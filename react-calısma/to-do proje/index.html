@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    body {
+      text-align: center;
+    }
+    .todoInput {
+      padding: 6px;
+      border: 1px solid red;
+    }
+    .addTask {
+      padding: 6px;
+      margin-left: 3px;
+      background-color: black;
+      color: white;
+    }
+    .todoItem{
+        display: flex;
+        justify-content: center;
+    }
+    .completed .todoText{
+        opacity: 0.5;
+        text-decoration: line-through;
+    }
+  </style>
   <body>
+    <h1>TO-DO LİST</h1>
+    <div class="inputContetnts">
+      <input type="text" class="todoInput" placeholder="notunuzu giriniz" />
+      <button class="addTask">ADD</button>
+    </div>
+    <div class="todos">
+        <!-- <li class="todoItem">
+            <button class="completeButton">Complete</button>
+            <button class="deleteButton">Delete</button>
+            <p class="todoTest">text something</p>
+        </li>
+        <li class="todoItem completed">
+            <button class="completeButton">Complete</button>
+            <button class="deleteButton">Delete</button>
+            <p class="todoTest">text something</p>
+        </li> -->
+        
+        </li>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
