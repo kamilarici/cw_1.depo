@@ -97,16 +97,17 @@ const data = [
 //? forEach end**************
 
 //! map methot *******
-//**map metodu dizi içerisinde döner ve bir değer döndürür,dönen değeri yakalamak için return yapmamız gerekiyor */
-const hour = data.map((datas) => {
-  //   console.log(datas);
-  //   console.log(datas.name);
-  if (datas.age < 30) {
-    console.log(datas.name);
-    return datas;
-  } else {
-    return "30 dan büyük";
-  }
-});
+// //**map metodu dizi içerisinde döner ve bir değer döndürür,dönen değeri yakalamak için return yapmamız gerekiyor.map aynı sayıda bir dizi döndürür  */
+// const hour = data.map((datas) => {
+//   console.log(datas);
+//   console.log(datas.name);
+//   if (datas.age < 30) {
+//     console.log(datas.name);
+//     return datas;
+//   } else {
+//     return "30 dan büyük";
+//   }
+//   return datas.age + 100;//?bu şekilde yeni koşullar ile de döndürülebilir
+// });
 
-console.log(hour);
+// console.log(hour);
