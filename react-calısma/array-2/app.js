@@ -149,3 +149,17 @@ const div = document.querySelector("#id");
 //   }
 // });
 // console.log(finder);
+
+//! iyileştirmeler
+
+// const findAges = (datas) => {
+//   if (datas.age === "25") {
+//     return datas
+//   }
+// };
+//* 2. iyileştirme .tek satırlık işlemlerde arrow f. return var gibi çalışır
+const findAges = (datas) => datas.age === "25";
+
+//*find ile dolaşmak yerine içine bir funtion tanınlıyoruz ve bu fonksiyonla dışarıda yapıyoruz işlemleri daha temiz kod oluyor
+const finder = data.find(findAges);
+console.log(finder);
