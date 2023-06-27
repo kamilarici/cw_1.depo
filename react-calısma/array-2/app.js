@@ -1,3 +1,4 @@
+console.log("array met.");
 //? for-forEach **************
 
 /* console.log("merhaba");
@@ -163,3 +164,12 @@ const div = document.querySelector("#id");
 //*find ile dolaşmak yerine içine bir funtion tanınlıyoruz ve bu fonksiyonla dışarıda yapıyoruz işlemleri daha temiz kod oluyor
 // const finder = data.find(findAges);
 // console.log(finder);
+
+//?REDUCE() METHODU
+
+const ürünler = [
+  { id: 1, name: "kalem", fiyat: 5 },
+  { id: 2, name: "defter", fiyat: 10 },
+  { id: 3, name: "silgi", fiyat: 2 },
+  { id: 4, name: "kalemtraş", fiyat: 7 },
+];
