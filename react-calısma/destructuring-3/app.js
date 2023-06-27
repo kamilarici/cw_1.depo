@@ -33,8 +33,15 @@ const user = {
 // console.log(sinif, name); //3 'asd'
 
 //? ARRAY DESTR.
-const skills = ["html", "css", "js"];
+// const skills = ["html", "css", "js", "java", "sql", "c++", "c#"];
 
-const firstSkills = skills[0];
-const secondSkills = skills[1];
-console.log(firstSkills, secondSkills); //html css
+// const firstSkills = skills[0];
+// const secondSkills = skills[1];
+// console.log(firstSkills, secondSkills); //html css
+
+// const [x, y, z, t, ...rest] = skills;
+// console.log(x, y, z, t); //html css js java
+// //?rest array şeklinde döner
+// console.log(rest); //['sql', 'c++', 'c#']
+
+//?SPREAD OPERATOR
