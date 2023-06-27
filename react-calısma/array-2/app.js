@@ -74,7 +74,7 @@ const data = [
   },
 ];
 
-// const div = document.querySelector("#id");
+const div = document.querySelector("#id");
 
 // const images = [];
 // data.forEach((datas) => {
@@ -111,3 +111,20 @@ const data = [
 // });
 
 // console.log(hour);
+//! filter *******
+//**tüm arrayi dönmek yerine bizim istediğimiz şartları sağlayanları döndürmasini istediğimizde kullanırız  */
+
+const kirk = data.filter((datas) => {
+  //   if (datas.age < 40) {
+  //     return datas;
+
+  //   }
+
+  if (datas.age < 40) {
+    // return datas.image;
+
+    return (div.innerHTML += `<img width="50px" src="${datas.image}" alt="">
+        `);
+  }
+});
+console.log(kirk);
