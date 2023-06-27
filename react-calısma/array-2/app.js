@@ -142,10 +142,10 @@ const div = document.querySelector("#id");
 
 //! find methot ******
 
-//* koşulu sağlayan ilk değeri döndürür diğerlerine bakmaz
-const finder = data.find((datas) => {
-  if (datas.age === 25) {
-    return datas;
-  }
-});
-console.log(finder);
+//* koşulu sağlayan ilk değeri döndürür diğerlerine bakmaz.döndürdüğü değeri de array içinde değil diren kendisini getirir
+// const finder = data.find((datas) => {
+//   if (datas.age === "25") {
+//     return datas;
+//   }
+// });
+// console.log(finder);
