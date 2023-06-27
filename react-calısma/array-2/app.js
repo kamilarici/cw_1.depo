@@ -158,8 +158,8 @@ const div = document.querySelector("#id");
 //   }
 // };
 //* 2. iyileştirme .tek satırlık işlemlerde arrow f. return var gibi çalışır
-const findAges = (datas) => datas.age === "25";
+// const findAges = (datas) => datas.age === "25";
 
 //*find ile dolaşmak yerine içine bir funtion tanınlıyoruz ve bu fonksiyonla dışarıda yapıyoruz işlemleri daha temiz kod oluyor
-const finder = data.find(findAges);
-console.log(finder);
+// const finder = data.find(findAges);
+// console.log(finder);
