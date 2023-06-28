@@ -19,8 +19,6 @@ testPromise((message) => {
   console.log(message);
 });
 
-console.log("async");
-
 function getUser(callback) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -47,12 +45,24 @@ function getRestaruants(addresses) {
     }, 1000);
   });
 }
-getUser()
-  .then((user) => getAdresses(user.username))
-  .then((addresses) => getRestaruants(addresses))
-  .then((openRestaurants) =>
-    document.body.append("acik restoranlar:", openRestaurants.toString())
-  )
-  .catch((error) => {
+// getUser()
+//   .then((user) => getAdresses(user.username))
+//   .then((addresses) => getRestaruants(addresses))
+//   .then((openRestaurants) =>
+//     document.body.append("acik restoranlar:", openRestaurants.toString())
+//   )
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+async function dispalyRestaurants() {
+  try {
+    const user = await getUser();
+    const addresses = await getAdresses(user.username);
+    const openRestaurants = await getRestaruants(addresses);
+    document.body.append("acik restoranlar: ", openRestaurants.toString());
+  } catch (error) {
     console.log(error);
-  });
+  }
+}
+dispalyRestaurants();
