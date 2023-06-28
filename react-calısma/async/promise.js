@@ -109,7 +109,13 @@ fetch("https://api.github.com/users")
     //?sonrası aşaıda fonksiyonda verileri dom a bastık
     showUsers(data);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+    const userDiv = document.getElementById("users");
+    userDiv.innerHTML = `
+    <h2 className="text-warning">${err}</h2>
+    `;
+  });
 
 const showUsers = (users) => {
   console.log(users);
@@ -121,3 +127,4 @@ const showUsers = (users) => {
 `;
   });
 };
+//? *****************************************
