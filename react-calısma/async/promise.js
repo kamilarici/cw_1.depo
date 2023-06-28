@@ -12,7 +12,7 @@ function testPromise() {
 }
 
 testPromise().then((message) => {
-  console.log("mesaj geldi", message);
+  // console.log("mesaj geldi", message);
 });
 
 testPromise((message) => {
@@ -55,14 +55,69 @@ function getRestaruants(addresses) {
 //     console.log(error);
 //   });
 
-async function dispalyRestaurants() {
-  try {
-    const user = await getUser();
-    const addresses = await getAdresses(user.username);
-    const openRestaurants = await getRestaruants(addresses);
-    document.body.append("acik restoranlar: ", openRestaurants.toString());
-  } catch (error) {
-    console.log(error);
+// async function dispalyRestaurants() {
+//   try {
+//     const user = await getUser();
+//     const addresses = await getAdresses(user.username);
+//     const openRestaurants = await getRestaruants(addresses);
+//     document.body.append("acik restoranlar: ", openRestaurants.toString());
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// dispalyRestaurants();
+
+// let count = 0;
+// let sec1 = setInterval(() => {
+//   console.log(++count);
+//   if (count > 10) {
+//     clearInterval(sec1);
+//   }
+// }, 1000);
+
+//? ****************PROMİSE YAPI ÖZET*******************
+const netwarkReq = new Promise((resolve, reject) => {
+  const data = { a: 1, b: 2 };
+  const success = Math.floor(Math.random() * 5);
+  if (success) {
+    console.log("data feched");
+    resolve(data);
+  } else {
+    reject("ohh no there is network error");
   }
-}
-dispalyRestaurants();
+});
+netwarkReq
+  .then((response) => console.log(response))
+  .then(() => console.log("2. then"))
+  .catch((err) => document.write(err));
+// .finally(()=>console.log("her zman çalisir"))
+//? ************************************************
+
+//? *****FETCH-APİ******
+
+fetch("https://api.github.com/users")
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error("something went wrong", res.status);
+    }
+    // console.log(res.status);
+    // console.log(res.ok);
+    return res.json();
+  })
+  .then((data) => {
+    //?veriyi dom a basmak için blok içinde fonksiyona değer olarak atadık
+    //?sonrası aşaıda fonksiyonda verileri dom a bastık
+    showUsers(data);
+  })
+  .catch((err) => console.log(err));
+
+const showUsers = (users) => {
+  console.log(users);
+  const userDiv = document.getElementById("users");
+  users.forEach((user) => {
+    userDiv.innerHTML += `
+<h2>${user.login}</h2>
+<img width="150px" src="${user.avatar_url}" alt="" />
+`;
+  });
+};
