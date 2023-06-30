@@ -22,4 +22,7 @@ class Book {
 }
 
 const book3 = new Book("hakim", "orhan veli", 1987);
+const book4 = new Book("elma", "xyz", 1990);
 console.log(book3);
+console.log(book3.getSummary());
+console.log(book4.getSummary());
