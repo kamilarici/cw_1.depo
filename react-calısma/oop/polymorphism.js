@@ -1,15 +1,5 @@
 console.log("oop");
 
-const book1 = {
-  title: "harry potter",
-  author: "tostoy",
-  year: 1186,
-  getSummary: function () {
-    return `${this.title} was written by ${this.author} in ${this.year}`;
-  },
-};
-console.log(book1.getSummary());
-
 class Book {
   constructor(title, author, year) {
     this.title = title;
@@ -19,13 +9,15 @@ class Book {
   getSummary() {
     return `${this.title} was written by ${this.author} in ${this.year}`;
   }
+  setPrice(price) {
+    const taxRate = 1.1;
+    this.price = Math.trunc(price * taxRate);
+  }
 }
 
-const book3 = new Book("hakim", "orhan veli", 1987);
-const book4 = new Book("elma", "xyz", 1990);
-console.log(book3);
-console.log(book3.getSummary());
-console.log(book4.getSummary());
+const book1 = new Book("hakim", "orhan veli", 1987);
+const book2 = new Book("elma", "xyz", 1990);
+
 //? *****inheitence
 //! sub class tanınması **inheritance**
 class Magazine extends Book {
@@ -33,11 +25,23 @@ class Magazine extends Book {
     super(title, author, year, month);
     this.month = month;
   }
-  //!   overroding
   getSummary() {
-    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month}`;
+    return `${this.title} was written by ${this.author} in ${this.year} in ${this.month}`; //?sadece içi değişiyor ise OVERRİDİNG
+  }
+
+  //? OVERLODİNG parametreler değişiyor parent eziliyor
+  setPrice(price, taxRate = 1.2) {
+    this.price = price * taxRate;
+  }
+  getSummaryParrent() {
+    return super.getSummary();
   }
 }
 const mag1 = new Magazine("elle", "mcelle", 2023, "june");
+book1.setPrice(100);
+console.log(book1);
+mag1.setPrice(50, 1.5);
 console.log(mag1);
-console.log(mag1.getSummary());
+
+console.log(mag1.getSummary()); //?averriding gelen
+console.log(mag1.getSummaryParrent()); //?parrenttan gelen
