@@ -27,12 +27,13 @@ console.log(book3);
 console.log(book3.getSummary());
 console.log(book4.getSummary());
 //? *****inheitence
-
+//! sub class tanınması **inheritance**
 class Magazine extends Book {
   constructor(title, author, year, month) {
     super(title, author, year, month);
     this.month = month;
   }
+  //!   overroding
   getSummary() {
     return `${this.title} was written by ${this.author} in ${this.year} in ${this.month}`;
   }
