@@ -30,7 +30,9 @@ const renderNews = (news) => {
   const newsDiv = document.getElementById("news");
   news.map((item) => {
     const { title, decription, content, urlToImage, url } = item;
-    newsDiv.innerHTML += `
+    newsDiv.innerHTML += ` 
+
+
     <div class="col-sm-6 col md-4 col-xl-6" >
     <div class="card" >
     <img src="${urlToImage}" class="card-img-top" alt="...">
@@ -43,9 +45,7 @@ const renderNews = (news) => {
   </div>
 
 
-
-
-    `;
+ `;
   });
 };
 getNews();
