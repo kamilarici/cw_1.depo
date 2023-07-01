@@ -7,7 +7,8 @@ function App() {
   const [age, setAge] = useState(29);
   //? array state********
   const [friends, setFriends] = useState(["ahmet", "murat"]);
-  console.log(age, name);
+  //? object state ********
+  const [address, setAddress] = useState({ title: "istanbul", zip: 11556 });
   return (
     <div className="App">
       <h1>Hello {name}</h1>
@@ -19,13 +20,24 @@ function App() {
       {friends.map((friend, index) => (
         <div key={index}>{friend}</div>
       ))}
-      //? setFriends içine array olarak yeni değer atamadığımız zaman map patlar
-      ve dönmez çünkü array olan yere string tanımlamış oluruz ..önceki
-      değerlerin gelmesini de istiyorsak spred operatörü ile çağırmamuz
-      gerekiyor
+      {/* //? setFriends içine array olarak yeni değer atamadığımız zaman map patlarve dönmez çünkü array olan yere string tanımlamış oluruz ..önceki değerlerin gelmesini de istiyorsak spred operatörü ile çağırmamuz gerekiyor */}
       <button onClick={() => setFriends([...friends, "ayşe"])}>
-        {" "}
         add new frends
+      </button>
+
+      <hr />
+      <br />
+
+      <h2>address</h2>
+      <div>
+        {address.title}
+        {address.zip}
+      </div>
+
+      <button
+        onClick={() => setAddress({ ...address, title: "ankara", zip: 22222 })}
+      >
+        new adress
       </button>
     </div>
   );
