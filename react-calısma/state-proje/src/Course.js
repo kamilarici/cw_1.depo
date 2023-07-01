@@ -11,8 +11,6 @@ const courseMap = {
 };
 
 const Course = ({ courseName }) => {
-  console.log(Dr);
-  console.log(courseName);
   return (
     <div className="imgDiv">
       <img className="imgCourse" src={courseMap[courseName]} alt="" />
