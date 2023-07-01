@@ -4,13 +4,15 @@ import Dr from "./img/dr.jpg";
 import Thor from "./img/thor.jpg";
 import "./Course.css";
 const courseMap = {
-  Batman,
+  Batman: Batman,
   Black,
   Dr,
   Thor,
 };
 
 const Course = ({ courseName }) => {
+  console.log(courseMap[courseName]);
+  console.log(courseName);
   return (
     <div className="imgDiv">
       <img className="imgCourse" src={courseMap[courseName]} alt="" />
