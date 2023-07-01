@@ -4,7 +4,7 @@ const Counter = () => {
   const [count, setCount] = useState(1);
   // ?onclik dışarıda tanımlı hali
   const increase = () => {
-    setCount(count + 1);
+    setCount(1);
   };
   return (
     <div>
