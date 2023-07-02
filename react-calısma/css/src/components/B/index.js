@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-
+//? karışıklığı önlemek için module.css kullanıyoruz ve import ettiğimiz isim ne ise verdiğimiz id yada class başına yazmamız gerekiyor.örneğin import add from... diye import ettiysek sstyle verirken clası title olan butonun clasına  ***{add.title}*** yazmamız gerekiyor
 const B = () => {
   return (
     <div className={style.title}>
