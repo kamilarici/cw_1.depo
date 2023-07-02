@@ -1,12 +1,14 @@
+import A from "./components/A";
+import B from "./components/B";
+
 function App() {
   return (
     <div className="App">
       <h1>Hello React</h1>
-      <p style={{ color: "red", backgroundColor: "beige", padding: 30 }}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-        ducimus praesentium quibusdam accusamus sunt, maiores molestias iusto
-        alias in rerum.
-      </p>
+
+      <A />
+      <hr />
+      <B />
     </div>
   );
 }
