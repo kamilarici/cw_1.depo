@@ -1,7 +1,18 @@
 //color
 $blackColor: rgb(35, 149, 65);
-$whiteColor: rgb(201, 193, 193);
-$redColor:red
+$whiteColor: rgb(255, 255, 255);
+$redColor: red;
 //?font
 $titleFont: Arial, Helvetica, sans-serif;
 $bodyFont: "Times New Roman", Times, serif;
+
+//? mixins******
+@mixin buttonStyle($color, $fontSize) {
+  width: 200px;
+  height: 40px;
+  background-color: $color;
+  border: none;
+  border-radius: 8px;
+  color: $whiteColor;
+  font-size: $fontSize;
+}

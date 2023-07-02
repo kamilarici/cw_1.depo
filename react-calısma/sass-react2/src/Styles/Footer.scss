@@ -1,0 +1,11 @@
+@import "../Veriables/Veriables.scss";
+.footer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  background-color: rgb(237, 52, 154);
+}
+
+.foot button {
+  @include buttonStyle(rgb(38, 132, 91), 40px);
+}

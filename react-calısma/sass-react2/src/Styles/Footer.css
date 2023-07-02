@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  background-color: rgb(237, 52, 154);
+}
+
+.foot button {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(38, 132, 91);
+  border: none;
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+}/*# sourceMappingURL=Footer.css.map */

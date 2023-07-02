@@ -1,1 +1,1 @@
-{"version":3,"sources":["MainPage.scss","MainPage.css"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;ACCF","file":"MainPage.css"}
+{"version":3,"sources":["MainPage.scss","MainPage.css","../Veriables/Veriables.scss"],"names":[],"mappings":"AAEA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;ACDF;ADEE;EACE,UEJO;ADIX;ADEE;EECA,YAAA;EACA,YAAA;EACA,qBATS;EAUT,YAAA;EACA,kBAAA;EACA,yBAbW;EAcX,eFNkC;ACMpC;;ADFA;EEJE,YAAA;EACA,YAAA;EACA,wBFGqB;EEFrB,YAAA;EACA,kBAAA;EACA,yBAbW;EAcX,eFD6B;ACW/B","file":"MainPage.css"}

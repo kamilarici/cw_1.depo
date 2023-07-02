@@ -1,7 +1,17 @@
-@import "../Veriables/Veriables.scss" .mainPage {
+@import "../Veriables/Veriables.scss";
+
+.mainPage {
   display: flex;
   justify-content: center;
   align-items: center;
   h1 {
+    color: $redColor;
   }
+  button {
+    @include buttonStyle($redColor, 30px);
+  }
+}
+
+button {
+  @include buttonStyle(purple, 10px);
 }
