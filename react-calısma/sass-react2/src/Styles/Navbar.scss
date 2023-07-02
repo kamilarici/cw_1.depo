@@ -1,0 +1,24 @@
+@import "../Veriables/Veriables.scss";
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: $blackColor;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.navbar a {
+  color: $whiteColor;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: $titleFont;
+  margin: 10px;
+}
+
+.navbar .links {
+  margin-right: 30px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
