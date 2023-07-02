@@ -1,0 +1,8 @@
+@import "../degiskenler/renkler.scss";
+.kutu {
+  height: 300px;
+  width: 300px;
+  background-color: $arkaPlan;
+  color: white;
+  border: 5px solid yellow;
+}
