@@ -1,4 +1,7 @@
+//?  sadece bu importu yaparak normal react kullanmayı yapabiliriz
+
 import "bootstrap/dist/css/bootstrap.min.css";
+//?burada ise sadece gerekli kısımları alarak bootstrap kullanabilirsiniz amaç dosya yükünden kurtulmak
 import { Alert, Button } from "react-bootstrap";
 
 function App() {

@@ -1,7 +1,14 @@
+/* //? burada bootstrap indirip içindeki veriables vb yapıları kullanabiliriz aşagıdaki gibi ama öncelikle node modulus se yüklememiz gerekli ...yani kendi stilimiz 
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+ */
+
 .kutu {
   height: 300px;
   width: 300px;
   background-color: rgba(42, 151, 146, 0.638);
   color: white;
   border: 5px solid yellow;
-}/*# sourceMappingURL=menu.css.map */
+} /*# sourceMappingURL=menu.css.map */
