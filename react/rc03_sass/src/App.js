@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Header />
+      {/* //? data buradaki gibi tamamen alta da gönderilebilir  */}
       <Card data={data} />
       <Footer />
     </>
