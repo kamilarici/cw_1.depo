@@ -1,5 +1,5 @@
 import CardStyle from "../scss/card.module.scss";
-//? scss ve mo
+//? scss ve module css birleştirdik
 const Card = ({ data }) => {
   console.log(data);
   //? js
