@@ -1,11 +1,14 @@
 import Card from "./components/card/Card";
 import data from "./data";
-console.log(data);
+
 function App() {
   return (
     <>
       <h1>APP</h1>
-      <Card />
+      {/* {iterasyon} */}
+      {data.map(({ id, language, img, btnName }) => (
+        <Card id={id} lang={language} img={img} btn={btnName} key={id} />
+      ))}
     </>
   );
 }

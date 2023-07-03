@@ -1,7 +1,11 @@
 import "./Button.css";
 
-const Button = () => {
-  return <div>Button</div>;
+const Button = ({ btn }) => {
+  return (
+    <div>
+      <button>{btn}</button>
+    </div>
+  );
 };
 
 export default Button;
