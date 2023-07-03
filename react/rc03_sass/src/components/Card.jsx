@@ -1,4 +1,5 @@
 import CardStyle from "../scss/card.module.scss";
+//?ilgili scss dosyasını import ettik .module ile entegre olduğu için normal css gibi değil from olarak import ettik
 //? scss ve module css birleştirdik
 const Card = ({ data }) => {
   console.log(data);
