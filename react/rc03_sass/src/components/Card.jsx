@@ -1,5 +1,5 @@
 import CardStyle from "../scss/card.module.scss";
-
+//? scss ve mo
 const Card = ({ data }) => {
   console.log(data);
   //? js
@@ -9,11 +9,12 @@ const Card = ({ data }) => {
         //? JS
         const { id, name, job, img, comment } = item;
         return (
+          //? module css dolayısıyla bu şekilde style verdik
           <div key={id} className={CardStyle.card}>
             <h1>{name}</h1>
             <h3>{job}</h3>
             <p>{comment}</p>
-            <img src={img} alt="img" />
+            <img src={img} alt={img} />
             <div className={CardStyle.buttons}>
               <button className={CardStyle.small}>Small</button>
               <button className={CardStyle.large}>Large</button>
