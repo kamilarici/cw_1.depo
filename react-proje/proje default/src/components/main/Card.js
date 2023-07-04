@@ -1,6 +1,4 @@
-import 
-
-
+// import
 
 const Card = ({ id, title, desc, date, image }) => {
   return (
