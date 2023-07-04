@@ -1,6 +1,6 @@
 const Card = ({ title, date, image, desc }) => {
   //   const { title, date, image, desc } = props;
-  //   console.log(props);
+
   return (
     <div className="cards">
       <div className="title">
