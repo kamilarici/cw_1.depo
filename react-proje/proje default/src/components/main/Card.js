@@ -1,9 +1,18 @@
+import 
 
 
-const Card = () => {
+
+const Card = ({ id, title, desc, date, image }) => {
   return (
-    <div>Card</div>
-  )
-}
+    <div key={id}>
+      <div>
+        <h1>{title}</h1>
+      </div>
+      <img src={image} alt="" />
+      <h2>{date}</h2>
+      <p>{desc}</p>
+    </div>
+  );
+};
 
-export default Card
+export default Card;
