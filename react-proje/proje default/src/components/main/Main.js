@@ -4,7 +4,7 @@ import MainStyle from "./main.module.scss";
 
 const Main = () => {
   return (
-    <div>
+    <div className={MainStyle.main}>
       {data.map((items) => {
         const { id, image, desc, title, date } = items;
         return (
