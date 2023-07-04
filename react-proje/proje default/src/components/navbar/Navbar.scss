@@ -1,0 +1,36 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+.navbar {
+  background-color: $NavbarColor;
+  @include FlexMix(space-between, center);
+  img {
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+  }
+  .nav_list {
+    ul {
+      align-items: center;
+      display: flex;
+
+      li {
+        padding: 1rem;
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 24px;
+          font-weight: 600;
+          padding: 0.5rem;
+          border-radius: 10px;
+          transition: all ease 0.7s;
+          &:hover {
+            color: $NavbarColor;
+            background: #000;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
