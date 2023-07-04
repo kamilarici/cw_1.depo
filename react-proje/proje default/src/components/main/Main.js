@@ -1,5 +1,6 @@
 import Card from "./Card";
 import data from "../../helper/data";
+import MainStyle from "./main.module.scss";
 
 const Main = () => {
   return (

@@ -1,0 +1,70 @@
+.container {
+  margin-top: 20px;
+  display: flex;
+  .Cards {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    &:hover .desc {
+      display: block;
+      animation: slide-top 0.7s ease;
+    }
+    .title {
+      position: absolute;
+      background-color: black;
+      color: blue;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 10px;
+      z-index: 2px;
+    }
+    .date {
+      border-radius: 10px;
+      padding: 1rem;
+      position: absolute;
+      background-color: black;
+      color: aqua;
+      text-align: center;
+      left: 30%;
+      top: 20%;
+      z-index: 2px;
+    }
+    .img {
+      border-radius: 10px;
+      width: 500px;
+      height: 350px;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .desc {
+      position: absolute;
+      text-align: center;
+      background: #000;
+      color: white;
+      border-radius: 10px;
+      padding: 0.5rem;
+      width: 500px;
+      height: 150px;
+      bottom: 150px;
+      z-index: 2;
+      font-size: 20px;
+      overflow: auto;
+
+      display: none;
+    }
+    .desc::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 150px;
+  }
+}
