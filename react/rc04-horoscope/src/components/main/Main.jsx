@@ -6,6 +6,7 @@ const Main = () => {
   return (
     <div className="card-container">
       {data.map((item) => {
+        //?key göndermemiz gerekiyor çünkü bunu react yazmamızı istiyor.dom da yazmasa bile yazmamız gerekiyor
         return <Card key={item.id} {...item} />;
       })}
     </div>
