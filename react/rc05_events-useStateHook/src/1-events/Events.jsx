@@ -20,6 +20,8 @@ const Events = () => {
 
   const handleChange = (e) => {
     console.log(e.target);
+
+    //? burayı basmaz başlangıçtaki değeri alır
     message = "STATE";
     console.log(message);
   };
