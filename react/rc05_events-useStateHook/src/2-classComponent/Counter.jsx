@@ -8,18 +8,19 @@
 //* Bir state'e baslangıc degeri constructor metodu icersinde this.state ile atanabilir
 //* constructor'in disinda state, setState() metodu ile degistilebilir.
 //* ====================================================================
-import React from "react"
+import React from "react";
 
 class Counter extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     //!  State'e baslangic degeri verdik.
     this.state = {
       count: 0,
-    }
+    };
 
-    }
+    //  this.increment = function (){
+    //  }
 
     //? increment metodunun Counter class'ina baglanmasi (bind)
     //  this.increment = this.increment.bind(this)
@@ -33,14 +34,14 @@ class Counter extends React.Component {
   increment = () => {
     this.setState({
       count: this.state.count + 1,
-    })
-  }
+    });
+  };
 
   decrement = () => {
     this.setState({
       count: this.state.count - 1,
-    })
-  }
+    });
+  };
   render() {
     return (
       <div className="">
@@ -59,8 +60,8 @@ class Counter extends React.Component {
           DEC
         </button>
       </div>
-    )
+    );
   }
 }
 
-export default Counter
+export default Counter;
