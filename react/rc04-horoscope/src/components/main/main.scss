@@ -63,6 +63,7 @@
     max-height: 75%;
     overflow: auto;
 
+    //? scroll bar kaybolması için
     &::-webkit-scrollbar {
       display: none;
     }
