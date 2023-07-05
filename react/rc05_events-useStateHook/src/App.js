@@ -1,8 +1,12 @@
+import Events from "./1-events/Events";
+
 function App() {
   return (
     <div>
-      <h1>EVENTS</h1>
+      <h1>
+        <Events />
+      </h1>
     </div>
-  )
+  );
 }
-export default App
+export default App;
