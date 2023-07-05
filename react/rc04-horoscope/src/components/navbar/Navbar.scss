@@ -36,7 +36,7 @@
     height: 100px;
   }
 }
-
+//?navbardaki başlıkların alt alta gelmesi için
 @include media-xsm {
   .links {
     flex-direction: column;
