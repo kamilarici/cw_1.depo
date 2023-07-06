@@ -3,6 +3,9 @@ import { useState } from "react";
 const MouseEvent = () => {
   const [visible, setVisible] = useState(false);
 
+  const [coorX, setCoordX] = useState();
+  const [coorY, setCoordY] = useState();
+
   const handleMove = (e) => {
     console.log(e.pageX);
     console.log(e.pageY);
@@ -38,7 +41,9 @@ const MouseEvent = () => {
         todo item 3
       </div>
 
-      <p>X and Y</p>
+      <p>
+        X: {setCoordX} and Y: {setCoordY}
+      </p>
     </div>
   );
 };
