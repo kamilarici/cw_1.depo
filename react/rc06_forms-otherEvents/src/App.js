@@ -6,10 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div>
-      <Form />
-      <FormObject />
-      {/* <KeyboardEvents />
-      <MouseEvent /> */}
+      {/* <Form />
+      <FormObject /> */}
+      <KeyboardEvents />
+      {/* <MouseEvent /> */}
     </div>
   );
 }

@@ -18,6 +18,7 @@ const FormObject = () => {
       email:${email}
       password:${password}
     `);
+
     setFormData({
       username: "",
       email: "",
@@ -26,13 +27,11 @@ const FormObject = () => {
   };
 
   const handleFormData = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.name);
-    console.log(e.target.id);
+    // console.log(e.target.value)
+    // console.log(e.target.name)
+    // console.log(e.target.id)
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  console.log(formData);
 
   return (
     <div className="container mt-4">
