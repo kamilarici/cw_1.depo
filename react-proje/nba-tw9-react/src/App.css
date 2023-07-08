@@ -14,12 +14,15 @@ body {
 .input {
   padding: 0.5rem;
   width: 300px;
+  border-radius: 5px;
 }
 .card-img {
+  /* border-radius: 5px; */
   width: 250px;
   height: 300px;
   position: relative;
   z-index: 5;
+  transition: all 0.5s;
   &:hover {
     transform: scale(0.9);
   }
@@ -44,7 +47,7 @@ body {
   width: 210px;
   height: 300px;
 
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(68, 64, 64, 0.542);
 }
 .ulz {
   z-index: 8;
@@ -52,5 +55,9 @@ body {
 li {
   padding: 5px;
   margin-top: 25px;
-  color: rgb(0, 0, 0);
+  color: white;
+}
+.p-card {
+  font-size: 20px;
+  color: white;
 }

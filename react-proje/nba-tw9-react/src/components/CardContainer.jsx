@@ -21,7 +21,7 @@ const CardContainer = (props) => {
           <li>🌟{statistics[3]}</li>
         </ul>
       </div>
-      <p p-card>{name}</p>
+      <p className=" p-card">{name}</p>
     </div>
   );
 };
