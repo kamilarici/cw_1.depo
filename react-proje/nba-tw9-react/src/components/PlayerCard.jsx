@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { data } from "../helper/data";
 import CardContainer from "./CardContainer";
 // console.log(data);
 const PlayerCard = () => {
+  const [query, setQuery] = useState("");
+  let nameArr = [];
+  nameArr = data.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const handleSearch = (e) => {
+    setQuery(e.target.value);
+  };
   return (
     <div>
-      <input className="input" type="text" />
+      <input className="input" type="text" onChange={handleSearch} />
       <div className="player-div">
-        {data.map((item) => (
+        {nameArr.map((item) => (
           <CardContainer {...item} />
         ))}
       </div>
