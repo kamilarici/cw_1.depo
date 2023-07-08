@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+.img-div {
+  text-align: center;
+}
+
+.img-div img {
+  width: 200px;
+}
+
+.input {
+  padding: 0.5rem;
+  width: 300px;
+}
+.card-img {
+  width: 250px;
+  height: 300px;
+}
+.player-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+  justify-content: center;
+}
