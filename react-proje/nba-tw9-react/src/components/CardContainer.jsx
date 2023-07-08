@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 const CardContainer = (props) => {
-  const { name, img, statistics } = props;
+  const { name, img } = props;
 
   return (
     <div>
