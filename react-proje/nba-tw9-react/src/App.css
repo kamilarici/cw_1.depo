@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  background-color: salmon;
 }
 
 .img-div {
@@ -17,6 +18,11 @@ body {
 .card-img {
   width: 250px;
   height: 300px;
+  position: relative;
+  z-index: 5;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 .player-div {
   display: flex;
@@ -24,4 +30,27 @@ body {
   gap: 2rem;
   margin-top: 5rem;
   justify-content: center;
+}
+
+.relative {
+  position: relative;
+}
+.ul {
+  list-style: none;
+  text-align: start;
+  position: absolute;
+  top: -16px;
+  /* left: 10vw; */
+  width: 210px;
+  height: 300px;
+
+  background-color: rgb(255, 255, 255);
+}
+.ulz {
+  z-index: 8;
+}
+li {
+  padding: 5px;
+  margin-top: 25px;
+  color: rgb(0, 0, 0);
 }

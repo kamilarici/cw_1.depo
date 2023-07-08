@@ -11,7 +11,7 @@ export const data = [
   },
   {
     name: "Larry Bird",
-    img: "https://images.footballfanatics.com/boston-celtics/larry-bird-boston-celtics-unsigned-driving-to-the-basket-photograph_pi4025000_ff_4025713-3a32778de9bb567994e1_full.jpg?_hv=2&w=900",
+    img: "https://freshairarchive.org/sites/default/files/styles/square_800/public/2021-08/CharlesBarkley.jpg?itok=lkOGUQ2t",
     statistics: [
       "21,791 points",
       "8,974 rebaunds",
@@ -111,7 +111,7 @@ export const data = [
   },
   {
     name: "Charles Barkley",
-    img: "https://freshairarchive.org/sites/default/files/styles/square_800/public/2021-08/CharlesBarkley.jpg?itok=lkOGUQ2t",
+    img: "https://images.footballfanatics.com/boston-celtics/larry-bird-boston-celtics-unsigned-driving-to-the-basket-photograph_pi4025000_ff_4025713-3a32778de9bb567994e1_full.jpg?_hv=2&w=900",
     statistics: [
       "23,757 points",
       "12,546 rebaunds",
