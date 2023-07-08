@@ -23,6 +23,7 @@ body {
   position: relative;
   z-index: 5;
   transition: all 0.5s;
+  object-fit: cover;
   &:hover {
     transform: scale(0.9);
   }
