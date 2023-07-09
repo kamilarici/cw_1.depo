@@ -2,5 +2,45 @@ body {
   text-align: center;
 }
 .App {
-  margin-top: 30vh;
+  margin-top: 10vh;
+}
+
+button {
+  width: 40%;
+  background-color: blueviolet;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 20px;
+  transition: all 2s;
+  &:hover {
+    scale: 1.1;
+    background-color: chartreuse;
+    color: black;
+  }
+}
+.img-div {
+  margin-top: 25px;
+}
+img {
+  width: 250px;
+  height: 350px;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: all 2s;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
