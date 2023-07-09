@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -11,10 +12,13 @@
   width: 100%;
   height: 100vh;
 }
-.container {
+.containerr {
+  /* justify-content: center; */
   box-shadow: 0 0 12px;
   border-radius: 8px;
   padding: 1rem;
+  width: 40%;
+  height: 50;
 }
 input {
   width: 100%;
@@ -29,11 +33,14 @@ input {
   font-size: 1.2rem;
   margin: 8px 0;
   padding: 10px 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: white;
   background-color: black;
 
   border-radius: 8px;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .btn-outline {

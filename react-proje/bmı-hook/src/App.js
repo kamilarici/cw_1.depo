@@ -15,7 +15,7 @@ function App() {
     if (weight === 0 || height === 0) {
       alert("please enter a valid weight and height");
     } else {
-      let bmi = (weight / (height * height)) * 703;
+      let bmi = weight / (height * height);
       setBmi(bmi.toFixed(1));
       console.log(bmi);
 
@@ -46,7 +46,7 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="container">
+      <div className="containerr ">
         <h2 className="center">BMI Calculater</h2>
         <form action="" onSubmit={calcBmi}>
           <div>
@@ -69,14 +69,14 @@ function App() {
           </div>
           <div>
             <button className="btnn " type="submit">
-              submit
+              Submit
             </button>
             <button className="btnn btn-outline" type="submit" onClick={reload}>
-              reload
+              Reload
             </button>
           </div>
           <div className="center">
-            <h3> your bmı is: {bmi}</h3>
+            <h3> Your BMI is : {bmi}</h3>
             <p>{message}</p>
           </div>
           <div className="img-container">
