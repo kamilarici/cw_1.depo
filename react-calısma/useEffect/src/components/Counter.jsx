@@ -11,7 +11,7 @@ const Counter = () => {
     //   setNumber((n) => n + 1);
     // }, 1000);
 
-    return () => clearInterval(interval);
+    // return () => clearInterval(interval);
   }, []);
   useEffect(() => {
     console.log(" number state güncellendi");
