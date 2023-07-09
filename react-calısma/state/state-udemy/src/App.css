@@ -30,7 +30,7 @@ img {
   border-radius: 5px;
   cursor: pointer;
   object-fit: cover;
-  cursor: zoom-in;
+  /* cursor: zoom-in; */
   transition: all 2s;
   &:hover {
     transform: scale(0.9);

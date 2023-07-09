@@ -1,25 +1,27 @@
 import { useState } from "react";
 import "./App.css";
-import Course from "./Course";
-
-function getRondomCourse() {
-  const courseArray = ["batman", "dr", "thor", "black"];
-  return courseArray[Math.floor(Math.random() * 4)];
-}
 
 function App() {
-  const [course, setCourse] = useState([]);
-  const handleClick = () => {
-    setCourse([...course, getRondomCourse()]);
-  };
+  const [name, setName] = useState("kml");
+  const [age, setAge] = useState(29);
+  const [friends, setFriends] = useState(["ahmet", "murat"]);
+
   return (
     <div className="App">
-      <button onClick={handleClick}>kurs ekle</button>
-      <div className="flex">
-        {course.map((item, index) => {
-          return <Course key={index} courseName={item} />;
-        })}
-      </div>
+      {/* //? string ************* */}
+      <h1>merhaba {name}</h1>
+      <h2>{age}</h2>
+      <button onClick={() => setName("ahmet")}>click</button>
+      <button onClick={() => setAge(33)}>age</button>
+      <hr />
+      //? array ******************************
+      <h2>başlık</h2>
+      {friends.map((friend, index) => (
+        <div key={index}>{friend}</div>
+      ))}
+      <button onClick={() => setFriends([...friends, "ayşe"])}>
+        Add new friends
+      </button>
     </div>
   );
 }
