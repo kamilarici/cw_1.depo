@@ -23,3 +23,12 @@ img {
     scale: 0.9;
   }
 }
+body {
+  text-align: center;
+}
+input {
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 21px;
+}
