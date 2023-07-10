@@ -8,7 +8,7 @@ const searchImages = async (term) => {
       query: term,
     },
   });
-  debugger;
+  //   debugger;
   return response.data.results;
 };
 export default searchImages;
