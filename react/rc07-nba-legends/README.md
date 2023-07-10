@@ -25,6 +25,7 @@ React Bootstrap'i kullanmak için, React uygulamanıza ilgili paketi (package) e
 React Bootstrap, React ve Bootstrap'i bir araya getirerek, güçlü bir kullanıcı arayüzü oluşturma deneyimi sunar. React'in bileşen tabanlı yapısı, Bootstrap bileşenlerini daha modüler hale getirir ve React'in güçlü özelliklerini kullanarak daha etkileşimli ve dinamik bir kullanıcı arayüzü oluşturmanızı sağlar.
 
 ## Projemize nasıl dahil edebiliriz?
+
 ```javascript
 npm install react-bootstrap bootstrap
 or
@@ -36,17 +37,19 @@ yarn add react-bootstrap bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
-Artık projemize eklediğimize göre hem bootstrap özelliklerinden hem de react-bootstrap özelliklerini kullanmaya başlayabiliriz. 
+Artık projemize eklediğimize göre hem bootstrap özelliklerinden hem de react-bootstrap özelliklerini kullanmaya başlayabiliriz.
 
 Örneğin; bir buton elementi oluşturmak istiyorsunuz diyelim. Öncelikle ilgili sayfamızda React-Bootstrapten `Button` componentini import ediyoruz.
+
 ```jsx
 import Button from 'react-bootstrap/Button';
 ...
 ```
+
 Sonrasında aynı sayfa içerisinde artık Button componentini çağırıp kullanabiliriz.
 
 ```jsx
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function MyButtonComp() {
   return (
@@ -65,25 +68,31 @@ function MyButtonComp() {
 }
 
 export default MyButtonComp;
-
 ```
-Button componenti html button elementinin sahip olduğu özellikleri içerisinde barındırıyor. Aynı zamanda `btn` classının sahip olduğu css özelliklerini içerisinde barındırıyor. React props mantığıyla da `Button` componentine ek özellikler kazandırabiliyoruz. React-Bootstrap componentlerinin alacağı props isimleri sabit belirlenmiştir. Bunları dökümandan öğrenebiliriz ([Button örneği için tıklayınız](https://react-bootstrap.netlify.app/docs/components/buttons#api)) veya node_modules klasörü içerisinden react-bootstrapi açıp içerisinden ilgili componente bakabiliriz(Dökümandan incelemenizi tavsiye ederim). 
+
+Button componenti html button elementinin sahip olduğu özellikleri içerisinde barındırıyor. Aynı zamanda `btn` classının sahip olduğu css özelliklerini içerisinde barındırıyor. React props mantığıyla da `Button` componentine ek özellikler kazandırabiliyoruz. React-Bootstrap componentlerinin alacağı props isimleri sabit belirlenmiştir. Bunları dökümandan öğrenebiliriz ([Button örneği için tıklayınız](https://react-bootstrap.netlify.app/docs/components/buttons#api)) veya node_modules klasörü içerisinden react-bootstrapi açıp içerisinden ilgili componente bakabiliriz(Dökümandan incelemenizi tavsiye ederim).
 
 ### Responsive Grid yapısına örnekler:
 
 ##### Col ile Responsive Ayarı
-Col, 6 breakpoints boyutunda (xs, sm, md, lg, xl ve xxl) sütun genişliklerini belirlemenizi sağlar. Her breakpoints için, yayılacak sütun miktarını belirtebilirsiniz.(Ölçüyü düz bootstrap mantığıyla veriyoruz. Yani `col-sm-8` ile `sm={8}` aynı ölçüye sahip olmuş oluyor. Yani sütunun o satırda ne kadar yer kaplamasını istiyorsanız ona göre değer veriyorsunuz. ) 
+
+Col, 6 breakpoints boyutunda (xs, sm, md, lg, xl ve xxl) sütun genişliklerini belirlemenizi sağlar. Her breakpoints için, yayılacak sütun miktarını belirtebilirsiniz.(Ölçüyü düz bootstrap mantığıyla veriyoruz. Yani `col-sm-8` ile `sm={8}` aynı ölçüye sahip olmuş oluyor. Yani sütunun o satırda ne kadar yer kaplamasını istiyorsanız ona göre değer veriyorsunuz. )
+
 ```jsx
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ResponsiveAutoExample() {
   return (
     <Container>
       <Row>
-        <Col sm={8} md={6} lg={4}>sm=8-md=6-lg=4</Col>
-        <Col sm={8} md={6} lg={4}>sm=4</Col>
+        <Col sm={8} md={6} lg={4}>
+          sm=8-md=6-lg=4
+        </Col>
+        <Col sm={8} md={6} lg={4}>
+          sm=4
+        </Col>
       </Row>
     </Container>
   );
@@ -95,10 +104,11 @@ export default ResponsiveAutoExample;
 ##### Row'da Col Genişliklerini Ayarlama ile Responsive Ayarı
 
 Row, 6 breakpoints boyutunda (xs, sm, md, lg, xl ve xxl) sütun genişliklerini belirlemenizi sağlar. Her breakpoints için, yan yana sığacak sütun miktarını belirleyebilirsiniz.(Ölçüyü satırda görüntülemek istediğiniz sayıya göre veriyorsunuz. Örneğin; xs ekranlarda her satırda 2 tane göster, md ekranlarda 4, lg ve sonrasında 6tane göster.)
+
 ```jsx
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function RowColLayoutExample() {
   return (
@@ -121,12 +131,79 @@ export default RowColLayoutExample;
 
 ##### Default 6 Breakpoints
 
-| Breakpoint           | Class infix | Dimensions |
-|----------------------|-------------|------------|
-| X-Small              | xs          | <576px     |
-| Small                | sm          | ≥576px     |
-| Medium               | md          | ≥768px     |
-| Large                | lg          | ≥992px     |
-| Extra large          | xl          | ≥1200px    |
-| Extra extra large    | xxl         | ≥1400px    |
+| Breakpoint        | Class infix | Dimensions |
+| ----------------- | ----------- | ---------- |
+| X-Small           | xs          | <576px     |
+| Small             | sm          | ≥576px     |
+| Medium            | md          | ≥768px     |
+| Large             | lg          | ≥992px     |
+| Extra large       | xl          | ≥1200px    |
+| Extra extra large | xxl         | ≥1400px    |
 
+# Nba Legends App
+
+<h1>Deneme</h1>
+## Description
+
+Project aims to create a Nba Legends App.
+
+## Project Skeleton
+
+```
+NBA Legends App
+|
+|----readme.md
+├── public
+│     └── index.html
+├── src
+│    ├── components
+│    │       ├── Header.js
+│    │       ├── ContainerCard.js
+│    │       └── PlayerCard.js
+│    ├── helper
+│    │       └── data.js
+│    ├── assets.js
+│    │       └── [images]
+│    ├── App.js
+│    ├── index.js
+│    └── index.css
+├── package.json
+└── yarn.lock
+```
+
+## Output
+
+<img src="./nba-app.gif" alt="deneme" >
+
+![deneme](./nba-app.gif)
+
+### At the end of the project, following topics are to be covered;
+
+- HTML
+
+- CSS
+
+- JS
+
+- **ReactJS**
+
+- _ReactBoostrap_
+
+<ul>
+<li>Deneme</li>
+<li>s</li>
+<li>s</li>
+<li>s</li>
+</ul>
+
+```jsx
+const [state, setState] = useState(false);
+```
+
+lorem dasdasdonapıofno `react`
+
+## Demo
+
+<a href="https://rc-08nba-legends.netlify.app/">Live</a>
+
+[Live](https://rc-08nba-legends.netlify.app/)
