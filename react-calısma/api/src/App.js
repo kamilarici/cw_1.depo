@@ -1,8 +1,11 @@
 import "./app.css";
 import SearchHeader from "./SearchHeader";
+import searchImages from "./Api";
+
 const handleSubmit = (term) => {
-  debugger;
+  // debugger;
   console.log(term);
+  searchImages(term);
 };
 
 function App() {

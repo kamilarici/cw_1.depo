@@ -1,7 +1,7 @@
 const SearchHeader = ({ search }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    debugger;
+    // debugger;
     search("can");
   };
   return (
