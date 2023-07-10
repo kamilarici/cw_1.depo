@@ -3,3 +3,23 @@ form {
   flex-direction: column;
   padding: 5px;
 }
+.car {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+img {
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid grey;
+  transition: all 2s;
+  &:hover {
+    scale: 0.9;
+  }
+}
