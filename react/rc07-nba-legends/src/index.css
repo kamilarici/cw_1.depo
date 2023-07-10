@@ -9,4 +9,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .card-container {
+  background-image: url(./assets/nba.jpg);
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  min-height: 400px;
 }
