@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color:#f4d467;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4d467;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.card-container {
+}
