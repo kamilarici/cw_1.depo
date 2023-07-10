@@ -15,9 +15,9 @@ const SearchHeader = ({ search }) => {
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <label>ne arıyorsunuz?</label>
+        <label>Ne Arıyorsunuz?</label>
         <input type="text" value={valueInput} onChange={handleChange} />
-        <div>{valueInput}</div>
+        {/* <div>{valueInput}</div> */}
       </form>
     </div>
   );

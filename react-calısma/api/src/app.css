@@ -2,7 +2,11 @@ form {
   display: flex;
   flex-direction: column;
   padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
 }
+
 .car {
   display: flex;
   flex-wrap: wrap;
@@ -25,10 +29,15 @@ img {
 }
 body {
   text-align: center;
+  background-color: sandybrown;
 }
 input {
   width: 40%;
   padding: 5px;
   border-radius: 5px;
   font-size: 21px;
+  margin: 10px 0;
+}
+label {
+  font-size: x-large;
 }
