@@ -11,7 +11,7 @@ const Doctors = ({ handleShow }) => {
             <div
               key={id}
               className="card text-center justify"
-              style={{ width: "13rem" }}
+              style={{ width: "15.2rem" }}
             >
               <img
                 onClick={handleShow}
