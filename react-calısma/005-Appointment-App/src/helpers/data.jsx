@@ -20,7 +20,7 @@ export const appointmentData = [
     consulted: true,
     doctor: "Dr. Jasmine Carpanter",
   },
-]
+];
 
 export const doctorData = [
   {
@@ -71,4 +71,4 @@ export const doctorData = [
     dep: "Oncology",
     img: "./img/dr8.jpg",
   },
-]
+];
