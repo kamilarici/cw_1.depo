@@ -3,7 +3,24 @@ import Modal from "react-bootstrap/Modal";
 import AppointmentList from "./AppointmentList";
 import { useState } from "react";
 const AddModal = ({ show, dName, handleClose }) => {
-  const [patientInf, setpatientInf] = useState({});
+  const [patientInf, setPatientInf] = useState({
+    patientName: "",
+    dataTime: "",
+    // dName: ${dName},
+  });
+  const [valuesArr, setvaluesArr] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleClose();
+    setvaluesArr([...valuesArr, patientInf]);
+  };
+
+  const handleValues = (e) => {
+    setPatientInf({ ...patientInf, [e.target.name]: e.target.value });
+  };
+
+  console.log(valuesArr);
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={false}>
@@ -13,21 +30,19 @@ const AddModal = ({ show, dName, handleClose }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label
-                htmlFor="patientName"
-                className="form-label fw-bold "
-                name="patientName"
-              >
+              <label htmlFor="patientName" className="form-label fw-bold ">
                 Patient Name
               </label>
               <input
                 type="text"
                 className="form-control"
                 id="patientName"
+                name="patientName"
                 aria-describedby="emailHelp"
                 placeholder="Enter Your Name"
+                onChange={handleValues}
               />
             </div>
             <div className="mb-3">
@@ -38,20 +53,25 @@ const AddModal = ({ show, dName, handleClose }) => {
                 type="datetime-local"
                 className="form-control"
                 id="dataTime"
+                name="dataTime"
+                onChange={handleValues}
               />
             </div>
+            <Modal.Footer className="justify-content-center">
+              <Button type="submit" variant="primary">
+                Submit
+              </Button>
+              <Button variant="danger" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
           </form>
         </Modal.Body>
-        <Modal.Footer className="justify-content-center">
-          <Button variant="primary" onClick={handleClose}>
-            Submit
-          </Button>
-          <Button variant="danger" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
-      <AppointmentList />
+      {/* AppointmentList called */}
+      <div>
+        <AppointmentList />
+      </div>
     </>
   );
 };

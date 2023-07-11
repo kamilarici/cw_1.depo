@@ -1,16 +1,5 @@
 import { doctorData } from "../helpers/data";
-import { useState } from "react";
-import AddModal from "./AddModal";
-const Doctors = () => {
-  const [show, setShow] = useState(false);
-  const [dName, setDName] = useState("");
-  const handleClose = (e) => {
-    setShow(false);
-  };
-  const handleShow = (e) => {
-    setDName(e.target.alt);
-    setShow(true);
-  };
+const Doctors = ({ handleShow }) => {
   return (
     <div className="container">
       <h1>CLARUS HOSPITAL</h1>
@@ -38,7 +27,6 @@ const Doctors = () => {
           );
         })}
       </div>
-      <AddModal handleClose={handleClose} show={show} dName={dName} />
     </div>
   );
 };
