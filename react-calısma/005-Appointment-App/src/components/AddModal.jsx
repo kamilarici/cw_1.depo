@@ -43,6 +43,7 @@ const AddModal = ({ show, dName, handleClose }) => {
                 aria-describedby="emailHelp"
                 placeholder="Enter Your Name"
                 onChange={handleValues}
+                required
               />
             </div>
             <div className="mb-3">
@@ -55,6 +56,7 @@ const AddModal = ({ show, dName, handleClose }) => {
                 id="dataTime"
                 name="dataTime"
                 onChange={handleValues}
+                required
               />
             </div>
             <Modal.Footer className="justify-content-center">
@@ -70,7 +72,9 @@ const AddModal = ({ show, dName, handleClose }) => {
       </Modal>
       {/* AppointmentList called */}
       <div>
-        <AppointmentList />
+        {valuesArr.map((item, index) => (
+          <AppointmentList item={item} name={dName} key={index} />
+        ))}
       </div>
     </>
   );
