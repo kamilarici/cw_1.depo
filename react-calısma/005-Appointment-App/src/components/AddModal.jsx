@@ -1,7 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AppointmentList from "./AppointmentList";
+import { useState } from "react";
 const AddModal = ({ show, dName, handleClose }) => {
+  const [patientInf, setpatientInf] = useState({});
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={false}>
@@ -13,7 +15,11 @@ const AddModal = ({ show, dName, handleClose }) => {
         <Modal.Body>
           <form>
             <div className="mb-3">
-              <label htmlFor="patientName" className="form-label fw-bold ">
+              <label
+                htmlFor="patientName"
+                className="form-label fw-bold "
+                name="patientName"
+              >
                 Patient Name
               </label>
               <input
@@ -36,12 +42,12 @@ const AddModal = ({ show, dName, handleClose }) => {
             </div>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
+        <Modal.Footer className="justify-content-center">
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Submit
+          </Button>
+          <Button variant="danger" onClick={handleClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
