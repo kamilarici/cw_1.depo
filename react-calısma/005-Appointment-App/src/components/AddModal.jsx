@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AppointmentList from "./AppointmentList";
 import { useState } from "react";
+
 const AddModal = ({ show, dName, handleClose }) => {
   const [patientInf, setPatientInf] = useState({
     patientName: "",
@@ -71,7 +72,7 @@ const AddModal = ({ show, dName, handleClose }) => {
         </Modal.Body>
       </Modal>
       {/* AppointmentList called */}
-      <div>
+      <div className="mt-5 container">
         {valuesArr.map((item, index) => (
           <AppointmentList item={item} name={dName} key={index} />
         ))}

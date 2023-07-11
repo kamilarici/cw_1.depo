@@ -1,0 +1,18 @@
+.relative {
+  position: relative;
+}
+.absolite {
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  padding: 10px;
+  top: 20%;
+  left: 35%;
+  border-radius: 25px;
+  width: 200px;
+}
+.none {
+  display: none;
+}
