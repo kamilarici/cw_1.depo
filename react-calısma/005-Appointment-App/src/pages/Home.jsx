@@ -1,5 +1,11 @@
+import Doctors from "../components/Doctors";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Doctors />
+    </div>
+  );
 };
 
 export default Home;
