@@ -1,7 +1,7 @@
 import { doctorData } from "../helpers/data";
 const Doctors = ({ handleShow }) => {
   return (
-    <div className="container">
+    <div className="container text-center">
       <h1>CLARUS HOSPITAL</h1>
       <h3>Our Doctors</h3>
       <div className="d-flex flex-wrap gap-4 justify-content-center">
