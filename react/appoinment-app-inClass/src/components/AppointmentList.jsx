@@ -13,7 +13,7 @@ const AppointmentList = ({ apps, setApps }) => {
   return (
     <Container className="p-2">
       <h3 className="display-6 mb-2" style={{ color: "rgb(166, 18, 189)" }}>
-        Appointment List
+        Appointment Listt
       </h3>
 
       {apps.map(({ id, patient, consulted, doctor, day }) => (
