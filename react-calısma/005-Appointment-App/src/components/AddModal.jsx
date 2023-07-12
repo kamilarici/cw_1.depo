@@ -9,7 +9,6 @@ const AddModal = ({ show, dName, handleClose }) => {
   const [patientInf, setPatientInf] = useState({
     patientName: "",
     dataTime: "",
-    // dName: ${dName},
   });
   const [valuesArr, setvaluesArr] = useState([]);
 

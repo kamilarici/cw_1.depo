@@ -4,7 +4,7 @@ const HazırData = ({ item }) => {
   const [isConsulted, setisConsulted] = useState(item.consulted);
 
   const handleCroos = (e) => {
-    console.log(e.target.offsetParent);
+    // console.log(e.target.offsetParent);
     // e.target.offsetParent.className = "none";
     e.target.offsetParent.remove();
   };
