@@ -37,7 +37,7 @@ const AppointmentList = ({ apps, setApps }) => {
               <h5>{doctor}</h5>
             </Col>
             <Col>
-              <h5>{day}</h5>
+              <h5>day</h5>
             </Col>
             <Col className="text-end">
               <TiDelete
