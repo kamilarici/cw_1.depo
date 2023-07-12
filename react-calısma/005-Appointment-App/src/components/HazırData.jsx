@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const AppointmentList = ({ item, name }) => {
-  const [isConsulted, setisConsulted] = useState(false);
+const HazırData = ({ item }) => {
+  const [isConsulted, setisConsulted] = useState(item.consulted);
 
   const handleCroos = (e) => {
     console.log(e.target.offsetParent);
     // e.target.offsetParent.className = "none";
     e.target.offsetParent.remove();
   };
-
   return (
     <div
-      className=" relative d-flex justify-content-between border border-success rounded-3 mt-3 p-2 "
+      className="container relative d-flex justify-content-between border border-success rounded-3 mt-3 p-2 "
       onDoubleClick={() => setisConsulted(!isConsulted)}
     >
       {isConsulted ? (
@@ -19,12 +18,15 @@ const AppointmentList = ({ item, name }) => {
       ) : null}
 
       <div>
-        <h4>{item.patientName}</h4>
-        <h5>{name}</h5>
+        <h4>{item.patient}</h4>
+        <h5>{item.doctor}</h5>
       </div>
       <div>
-        <h5>Time</h5>
-        <h6>{item.dataTime}</h6>
+        <h5>time</h5>
+        <h6>
+          date={new Date().getHours()}:00 /{new Date().getFullYear()}/
+          {new Date().getMinutes()}
+        </h6>
       </div>
       <div>
         <button
@@ -37,4 +39,5 @@ const AppointmentList = ({ item, name }) => {
     </div>
   );
 };
-export default AppointmentList;
+
+export default HazırData;

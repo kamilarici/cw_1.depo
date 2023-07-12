@@ -2,6 +2,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AppointmentList from "./AppointmentList";
 import { useState } from "react";
+import { appointmentData } from "../helpers/data";
+import HazırData from "./HazırData";
 
 const AddModal = ({ show, dName, handleClose }) => {
   const [patientInf, setPatientInf] = useState({
@@ -21,7 +23,6 @@ const AddModal = ({ show, dName, handleClose }) => {
     setPatientInf({ ...patientInf, [e.target.name]: e.target.value });
   };
 
-  console.log(valuesArr);
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={false}>
@@ -71,8 +72,11 @@ const AddModal = ({ show, dName, handleClose }) => {
           </form>
         </Modal.Body>
       </Modal>
-      {/* AppointmentList called */}
+
       <div className="mt-5 container">
+        {appointmentData.map((item, i) => (
+          <HazırData item={item} key={i} />
+        ))}
         {valuesArr.map((item, index) => (
           <AppointmentList item={item} name={dName} key={index} />
         ))}
