@@ -1,0 +1,20 @@
+.card-div {
+  width: 750px;
+  margin-top: 30px;
+}
+h1 {
+  font-size: 50px;
+}
+body {
+  background: linear-gradient(225deg, #2ea57b 0%, #efc77f 90%, #82b8de 100%);
+  font-family: cursive;
+  height: 98vh;
+  background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+  width: 1px; /* Adjust as needed */
+}
+.question-card {
+  box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 0.65);
+}
