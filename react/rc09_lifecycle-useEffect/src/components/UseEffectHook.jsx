@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //?===============================================
 //?                USEEFFECT HOOK
@@ -44,6 +44,12 @@ import { useState } from "react";
 
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      alert("data feched");
+    }, 3000);
+  }, [count]);
 
   const handleInc = () => {
     setCount(count + 1);
