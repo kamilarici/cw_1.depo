@@ -45,6 +45,7 @@ import { useState, useEffect } from "react";
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
 
+  //!   ComponentDidMount
   //   useEffect(() => {
   //     //! fetch, async-await ,localStorage, setTimeout, setInterval();
   //     console.log("componentDidMount")
@@ -53,12 +54,26 @@ const UseEffectHook = () => {
   //     }, 3000)
   //   }, []) //? Dependecny array bos
 
+  //!   ComponentDidUpdate
+  //   useEffect(() => {
+  //     console.log("componentDidMount + componentDidUpdate")
+  //     setTimeout(() => {
+  //       alert("Data fetched")
+  //     }, 3000)
+  //   }, [count]) //? count state'i her degistiginde yukaridaki mount+update kismi calisitirilir.
+
+  //! ComponentWillUnmount
+  const fetchData = () => {
+    console.log("Data Fetch started");
+  };
   useEffect(() => {
-    console.log("componentDidMount + componentDidUpdate");
-    setTimeout(() => {
-      alert("Data fetched");
-    }, 3000);
-  }, [count]); //? count state'i her degistiginde yukaridaki mount+update kismi calisitirilir.
+    const timer = setInterval(fetchData, 1000);
+
+    return () => {
+      clearInterval(timer);
+      console.log("componentWillUnmount");
+    };
+  }, []);
 
   const handleInc = () => {
     setCount(count + 1);
