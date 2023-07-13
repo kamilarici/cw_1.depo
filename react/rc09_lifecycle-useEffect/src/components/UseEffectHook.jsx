@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 //?===============================================
 //?                USEEFFECT HOOK
@@ -45,15 +45,25 @@ import { useEffect, useState } from "react";
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
 
+  //   useEffect(() => {
+  //     //! fetch, async-await ,localStorage, setTimeout, setInterval();
+  //     console.log("componentDidMount")
+  //     setTimeout(() => {
+  //       alert("Data fetched")
+  //     }, 3000)
+  //   }, []) //? Dependecny array bos
+
   useEffect(() => {
+    console.log("componentDidMount + componentDidUpdate");
     setTimeout(() => {
-      alert("data feched");
+      alert("Data fetched");
     }, 3000);
-  }, [count]);
+  }, [count]); //? count state'i her degistiginde yukaridaki mount+update kismi calisitirilir.
 
   const handleInc = () => {
     setCount(count + 1);
   };
+  console.log("render");
   return (
     <div className="container text-center">
       <h1 className="text-danger">USEEFFECT</h1>
