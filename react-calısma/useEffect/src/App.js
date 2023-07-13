@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>useeffect</h1>
-      {isVisiable && <Counter />}
+      {/* {isVisiable && <Counter />} */}
       <button onClick={() => setIsVisiable(!isVisiable)}>toggle</button>
       <hr /> <hr />
       <h1>liffecycle</h1>
