@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Counter from "./components/Counter";
 import Lifecycle from "./components/Lifecycle";
-import UseEffect from "./components2/UseEffectHook";
-import UseEffectHook from "./components2/UseEffectHook";
+import User from "./components/User";
 
 function App() {
   const [isVisiable, setIsVisiable] = useState(true);
@@ -16,7 +15,7 @@ function App() {
       <Lifecycle />
       <hr />
       <hr />
-      {visible && <UseEffectHook />}
+      <User />
     </div>
   );
 }
