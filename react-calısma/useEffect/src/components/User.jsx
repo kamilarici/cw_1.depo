@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const User = () => {
-  return <div>User</div>;
+  const [userData, setUserData] = useState("");
+  const getUser = () => {
+    fetch("https://randomuser.me/api")
+      .then((res) => res.json())
+      .then((data) => setUserData(data.results[0]))
+      .catch((err) => console.log(err));
+    console.log(userData);
+  };
+  useEffect(() => {
+    // fetch("https://randomuser.me/api")
+    //   .then((res) => res.json())
+    //   .then((data) => setUserData(data.results[0]))
+    //   .catch((err) => console.log(err));
+    getUser();
+  }, []);
+
+  return (
+    <div>
+      <img src={userData?.picture?.large} alt="" />
+      <h4>hi my name is </h4>
+      <h1>
+        {userData?.name?.first}
+        {userData?.name?.last}
+      </h1>
+      <h3>{userData?.email}</h3>
+      <h4>{new Date(userData?.dob?.date).toLocaleDateString()}</h4>
+      <h5>{userData?.phone}</h5>
+      {/* <h6>{userData?.location.city} </h6> */}
+      <button onClick={getUser}>get user</button>
+    </div>
+  );
 };
 
 export default User;
