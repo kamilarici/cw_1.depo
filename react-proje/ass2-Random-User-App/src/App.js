@@ -5,6 +5,7 @@ import womanSvg from "./assets/woman.svg";
 import manAgeSvg from "./assets/growing-up-man.svg";
 import womanAgeSvg from "./assets/growing-up-woman.svg";
 import mapSvg from "./assets/map.svg";
+import logo from "./assets/logo.png";
 import phoneSvg from "./assets/phone.svg";
 import padlockSvg from "./assets/padlock.svg";
 import cwSvg from "./assets/cw.svg";
@@ -58,7 +59,7 @@ function App() {
   return (
     <main>
       <div className="block bcg-orange">
-        {/* <img src={cwSvg} alt="cw" id="cw" /> */}
+        <img className="logo" src={logo} alt="cw" id="cw" />
       </div>
       <div className="block">
         <div className="container">
