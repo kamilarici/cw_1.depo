@@ -58,7 +58,7 @@ function App() {
   return (
     <main>
       <div className="block bcg-orange">
-        <img src={cwSvg} alt="cw" id="cw" />
+        {/* <img src={cwSvg} alt="cw" id="cw" /> */}
       </div>
       <div className="block">
         <div className="container">
