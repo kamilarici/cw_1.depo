@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer-div">
       <a
-        href="https://github.com/anthonyharold67"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         style={{ textDecoration: "none" }}
