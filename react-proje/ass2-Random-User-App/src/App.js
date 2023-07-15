@@ -69,7 +69,9 @@ function App() {
             className="user-img"
           />
 
-          <p className="user-title">My {<span>{title}</span>} is</p>
+          <p className="user-title">
+            My <span>{title}</span> is
+          </p>
           <p className="user-value">{task}</p>
           <div className="values-list">
             <button className="icon" data-label="name">
