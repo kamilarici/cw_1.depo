@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const TaskCreate = () => {
+const TaskCreate = ({ onCreate }) => {
   const [title, setTitle] = useState("");
   const [taskDesc, setTaskDesk] = useState("");
-  console.log(title, taskDesc);
 
   const handleChange = (e) => {
     setTitle(e.target.value);
@@ -11,6 +10,13 @@ const TaskCreate = () => {
   const handleTaskChange = (e) => {
     setTaskDesk(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onCreate(title, taskDesc);
+    setTitle("");
+    setTaskDesk("");
+  };
+
   return (
     <div className="task-create">
       <h3>Lütfen task ekleyiniz</h3>
@@ -29,7 +35,9 @@ const TaskCreate = () => {
           className="task-input"
           rows={5}
         />
-        <button className="task-button">Oluştur</button>
+        <button className="task-button" onClick={handleSubmit}>
+          Oluştur
+        </button>
       </form>
     </div>
   );
