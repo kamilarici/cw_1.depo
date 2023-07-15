@@ -11,7 +11,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         style={{ textDecoration: "none" }}
       >
-        <h2 className="brand">{"Anthony"}</h2>
+        <h2 className="brand">{"Kamil"}</h2>
       </a>
       <img
         src={designSvg}
