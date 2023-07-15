@@ -3,7 +3,7 @@ import TaskShow from "./TaskShow";
 
 const TaskList = ({ tasks }) => {
   return (
-    <div>
+    <div className="task-list">
       {tasks.map((task, i) => {
         return <TaskShow key={i} task={task} />;
       })}
