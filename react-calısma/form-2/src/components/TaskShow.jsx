@@ -1,13 +1,22 @@
 import React from "react";
 
-const TaskShow = ({ task }) => {
+const TaskShow = ({ task, onDelete }) => {
+  const handleDeleteClick = () => {
+    onDelete(task.id);
+  };
   console.log(task);
   return (
-    <div>
-      <h3>Göreviniz</h3>
+    <div className="task-show">
+      <h3 className="task-title">Göreviniz</h3>
       <p>{task.title}</p>
-      <h3>Yapılacaklar</h3>
+      <h3 className="task-title">Yapılacaklar</h3>
       <p>{task.taskDesc}</p>
+      <div>
+        <button className="task-delete" onClick={handleDeleteClick}>
+          Sil
+        </button>
+        <button className="task-edit">Güncelle</button>
+      </div>
     </div>
   );
 };
