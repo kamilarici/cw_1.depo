@@ -8,8 +8,11 @@ function App() {
   const handlClick = () => {
     setValue(value + 1);
   };
+  const loginAuth = () => {
+    console.log("metodu tetikledim");
+  };
   return (
-    <AuthContext.Provider>
+    <AuthContext.Provider value={{ status: false, login: loginAuth }}>
       <Auth />
     </AuthContext.Provider>
   );
