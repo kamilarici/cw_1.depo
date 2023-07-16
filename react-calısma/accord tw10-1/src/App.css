@@ -11,7 +11,7 @@ body {
   height: 98vh;
   background-attachment: fixed;
 }
-
+/* scrol bar kaybetme */
 body::-webkit-scrollbar {
   width: 1px; /* Adjust as needed */
 }
