@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AuthContext from "./context/auth-context";
+import Auth from "./Auth";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -7,17 +9,9 @@ function App() {
     setValue(value + 1);
   };
   return (
-    <div className="App">
-      <button onClick={handlClick}>Kurs Ekle</button>
-      {/* <button
-        onClick={() => {
-          console.log("cannn");
-        }}
-      >
-        Kurs Ekle
-      </button> */}
-      <div> Kurs Sayısı: {value}</div>
-    </div>
+    <AuthContext.Provider>
+      <Auth />
+    </AuthContext.Provider>
   );
 }
 
