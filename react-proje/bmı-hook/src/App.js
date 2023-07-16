@@ -28,7 +28,7 @@ function App() {
       }
     }
   };
-
+  // ?  bmi kilo aralıkları koşulları
   let imgSrc;
   if (bmi < 1) {
     imgSrc = null;
