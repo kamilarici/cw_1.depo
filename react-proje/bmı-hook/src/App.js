@@ -15,6 +15,7 @@ function App() {
     if (weight === 0 || height === 0) {
       alert("please enter a valid weight and height");
     } else {
+      // ? hesaplama
       let bmi = weight / (height * height);
       setBmi(bmi.toFixed(1));
       console.log(bmi);
