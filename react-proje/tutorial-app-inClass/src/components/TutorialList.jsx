@@ -1,5 +1,5 @@
-import { FaEdit } from "react-icons/fa"
-import { AiFillDelete } from "react-icons/ai"
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
 
 const TutorialList = () => {
   const tutorials = [
@@ -13,7 +13,12 @@ const TutorialList = () => {
       title: "React",
       description: "JS library for UI design",
     },
-  ]
+    {
+      id: 3,
+      title: "VUE",
+      description: "JS library for UI design",
+    },
+  ];
 
   return (
     <div className="container mt-4">
@@ -30,7 +35,7 @@ const TutorialList = () => {
         </thead>
         <tbody>
           {tutorials?.map((item) => {
-            const { id, title, description } = item
+            const { id, title, description } = item;
             return (
               <tr key={id}>
                 <th>{id}</th>
@@ -49,12 +54,12 @@ const TutorialList = () => {
                   />
                 </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default TutorialList
+export default TutorialList;
