@@ -6,9 +6,9 @@ const Auth = () => {
   console.log(status);
   return (
     <div>
-      <h1>giriş yaptın mı</h1>
+      {/* <h1>giriş yaptın mı</h1>
       {status ? <p>ohooo çoktan</p> : <p>hayır</p>}
-      <button onClick={login}>giriş yap</button>
+      <button onClick={login}>giriş yap</button> */}
     </div>
   );
 };
