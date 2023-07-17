@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MealItem from "./MealItem";
-import ReacipeIndex from "./ReacipeIndex";
+// import ReacipeIndex from "./ReacipeIndex";
 import axios from "axios";
 const Meal = () => {
   const [value, setValue] = useState("");
