@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-const EditTutorial = ({ editItem }) => {
-  const { id, description: newDescription, title: newTitle } = editItem;
+const Modal = ({ editItem }) => {
+  // const { id, description: newDescription, title: newTitle } = editItem;
 
-  const [title, setTitle] = useState(newTitle);
-  const [description, setDescription] = useState(newDescription);
+  const [title, setTitle] = useState(editItem ? editItem.title : "");
+  const [description, setDescription] = useState(
+    editItem ? editItem.description : ""
+  );
 
   return (
     <div
@@ -42,7 +44,7 @@ const EditTutorial = ({ editItem }) => {
                   className="form-control"
                   id="title"
                   placeholder="Enter your title"
-                  value={title}
+                  value={editItem.title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
                 />
@@ -56,7 +58,7 @@ const EditTutorial = ({ editItem }) => {
                   className="form-control"
                   id="desc"
                   placeholder="Enter your Description"
-                  value={description}
+                  value={editItem.description}
                   onChange={(e) => setDescription(e.target.value)}
                   required
                 />
@@ -75,4 +77,4 @@ const EditTutorial = ({ editItem }) => {
   );
 };
 
-export default EditTutorial;
+export default Modal;
