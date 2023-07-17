@@ -5,12 +5,14 @@ import axios from "axios";
 
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
-  const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
 
   const getTutorials = async () => {
+    const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
     try {
-      const data = await axios(BASE_URL);
-      setTutorials(data.data);
+      // const res = await axios(BASE_URL)
+      // setTutorials(res.data)
+      const { data } = await axios(BASE_URL);
+      setTutorials(data);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <AddTutorial tutorials={tutorials} setTutorials={setTutorials} />
+      <AddTutorial getTutorials={getTutorials} />
       <TutorialList tutorials={tutorials} />
     </>
   );
