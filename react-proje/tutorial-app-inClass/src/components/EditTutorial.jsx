@@ -25,7 +25,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
     //? oldTitle veya oldDescriptiion her degistiginde local title ve description state'lerimizi guncelliyoruz.
   }, [oldTitle, oldDescription]);
 
-  console.log(title); //ilk render da undefined
+  console.log(title); //ilk render da undefined useeffect olmadığı için
   console.log(description);
 
   const editTutor = async (tutor) => {
