@@ -95,6 +95,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
                   className="form-control"
                   id="desc"
                   placeholder="Enter your Description"
+                  // ? valular modal açıldığında önceki değerleri göstermesi için
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   required
