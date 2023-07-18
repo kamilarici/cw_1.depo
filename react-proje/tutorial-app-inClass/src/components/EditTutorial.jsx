@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const EditTutorial = ({ editItem }) => {
-  // const { id, description: newDescription, title: newTitle } = editItem;
+  const { id, description: oldDescription, title: oldTitle } = editItem;
 
-  const [title, setTitle] = useState(editItem?.title);
-  const [description, setDescription] = useState(editItem.description);
+  const [title, setTitle] = useState(oldTitle);
+  const [description, setDescription] = useState(oldDescription);
+  console.log(title);
 
+  useEffect(() => {
+    setTitle(oldTitle);
+    setDescription(oldDescription);
+  }, [oldTitle, oldDescription]);
   return (
     <div
       className="modal fade"

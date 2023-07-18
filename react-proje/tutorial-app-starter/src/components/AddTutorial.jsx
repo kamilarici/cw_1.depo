@@ -6,16 +6,18 @@ const AddTutorial = ({ getTutorials }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTudor = {
+    const newTutor = {
       title: title,
       description: description,
     };
-    postTutarial(newTudor);
+    postTutarial(newTutor);
     getTutorials();
+    setTitle("");
+    setDescription("");
   };
-  const postTutarial = async (newTudor) => {
+  const postTutarial = async (newTutor) => {
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
-    await axios.post(BASE_URL, newTudor);
+    await axios.post(BASE_URL, newTutor);
   };
   return (
     <div className="container text-center mt-4">
