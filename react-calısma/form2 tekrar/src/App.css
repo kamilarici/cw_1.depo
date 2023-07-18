@@ -7,6 +7,9 @@
 .task-create {
   width: 450px;
 }
+.task-update {
+  width: 100%;
+}
 .task-form {
   display: flex;
   flex-direction: column;
@@ -27,4 +30,47 @@
   color: white;
   border-radius: 10px;
   font-size: 20px;
+}
+.update-button {
+  background-color: blueviolet;
+}
+
+.task-show {
+  border: 1px solid green;
+  border-radius: 30px;
+  width: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.task-delete {
+  padding: 5px;
+  font-size: 15px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+  background-color: red;
+  color: white;
+  margin-right: 10px;
+}
+.task-edit {
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  border: none;
+  border-radius: 30px;
+  background-color: blue;
+  color: white;
+  margin-right: 10px;
+}
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.task-title {
+  margin-bottom: 5px;
 }
