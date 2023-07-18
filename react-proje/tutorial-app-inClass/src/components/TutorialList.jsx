@@ -36,14 +36,14 @@ const TutorialList = ({ tutorials, getTutorials }) => {
     getTutorials();
   };
 
-  const editTutor = async (tutor) => {
-    try {
-      await axios.put(`${BASE_URL}/${tutor.id}/`, tutor);
-    } catch (error) {
-      console.log(error);
-    }
-    getTutorials();
-  };
+  // const editTutor = async (tutor) => {
+  //   try {
+  //     await axios.put(`${BASE_URL}/${tutor.id}/`, tutor)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  //   getTutorials()
+  // }
 
   return (
     <div className="container mt-4">
@@ -96,7 +96,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
         </tbody>
       </table>
 
-      <EditTutorial editItem={editItem} />
+      <EditTutorial editItem={editItem} getTutorials={getTutorials} />
     </div>
   );
 };
