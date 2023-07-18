@@ -23,7 +23,7 @@ const AddTutorial = ({ getTutorials }) => {
       console.log(error);
     }
 
-    //? Tum tutorial'lari iste ve state'i guncelle
+    //? Tum tutorial'lari iste ve state'i guncelle..
     getTutorials();
   };
 
