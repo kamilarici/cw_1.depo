@@ -60,6 +60,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
               Edit Tutorial
             </h1>
             <button
+              // ? modalın çarpı butonu
               type="button"
               className="btn-close"
               data-bs-dismiss="modal"
