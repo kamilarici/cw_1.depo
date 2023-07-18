@@ -105,6 +105,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
                 <button
                   type="submit"
                   className="btn btn-danger"
+                  // ? modal kapanması için yazıldı bootstrap özelliği
                   data-bs-dismiss="modal"
                 >
                   Submit
