@@ -1,13 +1,13 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
-import Modal from "./EditTutorial";
+import EditTutorial from "./EditTutorial";
 import { useState } from "react";
 
 const TutorialList = ({ tutorials, getTutorials }) => {
   const [editItem, setEditItem] = useState("");
-  console.log(editItem);
 
+  console.log(editItem);
   // const tutorials = [
   //   {
   //     id: 1,
@@ -96,7 +96,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
         </tbody>
       </table>
 
-      <Modal editItem={editItem} setEditItem={setEditItem} />
+      <EditTutorial editItem={editItem} />
     </div>
   );
 };
