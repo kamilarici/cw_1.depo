@@ -40,6 +40,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    // ?edit tutor bizim oluşturduğumuz fomk içinde parametreleri axios da yenilemek için yollarız
     editTutor({ title, description });
   };
 
