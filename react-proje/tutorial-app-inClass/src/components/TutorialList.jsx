@@ -95,6 +95,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
+      {/* ?onclick ile yolluyoruz değerleri modalda göstermek için  ..get tutarials ise sayfayı yenilemek için */}
 
       <EditTutorial editItem={editItem} getTutorials={getTutorials} />
     </div>
