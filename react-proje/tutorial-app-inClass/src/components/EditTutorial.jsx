@@ -36,6 +36,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
     } catch (error) {
       console.log(error);
     }
+    // ? düzenledikten sonra yenile
     getTutorials();
   };
   const handleSubmit = (e) => {
