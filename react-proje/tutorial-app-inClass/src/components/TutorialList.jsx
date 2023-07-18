@@ -80,7 +80,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     //     description: "JS Library",
                     //   })
                     // }
-
+                    // ?map içinde olduğu için item yollanır
                     onClick={() => setEditItem(item)}
                   />
                   <AiFillDelete
