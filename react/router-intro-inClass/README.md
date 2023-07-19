@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+useLocation hook'u, geçerli konumu bir nesne olarak döndürür. Bu nesne, konum URL'sini, konum yolunu, konum parametrelerini ve konum durumunu içerir.
+
+const { pathname, search, hash,state } = useLocation();
+Bu kod, pathname, search, state ve hash değişkenlerini ayarlar. pathname değişkeni konum URL'sinin yolunu içerir, search değişkeni konum URL'sinin arama parametrelerini içerir ve hash değişkeni konum URL'sinin hash parametresini içerir. state değişkeni useNavigate ile yönlendirme yapılırken veri gönderildiyse o veriyi içerir.
+
+## pathname: Konum URL'sinin yolunu içerir. Örneğin, eğer URL "https://www.example.com/products" ise, pathname "/products" olacaktır.
+
+## search: Konum URL'sindeki sorgu parametrelerini içerir. Örneğin, eğer URL "https://www.example.com/products?id=123&category=electronics" ise, search "?id=123&category=electronics" olacaktır.
+
+# hash: Konum URL'sindeki "hash" kısmını içerir. Hash genellikle sayfanın belirli bir bölümüne doğrudan bağlantı yapmak için kullanılır. Örneğin, eğer URL "https://www.example.com/products#details" ise, hash "#details" olacaktır.
+
+## state: Konum nesnesinin bir özelliği olarak mevcut durumu içerir. Bu durum, genellikle geçmiş yönlendirmeleri veya ekstra veri taşımak için kullanılır.
