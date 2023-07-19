@@ -15,8 +15,10 @@ const EditTutorial = ({ editItem, getTutorials }) => {
   //! Eger props'tan gelen degerleri her degisimde useState'e
   //! aktarmak istersek useEffect hook'unu componentDidUpdate
   //! gibi kullanabiriz.
-  const [title, setTitle] = useState(oldTitle);
-  const [description, setDescription] = useState(oldDescription);
+  const [title, setTitle] = useState(oldTitle ? oldTitle : "yok");
+  const [description, setDescription] = useState(
+    oldDescription ? oldDescription : "yok"
+  );
 
   //? componentDidUpdate
   useEffect(() => {
@@ -82,7 +84,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
                   className="form-control"
                   id="title"
                   placeholder="Enter your title"
-                  value={title}
+                  value={title || ""}
                   onChange={(e) => setTitle(e.target.value)}
                   required
                 />
@@ -97,7 +99,7 @@ const EditTutorial = ({ editItem, getTutorials }) => {
                   id="desc"
                   placeholder="Enter your Description"
                   // ? valular modal açıldığında önceki değerleri göstermesi için
-                  value={description}
+                  value={description || ""}
                   onChange={(e) => setDescription(e.target.value)}
                   required
                 />
