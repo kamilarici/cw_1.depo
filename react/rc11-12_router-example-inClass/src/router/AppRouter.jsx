@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/paths" element={<Paths />}>
           <Route index element={<Fullstack />} />
           <Route path="fullstack" element={<Fullstack />}>
-            <Route path="react" element={<React />} />
+            <Route index element={<React />} />
             <Route path="next" element={<Next />} />
           </Route>
           <Route path="aws" element={<Aws />} />

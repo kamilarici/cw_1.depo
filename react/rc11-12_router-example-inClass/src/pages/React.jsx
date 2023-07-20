@@ -1,5 +1,9 @@
 const React = () => {
-  return <div>React</div>;
+  return (
+    <div>
+      <h1>React</h1>
+    </div>
+  );
 };
 
 export default React;
