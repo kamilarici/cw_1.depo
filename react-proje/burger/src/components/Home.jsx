@@ -1,7 +1,7 @@
 import "../styles/Home.css";
 
 import { Link } from "react-router-dom";
-import BannerImage from "../assets/2.jpg";
+import BannerImage from "../assets/3.jpg";
 const Home = () => {
   return (
     <div
