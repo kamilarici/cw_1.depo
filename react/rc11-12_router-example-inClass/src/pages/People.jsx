@@ -30,6 +30,9 @@ const People = () => {
               // onClick={()=>navigate(`/people/${id}`)}
               //! Relative path (goreceli adres vermek)
               onClick={() => navigate(`${id}`, { state: person })}
+              //? use params için
+              // onClick={() => navigate(`${id}`)}
+              //? *****
             >
               <img className="rounded" src={avatar} alt="img" />
               <h6>
