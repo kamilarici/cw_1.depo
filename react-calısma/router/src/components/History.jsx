@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 const History = () => {
   return (
     <div>
       <div>History</div>
       <nav>
-        <Link to="compony">our company</Link>
-        <Link>mananegment</Link>
+        <Link to="company">our company</Link>
+        <Link to="team">team</Link>
       </nav>
+      <Outlet />
     </div>
   );
 };
