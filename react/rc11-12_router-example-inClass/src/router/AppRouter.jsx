@@ -13,8 +13,10 @@ import Next from "../pages/Next";
 import React from "../pages/React";
 import PrivateRouter from "./PrivateRouter";
 import Login from "../pages/Login";
+import { useState } from "react";
 
 const AppRouter = () => {
+  const [user, setUser] = useState(false);
   return (
     <div>
       <Nav />
@@ -28,11 +30,11 @@ const AppRouter = () => {
           </Route>
           <Route path="aws" element={<Aws />} />
         </Route>
-        <Route element={<PrivateRouter />}>
+        <Route element={<PrivateRouter user={user} />}>
           <Route path="/people" element={<People />} />
           <Route path="/people/:id" element={<PersonDetail />} />
         </Route>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
