@@ -1,24 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import NotFound from "./NotFound";
+import spinner from "../img/Spinner-2.gif";
 
 const PersonDetail = () => {
-  let { state: person } = useLocation();
+  //! navigate ile gonderilen state'i yakalamak icin useLocation Hook'u kullanilabilir.
+  //! Bu durumda veri, state ile geldigi icin yeniden fetch yapilmasina gerek kalmaz
+  // let { state: person } = useLocation();
   let navigate = useNavigate();
   // console.log(person);
-  //? *****************useparams**********
-  // const [people, setPeople] = useState([]);
-  // let { id } = useParams();
-  // const getPeople = () => {
-  //   fetch(`https://reqres.in/api/users/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setPeople(data.data))
-  //     .catch((err) => console.log(err));
-  // };
-  // useEffect(() => {
-  //   getPeople();
-  // }, []);
+  //! Linkteki parametreyi almak icin useParams Hook'u kullanilabilir.
+  let { id } = useParams();
+  // console.log({ id });
+  const [person, setPerson] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  //? ************************** */
+  const getPerson = () => {
+    axios(`https://reqres.in/api/users/${id}`)
+      .then((res) => setPerson(res.data.data))
+      .catch((err) => {
+        setError(true);
+        console.log(err);
+      })
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    getPerson();
+  }, []);
+
+  if (error) {
+    return <NotFound />;
+  } else if (loading) {
+    return (
+      <div className="text-center mt-4">
+        <img src={spinner} alt="spinner" />
+      </div>
+    );
+  }
 
   return (
     <div className="container text-center">
