@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Paths = () => {
   return (
@@ -15,9 +15,14 @@ const Paths = () => {
         experts!
       </p>
       <div>
-        <Link className="btn btn-success w-50">FullStack</Link>
-        <Link className="btn btn-warning w-50">AWS-Devops</Link>
+        <Link to="fullstack" className="btn btn-success w-50">
+          FullStack
+        </Link>
+        <Link to="aws" className="btn btn-warning w-50">
+          AWS-Devops
+        </Link>
       </div>
+      <Outlet />
     </div>
   );
 };
