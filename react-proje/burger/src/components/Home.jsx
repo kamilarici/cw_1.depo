@@ -1,7 +1,7 @@
 import "../styles/Home.css";
 
 import { Link } from "react-router-dom";
-import BannerImage from "../assets/3.jpg";
+import BannerImage from "../assets/6.jpg";
 const Home = () => {
   return (
     <div
@@ -10,7 +10,7 @@ const Home = () => {
     >
       <div className="order">
         <Link to="/menu">
-          <button>SİPARİŞ VER</button>
+          <button className="home-button">SİPARİŞ VER</button>
         </Link>
       </div>
     </div>

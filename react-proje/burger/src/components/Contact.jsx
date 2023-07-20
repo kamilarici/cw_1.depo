@@ -9,27 +9,28 @@ const Contact = () => {
         style={{ backgroundImage: `url(${BannerImage})` }}
       ></div>
       <div className="right-side">
-        <h1>bizimle iletişime geçin</h1>
+        <h1>Bizimle İletişime Geçin</h1>
         <form action="">
-          <label htmlFor="">ad soyad</label>
+          <label htmlFor="">Ad Soyad</label>
           <input
             type="email"
             name="name"
-            placeholder="lütfen adınızı soyadınızı giribiz"
+            placeholder="Lütfen Adınızı Soyadınızı Giribiz"
           />
-          <label htmlFor="">email</label>
+          <label htmlFor="">Email</label>
           <input
             type="text"
             name="email"
-            placeholder="lütfen  emailinizi giribiz"
+            placeholder="Lütfen  Emailinizi Giribiz"
           />
-          <label htmlFor="">mesajınız</label>
+          <label htmlFor="">Mesajınız</label>
           <textarea
             type="text"
             name="name"
-            placeholder="lütfen mesajınızı giribiz"
+            placeholder="Lütfen Mesajınızı Giriniz"
             rows="6"
           />
+          <button className="contact-button">Gönder</button>
         </form>
       </div>
     </div>

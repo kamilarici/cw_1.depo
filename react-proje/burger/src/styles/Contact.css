@@ -43,3 +43,10 @@ form textarea {
   border-bottom: 1px solid black;
   color: black;
 }
+.contact-button {
+  margin-top: 15px;
+  padding: 8px;
+  background-color: brown;
+  color: white;
+  width: 150px;
+}

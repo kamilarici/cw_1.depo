@@ -1,5 +1,5 @@
 import React from "react";
-import BurgerLogo from "../assets/1.jpg";
+import BurgerLogo from "../assets/9.png";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
@@ -12,8 +12,8 @@ const Navbar = () => {
       <div className="nav-link">
         <Link to="/">Anasayfa</Link>
         <Link to="/menu">Menu</Link>
-        <Link to="/about">hakkımızda</Link>
-        <Link to="/contact">iletisim</Link>
+        <Link to="/about">Hakkımızda</Link>
+        <Link to="/contact">İletisim</Link>
       </div>
     </div>
   );

@@ -4,12 +4,13 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="social-media">
-        <i>📞⚪</i>
-        <i>📞⚪</i>
-        <i>📞⚪</i>
-        <i>📞⚪</i>
+        <i class="fa-brands fa-facebook"></i>
+
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
       </div>
-      <p> Tüm Hakları Saklıdır.| Burger yiyelim.</p>
+      <p> Tüm Hakları Saklıdır.| Burger Yiyelim.</p>
     </div>
   );
 };
