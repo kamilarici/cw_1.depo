@@ -19,6 +19,7 @@ body {
 }
 .navbar .main img {
   height: 70px;
+  margin: 10px;
 }
 .navbar .nav-link {
   margin-left: auto;
