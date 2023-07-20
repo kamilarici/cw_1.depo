@@ -1,0 +1,28 @@
+.navbar {
+  width: 100%;
+  height: 100%;
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  /* border-bottom: ; */
+}
+.navbar .main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+.navbar .main img {
+  height: 70px;
+}
+.navbar .nav-link {
+  margin-left: auto;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
