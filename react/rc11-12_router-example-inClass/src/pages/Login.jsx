@@ -9,6 +9,7 @@ const Login = ({ setUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser({ email, password });
+    sessionStorage.setItem("user", JSON.stringify({ email, password }));
     navigate("/");
     console.log(email, password);
   };
