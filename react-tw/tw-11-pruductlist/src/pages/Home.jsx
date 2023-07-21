@@ -6,7 +6,7 @@ const Home = () => {
   const [data, setData] = useState();
   return (
     <div>
-      <Header setData={setData} />
+      <Header setData={setData} data={data} />
 
       <ProductCard data={data} />
     </div>
