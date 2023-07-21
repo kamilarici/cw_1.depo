@@ -5,13 +5,16 @@ import Card from "react-bootstrap/Card";
 const ProductCard = ({ data }) => {
   console.log(data);
   return (
-    <div className="d-flex flex-wrap gap-3 mt-5 justify-content-center img-thumbnail">
+    <div className="container d-flex flex-wrap gap-5 mt-5 justify-content-center ">
       {data?.map((item) => {
         const { image, price, title } = item;
         return (
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={image} />
-            <Card.Body>
+          <Card
+            className=" img-thumbnail border border-danger text-center"
+            style={{ width: "22rem", height: "550px" }}
+          >
+            <Card.Img variant="top" src={image} className="h-75" />
+            <Card.Body className="border ">
               <Card.Title>{price}</Card.Title>
               <Card.Text>{title}</Card.Text>
             </Card.Body>
