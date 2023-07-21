@@ -14,7 +14,7 @@ const ProductCard = ({ data }) => {
             style={{ width: "22rem", height: "550px" }}
           >
             <Card.Img variant="top" src={image} className="h-75" />
-            <Card.Body className="border border-danger mt-1">
+            <Card.Body className="border border-danger mt-1 ">
               <Card.Title>{price}</Card.Title>
               <Card.Text>{title}</Card.Text>
             </Card.Body>
