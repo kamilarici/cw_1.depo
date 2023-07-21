@@ -43,12 +43,17 @@
   padding: 1rem;
   border-bottom: 5px solid #ff652f;
 }
+
 .about .about__job h2,
 .about .about__job h3 {
   margin: 0.5rem 0;
 }
 .about .about__job h6 {
   margin: 0.3rem 0;
+}
+.about {
+  display: flex;
+  align-items: end;
 }
 
 .contact-bgImg-container {

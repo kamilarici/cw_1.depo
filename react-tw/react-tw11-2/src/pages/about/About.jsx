@@ -1,8 +1,8 @@
 import "./About.scss";
 const About = () => {
   return (
-    <div>
-      <div className="about__bio-image">
+    <div className="">
+      <div className="  about__bio-image">
         <h2>BIO</h2>
         <p>
           Wednesday Addams is a fictional character from the Addams Family

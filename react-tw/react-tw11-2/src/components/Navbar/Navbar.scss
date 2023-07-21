@@ -25,7 +25,7 @@
     &:hover {
       color: blue;
     }
-    &--active {
+    &.active {
       color: $secondary-color;
     }
   }
