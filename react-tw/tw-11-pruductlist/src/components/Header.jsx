@@ -22,9 +22,9 @@ const Header = ({ setData, data }) => {
   }, []);
 
   return (
-    <div className="container text-center">
-      <h1>Products List</h1>
-      <div>
+    <div className="container text-center ">
+      <h1 className="m-5">Products List</h1>
+      <div className="">
         <Button onClick={getData} variant="primary">
           ALL
         </Button>{" "}

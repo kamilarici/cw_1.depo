@@ -10,11 +10,11 @@ const ProductCard = ({ data }) => {
         const { image, price, title } = item;
         return (
           <Card
-            className=" img-thumbnail border border-danger text-center"
+            className=" img-thumbnail border border-danger text-center p-3"
             style={{ width: "22rem", height: "550px" }}
           >
             <Card.Img variant="top" src={image} className="h-75" />
-            <Card.Body className="border ">
+            <Card.Body className="border border-danger mt-1">
               <Card.Title>{price}</Card.Title>
               <Card.Text>{title}</Card.Text>
             </Card.Body>
