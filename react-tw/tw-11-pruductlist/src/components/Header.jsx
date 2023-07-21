@@ -29,19 +29,39 @@ const Header = ({ setData, data }) => {
     <div className="container text-center ">
       <h1 className="m-5">Products List</h1>
       <div className="">
-        <Button onClick={getData} variant="primary">
+        <Button className="m-1" onClick={getData} variant="primary">
           ALL
         </Button>{" "}
-        <Button name="electronics" onClick={handleFilter} variant="secondary">
+        <Button
+          className="m-1"
+          name="electronics"
+          onClick={handleFilter}
+          variant="secondary"
+        >
           ELECTRONİCS
         </Button>{" "}
-        <Button name="jewelery" onClick={handleFilter} variant="success">
+        <Button
+          className="m-1"
+          name="jewelery"
+          onClick={handleFilter}
+          variant="success"
+        >
           JEWELERY
         </Button>{" "}
-        <Button name="men's clothing" onClick={handleFilter} variant="warning">
+        <Button
+          className="m-1"
+          name="men's clothing"
+          onClick={handleFilter}
+          variant="warning"
+        >
           MENS CLOTHİNG
         </Button>{" "}
-        <Button name="women's clothing" onClick={handleFilter} variant="danger">
+        <Button
+          className="m-1"
+          name="women's clothing"
+          onClick={handleFilter}
+          variant="danger"
+        >
           WOMEN'S CLOTHİNG
         </Button>{" "}
       </div>
