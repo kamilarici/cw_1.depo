@@ -13,6 +13,10 @@ const Header = ({ setData, data }) => {
     // .catch((err)=>console.log(err));
   };
 
+  //   const handleFilter = (e) => {
+  //     console.log(e.target.name);
+  //     setData(actualData.filter((item) => item.category == e.target.name));
+  //   };
   const handleFilter = (e) => {
     console.log(e.target.name);
     setData(actualData.filter((item) => item.category == e.target.name));
@@ -34,8 +38,12 @@ const Header = ({ setData, data }) => {
         <Button name="jewelery" onClick={handleFilter} variant="success">
           JEWELERY
         </Button>{" "}
-        <Button variant="warning">MENS CLOTHİNG</Button>{" "}
-        <Button variant="danger">WOMEN'S CLOTHİNG</Button>{" "}
+        <Button name="men's clothing" onClick={handleFilter} variant="warning">
+          MENS CLOTHİNG
+        </Button>{" "}
+        <Button name="women's clothing" onClick={handleFilter} variant="danger">
+          WOMEN'S CLOTHİNG
+        </Button>{" "}
       </div>
     </div>
   );

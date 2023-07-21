@@ -6,19 +6,20 @@ const ProductCard = ({ data }) => {
   console.log(data);
   return (
     <div className="container d-flex flex-wrap gap-5 mt-5 justify-content-center ">
-      {data?.map((item) => {
+      {data?.map((item, i) => {
         const { image, price, title } = item;
         return (
-          <Card
-            className=" img-thumbnail border border-danger text-center p-3"
-            style={{ width: "22rem", height: "550px" }}
-          >
-            <Card.Img variant="top" src={image} className="h-75" />
-            <Card.Body className="border border-danger mt-1 ">
-              <Card.Title>{price}</Card.Title>
-              <Card.Text>{title}</Card.Text>
-            </Card.Body>
-          </Card>
+          <div key={i} className="card p-2 " style={{ width: "18rem" }}>
+            <div className="img-card border border-gray">
+              <img src={image} className="card-img-top" alt="..." />
+            </div>
+            <div className="card-price">
+              <p className="card-text">{price}</p>
+            </div>
+            <div className="card-cover">
+              <h5 className="card-title">{title}</h5>
+            </div>
+          </div>
         );
       })}
     </div>
