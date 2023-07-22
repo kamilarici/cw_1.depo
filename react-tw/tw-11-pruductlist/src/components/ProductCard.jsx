@@ -14,7 +14,7 @@ const ProductCard = ({ data }) => {
               <img src={image} className="card-img-top" alt="..." />
             </div>
             <div className="card-price">
-              <p className="card-text">{price}</p>
+              <p className="card-text">{price} $</p>
             </div>
             <div className="card-cover">
               <h5 className="card-title">{title}</h5>
