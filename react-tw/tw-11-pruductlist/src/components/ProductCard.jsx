@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 // import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+// import Card from "react-bootstrap/Card";
 
 const ProductCard = ({ data }) => {
   console.log(data);
@@ -11,7 +11,7 @@ const ProductCard = ({ data }) => {
         return (
           <div key={i} className="card p-2 " style={{ width: "18rem" }}>
             <div className="img-card border border-gray">
-              <img src={image} className="card-img-top" alt="..." />
+              <img src={image} className="card-img-top" alt="all" />
             </div>
             <div className="card-price">
               <p className="card-text">{price} $</p>

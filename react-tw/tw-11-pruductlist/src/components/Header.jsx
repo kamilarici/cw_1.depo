@@ -19,7 +19,7 @@ const Header = ({ setData, data }) => {
   //   };
   const handleFilter = (e) => {
     console.log(e.target.name);
-    setData(actualData.filter((item) => item.category == e.target.name));
+    setData(actualData.filter((item) => item.category === e.target.name));
   };
   useEffect(() => {
     getData();
