@@ -54,7 +54,7 @@ const Header = ({ setData, data }) => {
           onClick={handleFilter}
           variant="warning"
         >
-          MENS CLOTHİNG
+          MEN'S CLOTHİNG
         </Button>{" "}
         <Button
           className="m-1"
