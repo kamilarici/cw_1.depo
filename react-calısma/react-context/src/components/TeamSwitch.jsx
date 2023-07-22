@@ -1,6 +1,7 @@
-import React from "react";
+import { MainContext, useContext } from "../context";
 
-const TeamSwitch = ({ team, setTeam }) => {
+const TeamSwitch = () => {
+  const { team, setTeam } = useContext(MainContext);
   const switchTheme = () => {
     setTeam(team === "light" ? "dark" : "light");
   };

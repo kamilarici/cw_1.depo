@@ -1,6 +1,7 @@
-import React from "react";
+import { MainContext, useContext } from "../context";
 
-const Header = ({ team }) => {
+const Header = () => {
+  const { team } = useContext(MainContext);
   return <div>Header {team}</div>;
 };
 
