@@ -7,10 +7,16 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import Login from "./pages/Login";
 import { LoginContext } from "./context/LoginContext";
+import { useState } from "react";
+import PrivateRouter from "./pages/PrivateRouter";
 
 function App() {
+  // //! Local State
+  const [user, setUser] = useState({ email: "", password: "" });
+
+  console.log(user);
   return (
-    <LoginContext.Provider value={{}}>
+    <LoginContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <Navs />
         <Routes>
@@ -18,8 +24,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login />} />
 
-          <Route path="people" element={<People />} />
-          <Route path="people/:id" element={<PersonDetail />} />
+          <Route path="people" element={<PrivateRouter />}>
+            <Route path="" element={<People />} />
+            {/* <Route path="people/:id" element={<PersonDetail />} /> */}
+          </Route>
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
