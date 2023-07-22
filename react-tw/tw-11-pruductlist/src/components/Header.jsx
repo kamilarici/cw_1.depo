@@ -9,10 +9,11 @@ const Header = ({ setData, data }) => {
       setData(res.data);
       setActualData(res.data);
     });
-
-    // .catch((err)=>console.log(err));
   };
 
+  useEffect(() => {
+    getData();
+  }, []);
   //   const handleFilter = (e) => {
   //     console.log(e.target.name);
   //     setData(actualData.filter((item) => item.category == e.target.name));
@@ -21,9 +22,6 @@ const Header = ({ setData, data }) => {
     console.log(e.target.name);
     setData(actualData.filter((item) => item.category === e.target.name));
   };
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <div className="container text-center ">
