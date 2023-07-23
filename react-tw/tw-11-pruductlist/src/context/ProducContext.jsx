@@ -18,5 +18,5 @@ export const ProviderContext = ({ children }) => {
     <ProducContext.Provider value={values}>{children}</ProducContext.Provider>
   );
 };
-
+//? export ile değişken import edilir
 export default ProducContext;
