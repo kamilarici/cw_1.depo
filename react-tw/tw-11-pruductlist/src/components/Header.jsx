@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import ProducContext from "../context/ProducContext";
 const Header = () => {
   //? global context deki veriler bu şekilde çekilir
+  //gerekli importları yapılr
   const { setData, Data } = useContext(ProducContext);
 
   const [actualData, setActualData] = useState();
