@@ -5,6 +5,7 @@ const ProducContext = createContext();
 //? tüm işlemlerin yapılacağı yer children içine parametre olarak verilir
 export const ProviderContext = ({ children }) => {
   const [data, setData] = useState();
+  //   ?   state ve fonsiyonlar buraya yazılır
   const values = {
     data,
     setData,
