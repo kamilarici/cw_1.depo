@@ -13,6 +13,7 @@ export const ProviderContext = ({ children }) => {
   };
 
   return (
+    //? değişkene provider ile chhildren sarmallanır
     <ProducContext.Provider value={values}>{children}</ProducContext.Provider>
   );
 };
