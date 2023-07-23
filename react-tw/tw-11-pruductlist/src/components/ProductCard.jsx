@@ -6,6 +6,7 @@ import { useContext } from "react";
 import ProducContext from "../context/ProducContext";
 
 const ProductCard = () => {
+  //? context deki veriler bu şekilde çekilir
   const { data } = useContext(ProducContext);
   console.log(data);
   return (
