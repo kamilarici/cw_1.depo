@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom"
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
-import Image from "react-bootstrap/Image"
-import { useContext } from "react"
-import { LoginContext } from "../context/LoginContext"
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Image from "react-bootstrap/Image";
+import { useContext } from "react";
+import { LoginContext } from "../context/LoginContext";
 
 function Navs() {
   // ! Consuming login context
-  const { user, setUser } = useContext(LoginContext)
+  const { user, setUser } = useContext(LoginContext);
 
   return (
     <Navbar expand="sm">
@@ -35,7 +35,7 @@ function Navs() {
               People
             </Link>
 
-            {user.email && user.password ? (
+            {user?.email && user.password ? (
               <Link
                 className="nav-link"
                 to="/login"
@@ -52,7 +52,7 @@ function Navs() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
 
-export default Navs
+export default Navs;
