@@ -14,6 +14,7 @@ export const ProviderContext = ({ children }) => {
 
   return (
     //? değişkene provider ile chhildren sarmallanır
+    //? value içine props hibi yazılır
     <ProducContext.Provider value={values}>{children}</ProducContext.Provider>
   );
 };
