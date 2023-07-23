@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 //?pruduct değişkenine eşitleme ile başlanır.isimi biz veriyoruz
 const ProducContext = createContext();
 
+//? tüm işlemlerin yapılacağı yer children içine parametre olarak verilir
 export const ProviderContext = ({ children }) => {
   const [data, setData] = useState();
   const values = {
