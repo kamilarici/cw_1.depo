@@ -5,6 +5,7 @@ import { ProviderContext } from "../context/ProducContext";
 const Home = () => {
   return (
     <div>
+      //? context için sarmallama
       <ProviderContext>
         <Header />
         <ProductCard />
