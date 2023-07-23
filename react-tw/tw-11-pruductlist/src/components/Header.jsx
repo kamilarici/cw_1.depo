@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
-const Header = ({ setData, data }) => {
+import ProducContext from "../context/ProducContext";
+const Header = () => {
+  const { setData, Data } = useContext(ProducContext);
+
   const [actualData, setActualData] = useState();
   const getData = () => {
     const URL = "https://fakestoreapi.com/products ";

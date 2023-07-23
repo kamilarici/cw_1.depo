@@ -1,15 +1,17 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const PruducContext=createContext()
+const ProducContext = createContext();
 
-export  const ProviderContext=()=>{
+export const ProviderContext = ({ children }) => {
+  const [data, setData] = useState();
+  const values = {
+    data,
+    setData,
+  };
 
+  return (
+    <ProducContext.Provider value={values}>{children}</ProducContext.Provider>
+  );
+};
 
-
-
-    return(
-
-    )
-}
-
-export default PruducContext;
+export default ProducContext;

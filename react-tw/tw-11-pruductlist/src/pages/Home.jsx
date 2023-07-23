@@ -1,14 +1,14 @@
-import React, { useState } from "react";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
+import { ProviderContext } from "../context/ProducContext";
 
 const Home = () => {
-  const [data, setData] = useState();
   return (
     <div>
-      <Header setData={setData} data={data} />
-
-      <ProductCard data={data} />
+      <ProviderContext>
+        <Header />
+        <ProductCard />
+      </ProviderContext>
     </div>
   );
 };

@@ -2,7 +2,11 @@
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Card";
 
-const ProductCard = ({ data }) => {
+import { useContext } from "react";
+import ProducContext from "../context/ProducContext";
+
+const ProductCard = () => {
+  const { data } = useContext(ProducContext);
   console.log(data);
   return (
     <div className="container d-flex flex-wrap gap-5 mt-5 justify-content-center ">
