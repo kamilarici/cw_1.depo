@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+//?pruduct değişkenine eşitleme ile başlanır.isimi biz veriyoruz
 const ProducContext = createContext();
 
 export const ProviderContext = ({ children }) => {
