@@ -1,14 +1,13 @@
-import { createContext, useContext } from "react";
 import A from "./components/A";
-export const UserContext = createContext();
+import { UserProvider } from "./contexts/UserContexts";
+
 function App() {
   return (
-    <div>
-      <UserContext.Provider value={"ali"}>
-        <h1>app</h1>
-
+    <div className="App">
+      <UserProvider>
+        <h1>App</h1>
         <A />
-      </UserContext.Provider>
+      </UserProvider>
     </div>
   );
 }
