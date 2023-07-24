@@ -30,7 +30,7 @@ const PersonDetail = () => {
   useEffect(() => {
     getPerson();
   }, []);
-
+  //?    *********************************
   if (error) {
     return <NotFound />;
   } else if (loading) {
@@ -40,7 +40,7 @@ const PersonDetail = () => {
       </div>
     );
   }
-
+  //? ********************************
   return (
     <div className="container text-center">
       <h3>
