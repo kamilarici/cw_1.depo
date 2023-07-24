@@ -7,7 +7,6 @@ const Paths = () => {
       <h1>
         Online IT Courses to Become a Qualified IT Professional with Clarusway
       </h1>
-
       <p className="fs-5">
         Join outstanding companies with rewarding salaries. We offer the
         highest-demand IT skills YOU need for success! CHOOSE THE BEST COURSE
@@ -22,7 +21,9 @@ const Paths = () => {
           AWS-Devops
         </Link>
       </div>
+      //? nested yapılarda sayfada göstermk istediğimiz yere yazarız
       <Outlet />
+      //? *********
     </div>
   );
 };
