@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const A = styled.a`
-  /* ... */
+const Title = styled.h1`
+  color: ${({ renk }) => renk || "black"};
+  background-color: ${({ bgRenk }) => bgRenk || "bebe"};
 `;
 
-export default A;
+export default Title;
