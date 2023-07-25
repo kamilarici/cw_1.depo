@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Button = styled.button`
   background-color: hotpink;
@@ -12,10 +12,10 @@ export const Button = styled.button`
     cursor: pointer;
     transform: scale(0.96);
   }
-`
+`;
 //! Extension
 export const DarkButton = styled(Button)`
   background-color: black;
   color: white;
   border: none;
-`
+`;
