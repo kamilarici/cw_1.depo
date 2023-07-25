@@ -7,9 +7,9 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 
+    font-family: 'Shantell Sans', cursive;
 }
 body{
-    font-family: 'Shantell Sans', cursive;
 }
 
 
