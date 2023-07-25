@@ -50,7 +50,7 @@ const Home = () => {
         </FormStyle>
       </FormDiv>
 
-      {data ? <Card data={data} /> : <DivImg src={books} alt="" />}
+      {data ? <Card data={data} /> : <DivImg src={books} alt="books" />}
     </FlexDiv>
   );
 };
