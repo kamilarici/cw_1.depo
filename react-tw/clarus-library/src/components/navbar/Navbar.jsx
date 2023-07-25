@@ -9,8 +9,9 @@ const Navbar = () => {
       </div>
       <div>
         <LinkStyled to="/">HOME</LinkStyled>
-        <LinkStyled to="/">ABOUT</LinkStyled>
-        <LinkStyled to="/">LOGİN</LinkStyled>
+        <LinkStyled to="/about">ABOUT</LinkStyled>
+        <LinkStyled to="/register">REGİSTER</LinkStyled>
+        <LinkStyled to="/login">LOGİN</LinkStyled>
       </div>
     </NavStyled>
   );

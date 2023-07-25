@@ -4,6 +4,7 @@ const NavStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
   /* h1 {
     padding: 1rem 0px;
     color: darkslategray;
@@ -22,13 +23,13 @@ export const LinkStyled = styled(NavLink)`
   text-decoration: none;
   color: rgb(139, 126, 116);
   transition: all 0.3s ease-in 0s;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 export const H1 = styled.h1`
-  padding: 1rem 0px;
   color: darkslategray;
   text-decoration: none;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;

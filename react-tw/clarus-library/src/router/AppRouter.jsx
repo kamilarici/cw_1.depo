@@ -2,6 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { GlobalStyles } from "../styles/Global.styles";
+import Home from "../pages/home/Home";
+import About from "../pages/about/About";
+import Register from "../pages/register/Register";
+import Login from "../pages/login/Login";
 
 const AppRouter = () => {
   return (
@@ -10,7 +14,10 @@ const AppRouter = () => {
       <Navbar />
       <Routes>
         <Route />
-        <Route />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route />
         <Route />
       </Routes>
