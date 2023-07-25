@@ -19,3 +19,17 @@ export const DarkButton = styled(Button)`
   color: white;
   border: none;
 `;
+export const PinkButton = styled.button`
+  background-color: ${({ primary }) => (primary ? "white" : "hotpink")};
+  color: ${({ primary }) => (primary ? "hotpink" : "white")};
+  border: 2px solid hotpink;
+  font-size: 1.3rem;
+  padding: 0.7rem 3rem;
+  border-radius: 20px;
+`;
+// //! Extension
+// export const DarkButton = styled(Button)`
+//   background-color: black;
+//   color: white;
+//   border: none;
+// `;
