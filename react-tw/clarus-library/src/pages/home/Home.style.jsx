@@ -52,7 +52,7 @@ export const FormDiv = styled.div`
 `;
 
 export const DivImg = styled.img`
-  width: 65%;
+  width: 45%;
   height: 60%;
   border-radius: 10px;
   object-fit: cover;

@@ -5,6 +5,9 @@ const NavStyled = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
   /* h1 {
     padding: 1rem 0px;
     color: darkslategray;
@@ -32,4 +35,11 @@ export const H1 = styled.h1`
   text-decoration: none;
   font-weight: 800;
   font-size: 1.5rem;
+`;
+
+export const NavLinkDiv = styled.div`
+  display: flex;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
