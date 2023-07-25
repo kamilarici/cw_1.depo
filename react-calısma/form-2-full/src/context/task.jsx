@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 const TasksContext = createContext();
 
-function Provider({ children }) {
+export function Provider({ children }) {
   return <TasksContext.Provider>{children}</TasksContext.Provider>;
 }
 
