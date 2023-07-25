@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   padding-top: 2rem;
   align-items: center;
   gap: 1rem;

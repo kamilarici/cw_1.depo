@@ -4,7 +4,7 @@ const NavStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.1rem;
   @media (max-width: 700px) {
     flex-direction: column;
   }
@@ -21,7 +21,7 @@ export default NavStyled;
 
 export const LinkStyled = styled(NavLink)`
   text-align: center;
-  padding: 1rem 2rem;
+
   cursor: pointer;
   text-decoration: none;
   color: rgb(139, 126, 116);
@@ -39,6 +39,7 @@ export const H1 = styled.h1`
 
 export const NavLinkDiv = styled.div`
   display: flex;
+  gap: 2rem;
   @media (max-width: 500px) {
     flex-direction: column;
   }
