@@ -12,7 +12,7 @@ const Card = ({ data }) => {
         return (
           <CardDiv>
             <h1>{item.volumeInfo.title}</h1>
-            <img src={item.volumeInfo.imageLinks.smallThumbnail} alt="" />
+            <img src={item?.volumeInfo?.imageLinks?.smallThumbnail} alt="" />
             <button
               onClick={() => navigate(`/detail/${item.id}`, { state: item })}
             >

@@ -8,10 +8,10 @@ const Detail = () => {
   return (
     <FlexDiv>
       <h1>{state?.volumeInfo.title}</h1>
-      <img src={state?.volumeInfo.imageLinks.smallThumbnail} alt="" />
-      <p>{state?.volumeInfo.description}</p>
-      <p>{state?.volumeInfo.authors}</p>
-      <p>{state?.volumeInfo.publishedDate}</p>
+      <img src={state?.volumeInfo?.imageLinks?.smallThumbnail} alt="" />
+      <p>{state?.volumeInfo?.description}</p>
+      <p>{state?.volumeInfo?.authors}</p>
+      <p>{state?.volumeInfo?.publishedDate}</p>
     </FlexDiv>
   );
 };
