@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Shantell Sans', cursive;
 }
 body{
+    background-color: #bebe;
 }
 
 

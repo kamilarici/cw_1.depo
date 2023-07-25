@@ -4,7 +4,8 @@ const NavStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: white;
   @media (max-width: 700px) {
     flex-direction: column;
   }

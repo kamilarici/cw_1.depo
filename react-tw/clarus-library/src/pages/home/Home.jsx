@@ -2,7 +2,7 @@ import FlexDiv from "../../styles/Flex";
 import FormStyle, { DivImg, FormDiv } from "./Home.style";
 import books from "../../assets/books.jpg";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Card from "../../components/card/Card";
 const Home = () => {
   const [data, setData] = useState("");
@@ -51,6 +51,7 @@ const Home = () => {
           <button>SEARCH</button>
         </FormStyle>
       </FormDiv>
+      <hr />
 
       {data ? <Card data={data} /> : <DivImg src={books} alt="books" />}
     </FlexDiv>

@@ -8,9 +8,9 @@ const FlexDiv = styled.div`
   align-items: center;
   gap: 1rem;
   background-color: #bebe;
-  width: 100vw;
-  height: 100vh;
-  height: calc(100vh - 68px);
+  /* width: 100vw;
+  height: 100vh; */
+  /* height: calc(100vh - 68px); */
   /* margin: 1rem auto; */
   /* background-color: ${(props) => props.bg || "transparent"}; */
   /* background-color: ${({ bg }) => bg || "transparent"}; */
