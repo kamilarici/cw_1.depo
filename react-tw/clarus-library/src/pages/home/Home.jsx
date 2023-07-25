@@ -24,6 +24,7 @@ const Home = () => {
     e.preventDefault();
 
     getData();
+    setQuery("");
   };
   return (
     <FlexDiv>
@@ -31,7 +32,8 @@ const Home = () => {
         <h2>BOOKS OR MAGAZİNES</h2>
         <FormStyle onSubmit={handleSubmit}>
           <input
-            type="text"
+            value={query}
+            type="search"
             placeholder="Search"
             onChange={(e) => setQuery(e.target.value)}
           />
