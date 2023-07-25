@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "./styled/NavStyled";
+import Nav from "./Nav";
 
 const Header = () => {
   return (
