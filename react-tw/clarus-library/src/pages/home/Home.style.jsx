@@ -5,6 +5,9 @@ export const FormDiv = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.5rem;
+  h2 {
+    color: #000000;
+  }
 `;
 const FormStyle = styled.form`
   display: flex;
@@ -26,7 +29,14 @@ const FormStyle = styled.form`
     border-radius: 1rem 3px 3px 1rem;
     text-indent: 10px;
     font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    &::placeholder {
+      color: black;
+    }
+
+    border: 1px solid black;
   }
   select {
     border-radius: 3px 1rem 1rem 3px;
@@ -36,6 +46,8 @@ const FormStyle = styled.form`
     border: none;
     font-size: 1.5rem;
     background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    margin-left: 1px;
   }
   button {
     background-color: rgb(225, 241, 221);

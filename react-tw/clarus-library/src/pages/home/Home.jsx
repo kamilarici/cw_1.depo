@@ -55,7 +55,8 @@ const Home = () => {
       </FormDiv>
       <hr />
 
-      {data ? <Card data={data} /> : <DivImg src={books} alt="books" />}
+      {data && <Card data={data} />}
+      {/* {data ? <Card data={data} /> : <DivImg src={books} alt="books" />} */}
     </FlexDiv>
   );
 };

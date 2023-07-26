@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import logo from "../assets/logo4.jpg";
 export const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;600;700&display=swap');
 *{
@@ -11,14 +11,17 @@ export const GlobalStyles = createGlobalStyle`
   
 }
 body{
-.dark{
+/* .dark{
     background-color: #000000;
     
- color: white;
-}
-    background-color: #bebe 
+ color: white; */
+/* } */
+/* background-color: #bebe  */
     /* background-color: ${({ theme }) => theme.colors.dark};
     color: white; */
+    background-image: url(${logo});
+    background-position: center;
+   
 
 }
 
