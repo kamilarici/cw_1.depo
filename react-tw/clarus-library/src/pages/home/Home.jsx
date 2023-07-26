@@ -2,9 +2,11 @@ import FlexDiv from "../../styles/Flex";
 import FormStyle, { DivImg, FormDiv } from "./Home.style";
 import books from "../../assets/books.jpg";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "../../components/card/Card";
+import AuthContext from "../../context/AuthContext";
 const Home = () => {
+  const { dark, setDark } = useContext(AuthContext);
   const [data, setData] = useState("");
   const [query, setQuery] = useState("");
   const [option, setOption] = useState("all");
@@ -27,7 +29,7 @@ const Home = () => {
     setQuery("");
   };
   return (
-    <FlexDiv>
+    <FlexDiv className={`${dark && "dark"}`}>
       <FormDiv>
         <h2>BOOKS OR MAGAZİNES</h2>
         <FormStyle onSubmit={handleSubmit}>

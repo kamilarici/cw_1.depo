@@ -7,6 +7,7 @@ const FlexDiv = styled.div`
   padding-top: 2rem;
   align-items: center;
   gap: 1rem;
+
   background-color: ${({ bg }) => bg || "transparent"};
   /* width: 100vw;
   height: 100vh; */

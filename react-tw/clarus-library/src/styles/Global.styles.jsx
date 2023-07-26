@@ -8,9 +8,15 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
 
     font-family: 'Shantell Sans', cursive;
+  
 }
 body{
-    background-color: #bebe;
+.dark{
+    background-color: #000000;
+    
+ color: white;
+}
+    background-color: #bebe 
     /* background-color: ${({ theme }) => theme.colors.dark};
     color: white; */
 

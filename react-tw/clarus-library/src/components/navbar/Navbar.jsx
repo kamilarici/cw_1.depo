@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, dark, setDark } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
-    <NavStyled>
+    <NavStyled className={`${dark && "dark"}`}>
       <div onClick={() => navigate("/")}>
-        <H1>CLARUS LİBRARY</H1>
+        <H1>GOOGLE LİBRARY</H1>
       </div>
       <NavLinkDiv>
         <LinkStyled to="/">HOME</LinkStyled>
