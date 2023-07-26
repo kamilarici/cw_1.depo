@@ -6,10 +6,10 @@ import { useThemeContext } from "./context/ThemeContext";
 
 function App() {
   const { myTheme } = useThemeContext();
-  const themes = myTheme;
+  const themes = myTheme === "light" ? lightTheme : darktheme;
   return (
     <>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={themes}>
         <GlobalStyles />
         <AppRouter />
       </ThemeProvider>
