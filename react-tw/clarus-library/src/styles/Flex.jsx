@@ -16,4 +16,15 @@ const FlexDiv = styled.div`
   /* background-color: ${({ bg }) => bg || "transparent"}; */
 `;
 
+export const LoginFlexDiv = styled(FlexDiv)`
+  background-image: url(${({ pic }) => pic && pic});
+  /* background-color: #cccccc; */
+  /* height: calc(100vh - 1px); */
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+`;
+
 export default FlexDiv;

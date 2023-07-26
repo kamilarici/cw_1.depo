@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
     <NavStyled>
@@ -15,8 +15,13 @@ const Navbar = () => {
         <LinkStyled to="/">HOME</LinkStyled>
         <LinkStyled to="/about">ABOUT</LinkStyled>
         {!user && <LinkStyled to="/register">REGİSTER</LinkStyled>}
-
-        <LinkStyled to="/login">{user ? "LOGOUT" : "LOGİN"}</LinkStyled>
+        {user ? (
+          <LinkStyled to="/login" onClick={() => setUser("")}>
+            LOGOUT
+          </LinkStyled>
+        ) : (
+          <LinkStyled to="/login">LOGİN</LinkStyled>
+        )}
       </NavLinkDiv>
     </NavStyled>
   );
