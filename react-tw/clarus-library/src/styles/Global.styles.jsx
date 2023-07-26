@@ -11,6 +11,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 body{
     background-color: #bebe;
+    /* background-color: ${({ theme }) => theme.colors.dark};
+    color: white; */
+
 }
 
 
