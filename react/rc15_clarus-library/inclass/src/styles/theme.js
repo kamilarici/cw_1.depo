@@ -1,4 +1,5 @@
 //create theme
+
 export const lightTheme = {
   colors: {
     navbarBgColor: "white",
@@ -10,10 +11,11 @@ export const lightTheme = {
     linkHoverColor: "rgb(5,5,5)",
     headerFormColor: "rgba(15, 63, 42, 0.36)",
   },
-  screen: {
+  screens: {
     lg: "992px",
-  },
+  }
 };
+
 export const darktheme = {
   colors: {
     navbarBgColor: "rgba(255, 255, 255, 0.46)",

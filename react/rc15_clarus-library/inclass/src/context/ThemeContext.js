@@ -15,7 +15,7 @@ const ThemeContextProvider = ({ children }) => {
 };
 
 export const useThemeContext = () => {
-  return useContext(ThemeContext);
-};
+    return useContext(ThemeContext)
+}
 
 export default ThemeContextProvider;
