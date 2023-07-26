@@ -36,6 +36,7 @@ export const H1 = styled.h1`
   text-decoration: none;
   font-weight: 800;
   font-size: 1.5rem;
+  cursor: pointer;
 `;
 
 export const NavLinkDiv = styled.div`

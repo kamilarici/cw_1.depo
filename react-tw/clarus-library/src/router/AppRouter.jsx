@@ -8,28 +8,31 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import PrivateRouter from "./PrivateRouter";
 import Detail from "../pages/detail/Detail";
+import { AuthProvider } from "../context/AuthContext";
 
 const AppRouter = () => {
   return (
     <div>
       <GlobalStyles />
-      <Navbar />
-      <Routes>
-        <Route />
-        <Route path="/" element={<Home />} />
-        <Route path="/detail/:id" element={<Detail />} />
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route />
+          <Route path="/" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
 
-        <Route path="" element={<PrivateRouter />}>
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/about/:id" element={<About />} /> */}
-        </Route>
+          <Route path="" element={<PrivateRouter />}>
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/about/:id" element={<About />} /> */}
+          </Route>
 
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route />
-        <Route />
-      </Routes>
-      <Footer />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route />
+          <Route />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </div>
   );
 };

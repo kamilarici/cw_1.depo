@@ -1,8 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { FormLogin } from "./Login.style";
 import FlexDiv from "../../styles/Flex";
+import AuthContext from "../../context/AuthContext";
 
 const Login = () => {
+  const { setUser } = useContext(AuthContext);
   return (
     <FlexDiv bg="#bebe">
       <FormLogin>
