@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const FormDiv = styled.div`
-  width: 100vw;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +53,7 @@ const FormStyle = styled.form`
   }
 `;
 export const DivImg = styled.img`
-  height: 60%;
+  height: 50%;
   width: 45%;
   object-fit: cover;
   border-radius: 20px;
