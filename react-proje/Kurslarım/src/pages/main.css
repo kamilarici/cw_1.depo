@@ -1,0 +1,16 @@
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+  border: 1px solid red;
+  padding: 2rem;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
