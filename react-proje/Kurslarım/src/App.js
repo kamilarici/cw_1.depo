@@ -1,15 +1,10 @@
-import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 function App() {
   return (
-    <div className="Apprrr">
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route />
-        <Route />
-        <Route />
-      </Routes>
+    <div className="App my_card m-auto mt-5 ">
+      <Main />
     </div>
   );
 }

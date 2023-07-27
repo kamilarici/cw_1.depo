@@ -1,0 +1,54 @@
+
+
+.my_card {
+  background-color: hsla(0, 24%, 96%, 0.4);
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 20px 30px -10px #26394d;
+  min-height: 50vh;
+  min-width: 70%;
+  padding: 1rem;
+}
+.years {
+    cursor: pointer;
+  
+    .year {
+      position: relative; /* İçeriklerin konumlandırılması için ana öğeye göre pozisyonu ayarla */
+      display: flex;
+      height: 40px;
+      padding: 5px;
+      background-color: #26394d29;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      
+      &:hover {
+        /* Alt kenarlık eklemek için before pseudo-element kullan */
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0px; /* Alt kısmında görünmesini sağla */
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: red;
+        }
+      }
+    }
+  }
+ 
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column !important; /* Yatay yerleşimi sütun yerleşimine değiştir */
+    gap: 1rem  !important; /* İki bileşen arasındaki boşluğu azaltabilirsiniz */
+  }
+  .years {
+    flex-direction: row !important;
+    margin-bottom: 0 !important;
+    gap: 0 3rem!important;
+  }
+  .right_card {
+    padding: 0!important;
+  }
+}
