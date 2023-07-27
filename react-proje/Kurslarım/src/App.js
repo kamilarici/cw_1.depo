@@ -3,7 +3,7 @@ import Main from "./pages/Main";
 
 function App() {
   return (
-    <div className="App">
+    <div className="Apprrr">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route />
