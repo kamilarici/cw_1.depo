@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Footer from "../components/footer/Footer";
 
 const AppRouter = () => {
   return (
-    <div>AppRouter</div>
-  )
-}
+    <div>
+      <Footer />
+    </div>
+  );
+};
 
-export default AppRouter
+export default AppRouter;
