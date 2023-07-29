@@ -1,5 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Cards from "../components/Cards";
 const Main = () => {
+  const API_KEY = "405cd9fb67e60c3e2feae1872a93ac53";
+  const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=";
+  const [movies, setMovies] = useState([]);
+  const getData = async () => {
+    try {
+      const response = await axios(`${API_URL}${API_KEY}`);
+      setMovies(response.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  console.log(movies);
   return (
     <main>
       <form action="" className="flex justify-center p-2">
@@ -11,23 +28,7 @@ const Main = () => {
         <button type="submit">Search</button>
       </form>
       <div className="flex flex-wrap">
-        <div className="movie">
-          <img
-            src="https://image.tmdb.org/t/p/w1280/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg"
-            alt=""
-          />
-          <div className="bg-blue-700 py-5 text-white">
-            <h5>The Flash</h5>
-          </div>
-          <div className="movie-over">
-            <h4>Overvieww</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia est
-              dicta, nemo alias quis ratione placeat. Consequatur ut repellat
-              sunt?
-            </p>
-          </div>
-        </div>
+        <Cards movies={movies} />
       </div>
     </main>
   );
