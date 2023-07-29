@@ -3,7 +3,7 @@ import React from "react";
 const Cards = ({ movies }) => {
   return (
     <div className="flex flex-wrap">
-      {movies.map((movie) => {
+      {movies?.map((movie) => {
         return (
           <div key={movie.id} className="movie">
             <img

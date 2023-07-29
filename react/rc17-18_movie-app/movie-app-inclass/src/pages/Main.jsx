@@ -4,7 +4,7 @@ import Cards from "../components/Cards";
 const Main = () => {
   const [movies, setMovies] = useState();
   const [query, setQuery] = useState();
-  const API_KEY = "b1ad040c8b59ee92603839b9fbbe4adf";
+  const API_KEY = "405cd9fb67e60c3e2feae1872a93ac53";
   const [apiUrl, setApiUrl] = useState(
     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`
   );
