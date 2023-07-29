@@ -4,6 +4,7 @@ import { auth } from "../firebase-config";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import LogOut from "./LogOut";
+import { signInWithGoogle } from "./signInWithGoogle";
 
 const Body = () => {
   const [user, setUser] = useState({});
@@ -14,7 +15,7 @@ const Body = () => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <SignUp />
       </div>
 
@@ -25,7 +26,9 @@ const Body = () => {
       <h4> User Logged In: </h4>
       {user?.email}
 
-      <LogOut />
+      <LogOut /> */}
+      <button onClick={signInWithGoogle}>google</button>
+      {/* <signInWithGoogle /> */}
     </div>
   );
 };
