@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* yapıştırdığımız @tailwind base; @tailwind components; @tailwind utilities; Kodları Tailwind içerisindeki base component ve utilities classlarını kullanabileceğimizi gösteriyor.*/
+
+/** element bazında default olarak vermek istediğimiz stilleri base layer'da veriyoruz */
+@layer base {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+/** component/class bazında default olarak vermek istediğimiz stilleri component layer'da veriyoruz */
 @layer components {
   .card {
     @apply flex flex-col justify-between items-center bg-slate-500 rounded-xl w-3/12 h-[250px];
