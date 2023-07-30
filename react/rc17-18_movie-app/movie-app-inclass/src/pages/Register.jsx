@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase.config";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -10,15 +11,20 @@ const Register = () => {
     name: "",
     surname: "",
   });
-
+  const navigate = useNavigate();
   const register = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         registerEmail,
         registerPassword
       );
-      console.log(user);
+      await updateProfile(userCredential.user, {
+        displayName: `${userName.name} ${userName.surname}`,
+      });
+
+      console.log(userCredential.user.displayName);
+      navigate("/login");
     } catch (error) {
       alert(error.message);
     }
