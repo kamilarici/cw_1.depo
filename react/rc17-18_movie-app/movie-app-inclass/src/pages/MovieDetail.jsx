@@ -4,7 +4,7 @@ const MovieDetail = () => {
   return (
     <div className="  bg-slate-600  w-12/12 mx-auto py-5 ">
       <h1 className="text-center mb-2 text-3xl">The falh</h1>
-      <div className="w-10/12 md:w-3/5 bg-red-500 mx-auto">
+      <div className="w-10/12 md:w-3/5 bg-red-500 mx-auto rounded-xl">
         <div className="ratio h-[400px] ratio-16x9">
           <iframe
             class="rounded-xl"
