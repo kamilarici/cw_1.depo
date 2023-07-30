@@ -91,7 +91,20 @@ body {
   min-width: 800px;
   min-height: 600px;
 }
-
+.ratio {
+  position: relative;
+  width: 100%;
+}
+.ratio-16x9 {
+  --bs-aspect-ratio: 56.25%;
+}
+.ratio > * {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 /* Login Custom CSS */
 
 .custom-linear-gradient::before {
