@@ -4,6 +4,7 @@ import {
 } from "firebase/auth";
 import React, { createContext } from "react";
 import { auth } from "../auth/firebase";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -13,6 +14,7 @@ export const AuthContext = createContext();
 // }
 
 const AuthContextProvider = ({ children }) => {
+  let navigate = useNavigate();
   const createUser = async (email, password) => {
     //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
     try {
@@ -22,6 +24,7 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       console.log(userCredential);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -33,7 +36,13 @@ const AuthContextProvider = ({ children }) => {
   const signIn = async (email, password) => {
     try {
       //? mevcut kullanıcının giriş yapması için kullanılan firebase metodu
-      await signInWithEmailAndPassword(auth, email, password);
+      let userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      navigate("/");
+      console.log(userCredential);
     } catch (error) {
       console.log(error.message);
     }
