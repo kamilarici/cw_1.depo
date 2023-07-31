@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = ({ userNameLogin,logout }) => {
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  /* 
+  // const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+   
+    console.log(isOpen);
+
+  }, [isOpen]); */
+
   return (
     <header className={`flex items-center justify-center w-full bg-slate-700`}>
       <div className="container ">
         <div className=" mx-4">
           <div className="flex items-center justify-between w-full px-4 ">
-            <div className="max-w-full px-4 w-60">
-              <a href="/#" className="block w-full py-5">
-                <img
-                  src="https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg"
-                  alt="logo"
-                  className="w-full"
-                />
-              </a>
+            <div className="max-w-full px-4 w-auto">
+              <Link to="/" className="block w-full py-5 text-4xl text-green-600">
+              <i class="fa-solid fa-c"></i><span className="text-2xl">ode </span> <i class="fa-solid fa-f"></i><span className="text-2xl">riends group work </span>
+              </Link>
             </div>
             {/* <div className="me">
               <button
@@ -68,47 +69,43 @@ const Navbar = () => {
                 </ul>
               </nav>
             </div> */}
-            <div className="justify-end hidden pr-16 sm:flex lg:pr-0">
-              <a
-                href="/#"
-                className="py-3 text-base font-medium px-7 text-dark hover:text-primary"
-              >
-                Sign in
-              </a>
-
-              <a
-                href="/#"
-                className="py-3 text-base font-medium text-white rounded-lg bg-primary px-7 hover:bg-opacity-90"
-              >
-                Sign Up
-              </a>
-            </div>
-            {/* <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn m-1">
-                Click
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div> */}
-
-            <div className="dropdown dropdown-end relative">
-              <label tabIndex={0} className="btn m-1" onClick={toggleDropdown}>
-                Click
-              </label>
-              {isOpen && (
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            { 
+            !userNameLogin ? 
+              <div className="justify-end pr-16 sm:flex lg:pr-0">
+                <Link
+                  to="/register"
+                  className="py-3 text-base font-medium px-7 text-dark hover:text-primary"
                 >
+                  Sign in
+                </Link>
+
+                <Link
+                  to="/Login"
+                  className="py-3 text-base font-medium text-white rounded-lg bg-primary px-7 hover:bg-opacity-90"
+                >
+                  Login
+                </Link>
+              </div> 
+              : 
+              <div className="justify-end  sm:flex lg:pr-0">
+              <span className="py-3 text-base font-medium px-7 hover:text-primary text-green-300">
+               {userNameLogin} <i class="fa-regular fa-circle-user"></i>
+             </span>
+              <Link to="/" onClick={logout} className="py-3 text-base font-medium text-white rounded-lg bg-primary px-7 hover:bg-opacity-90">
+                Logout
+              </Link>
+            </div>
+            }
+            {/*   <div className="dropdown dropdown-end relative">
+              <label 
+                tabIndex={0}
+                className="btn m-1 "
+                onClick={() => setIsOpen(!isOpen)} 
+              >
+                Click
+              </label>
+              {isOpen && ( 
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li>
                     <a>Item 1</a>
                   </li>
@@ -117,7 +114,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
