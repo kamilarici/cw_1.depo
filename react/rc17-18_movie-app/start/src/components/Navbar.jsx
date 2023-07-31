@@ -1,12 +1,14 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import avatar from "../assets/icons/avatar.png";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+  const currentUser = { displayName: "felix franko" };
   return (
     <>
       <Disclosure
@@ -15,10 +17,13 @@ export default function Navbar() {
       >
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
-            <a className="pr-2 text-2xl font-semibold" href="#">
+            <Link className="pr-2 text-2xl font-semibold" to="/">
               React Movie App
-            </a>
+            </Link>
             <div className="absolute inset-y-0 right-0 flex items-center ">
+              {currentUser && (
+                <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+              )}
               {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
                 <div>
@@ -27,7 +32,7 @@ export default function Navbar() {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src={avatar}
+                      src={currentUser?.photoURL || avatar}
                       alt="user"
                     />
                   </Menu.Button>
@@ -44,41 +49,40 @@ export default function Navbar() {
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="#"
+                        <Link
+                          to="/register"
                           className={classNames(
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700"
                           )}
                         >
                           Register
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="#"
+                        <Link
+                          to="/login"
                           className={classNames(
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700"
                           )}
                         >
                           Login
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="#"
+                        <span
                           className={classNames(
                             active ? "bg-gray-100" : "",
-                            "block px-4 py-2 text-sm text-gray-700"
+                            "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
                         >
                           Log out
-                        </a>
+                        </span>
                       )}
                     </Menu.Item>
                   </Menu.Items>
