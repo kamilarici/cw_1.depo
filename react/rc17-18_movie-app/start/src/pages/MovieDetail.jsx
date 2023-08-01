@@ -7,6 +7,15 @@ const MovieDetail = () => {
   const [movieDetails, setMovieDetails] = useState({});
   console.log(id);
 
+  const {
+    title,
+    poster_path,
+    overview,
+    vote_average,
+    release_date,
+    vote_count,
+  } = movieDetails;
+
   const API_KEY = process.env.REACT_APP_TMDB_KEY;
   const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
   const baseImageUrl = "https://image.tmdb.org/t/p/w1280";
