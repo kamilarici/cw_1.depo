@@ -1,12 +1,14 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
 import { useNavigate } from "react-router-dom";
-import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastyNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 
 export const AuthContext = createContext();
 
@@ -16,8 +18,14 @@ export const AuthContext = createContext();
 // }
 
 const AuthContextProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(false);
   let navigate = useNavigate();
-  const createUser = async (email, password) => {
+
+  useEffect(() => {
+    userObserver();
+  }, []);
+
+  const createUser = async (email, password, displayName) => {
     //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
     try {
       let userCredential = await createUserWithEmailAndPassword(
@@ -25,8 +33,14 @@ const AuthContextProvider = ({ children }) => {
         email,
         password
       );
-      toastSuccessNotify("registered succesfully");
+      //? kullanıcı profilini güncellemek için kullanılan firebase metodu
+      await updateProfile(auth.currentUser, {
+        //* key ve value değerleri aynı ise sadece key değerini yazabiliriz
+        displayName,
+      });
+      console.log(userCredential);
       navigate("/");
+      toastSuccessNotify("Registered successfully!");
     } catch (error) {
       toastErrorNotify(error.message);
     }
@@ -44,17 +58,34 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       navigate("/");
-      toastSuccessNotify("login succesfully");
+      toastSuccessNotify("Logged in successfully!");
+      console.log(userCredential);
     } catch (error) {
       toastErrorNotify(error.message);
     }
   };
+
   const logOut = () => {
     signOut(auth);
-    toastSuccessNotify("logout succesfully");
+    toastSuccessNotify("Logged out successfully!");
   };
 
-  const values = { createUser, signIn, logOut };
+  const userObserver = () => {
+    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { email, displayName, photoURL } = user;
+        setCurrentUser({ email, displayName, photoURL });
+        console.log(user);
+      } else {
+        // User is signed out
+        setCurrentUser(false);
+        console.log("logged out");
+      }
+    });
+  };
+
+  const values = { createUser, signIn, logOut, currentUser };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
