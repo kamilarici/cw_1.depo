@@ -40,7 +40,7 @@ const AuthContextProvider = ({ children }) => {
         //* key ve value değerleri aynı ise sadece key değerini yazabiliriz
         displayName,
       });
-      // console.log(userCredential);
+      console.log(userCredential);
       navigate("/");
       toastSuccessNotify("Registered successfully!");
     } catch (error) {
