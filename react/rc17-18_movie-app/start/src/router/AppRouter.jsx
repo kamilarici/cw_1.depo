@@ -9,15 +9,13 @@ import Navbar from "../components/Navbar";
 const AppRouter = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/details/:id" element={<MovieDetail />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/details/:id" element={<MovieDetail />} />
+      </Routes>
     </div>
   );
 };
