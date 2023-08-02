@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import Login from "./pages/Login";
 
-import { useState } from "react";
 import PrivateRouter from "./pages/PrivateRouter";
 import FireBaseProvider from "./context/FireBaseContext";
 import Register from "./pages/Register";

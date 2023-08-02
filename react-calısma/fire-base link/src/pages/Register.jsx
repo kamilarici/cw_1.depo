@@ -5,9 +5,11 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { FirebaseContext } from "../context/FireBaseContext";
+import { auth } from "../FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
-  const { setCurrentUser } = useContext(FirebaseContext);
+  const { setCurrentUser, createUser } = useContext(FirebaseContext);
 
   const navigate = useNavigate();
 
@@ -15,10 +17,11 @@ const Register = () => {
     e.preventDefault();
 
     setCurrentUser({
-      email: e.target[0].value,
-      password: e.target[1].value,
+      email: e.target[2].value,
+      password: e.target[3].value,
     });
-    console.log(e);
+    // createUserWithEmailAndPassword(auth, e.target[2].value, e.target[3].value);
+    createUser(e.target[2].value, e.target[3].value);
     navigate(-1);
   };
 
