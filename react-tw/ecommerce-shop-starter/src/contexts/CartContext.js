@@ -6,6 +6,8 @@ const CartProvider = ({ children }) => {
   const [card, setCard] = useState([]);
   const [itemAmount, setItemAmount] = useState(0);
 
+  const [total, setTotal] = useState(0);
+
   useEffect(() => {
     const amount = card.reduce((accumulator, currentItem) => {
       return accumulator + currentItem.amount;

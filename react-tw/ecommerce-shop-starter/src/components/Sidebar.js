@@ -25,7 +25,7 @@ const Sidebar = () => {
           <IoMdArrowForward />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b ">
         {card.map((item) => {
           return <CardItem item={item} key={item.id} />;
         })}
