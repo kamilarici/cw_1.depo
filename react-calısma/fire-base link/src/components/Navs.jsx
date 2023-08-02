@@ -44,7 +44,7 @@ function Navs() {
                 <Link className="nav-link" to="/login">
                   Login
                 </Link>
-                <Link className="nav-link" to="/login">
+                <Link className="nav-link" to="/register">
                   Register
                 </Link>{" "}
               </>
