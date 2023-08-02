@@ -11,11 +11,11 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ((e) => {
     e.preventDefault();
-    let email=e.target[0].value
-    let password=e.target[1].value,
-  };
+    let email=e.target[0].value;
+    let password=e.target[1].value;
+  });
 
     setCurrentUser({
       email: e.target[0].value,
