@@ -7,8 +7,8 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import CardItem from "./CarrdItem";
 import { CardContext } from "../contexts/CartContext";
 const Sidebar = () => {
-  const { card, clearCard } = useContext(CardContext);
   const { isOpen, handleClose } = useContext(SidebarContext);
+  const { card, clearCard, total } = useContext(CardContext);
 
   return (
     <div
@@ -33,7 +33,7 @@ const Sidebar = () => {
       <div className=" flex flex-col gap-y-3 py-4 mt-4">
         <div className=" flex w-full justify-between items-center">
           <div className="uppercase font-semibold">
-            <span>Total:</span>$ 1000
+            <span>Total:</span>$ {total}
           </div>
           <div
             onClick={clearCard}
