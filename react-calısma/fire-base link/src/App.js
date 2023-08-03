@@ -6,18 +6,16 @@ import People from "./pages/People";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import Login from "./pages/Login";
-
 import PrivateRouter from "./pages/PrivateRouter";
 import FireBaseProvider from "./context/FireBaseContext";
 import Register from "./pages/Register";
 
 function App() {
   // //! Local State
-  // const [user, setUser] = useState({ email: "", password: "" });
 
   return (
-    <FireBaseProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <FireBaseProvider>
         <Navs />
         <Routes>
           <Route index element={<Home />} />
@@ -33,8 +31,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
-    </FireBaseProvider>
+      </FireBaseProvider>
+    </BrowserRouter>
   );
 }
 

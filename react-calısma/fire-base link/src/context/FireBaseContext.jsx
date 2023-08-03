@@ -1,43 +1,75 @@
-import React, { createContext } from "react";
-import { useState } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../FirebaseConfig";
-export const FirebaseContext = createContext();
+import React, { createContext, useEffect, useState } from 'react'
+import { auth } from '../FirebaseConfig'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
+
+
+
+export const FirebaseContext = createContext()
+
 
 const FireBaseProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(false);
 
-  //? *****createuser******
+  const navigate = useNavigate()
+
+  const [currentUser, setCurrentUser] = useState(false)
+  
+  useEffect(() => {
+    userObserver()
+  }, [])
+
   const createUser = async (email, password, displayName) => {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    await updateProfile(auth.currentUser, {
-      displayName: displayName,
+
+    try {
+     const userCredential =  await createUserWithEmailAndPassword(auth, email, password)
+     
+      await updateProfile(auth.currentUser, {
+        displayName: displayName
+      });
+
+      setCurrentUser(userCredential.user.displayName)
+
+    } catch (error) {
+      console.log(error.message);
+    }
+
+  }
+
+  const LoginUser = async (email, password) => {
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+    } catch (error) {
+      alert("sen kimsen la?? Hadi bir kayit ol gel")
+      navigate("/register")
+    }
+
+  }
+
+  const logOut = () => {
+    signOut(auth)
+  }
+
+  const userObserver = () => {
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setCurrentUser(user.displayName)
+
+      } else {
+        console.log('user key bos');
+      }
     });
 
-    console.log(userCredential);
-  };
-  //? *******
-  const loginUser = async (email, password) => {
-    const user = await signInWithEmailAndPassword(auth, email, password);
-    console.log(user);
-  };
-  // const values ={currentUser, setCurrentUser, createUser,loginUser}
-  return (
-    <FirebaseContext.Provider
-      value={{ currentUser, setCurrentUser, createUser, loginUser }}
-    >
-      {children}
-    </FirebaseContext.Provider>
-  );
-};
+  }
 
-export default FireBaseProvider;
+
+
+  const values = { currentUser, setCurrentUser, createUser, LoginUser,logOut }
+
+  return (
+    <FirebaseContext.Provider value={values}>{children}</FirebaseContext.Provider>
+  )
+}
+
+export default FireBaseProvider
