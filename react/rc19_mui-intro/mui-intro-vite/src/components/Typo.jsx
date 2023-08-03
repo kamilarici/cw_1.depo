@@ -1,14 +1,15 @@
 // import { Typography,Button } from "@mui/material"
 
-import Typography from "@mui/material/Typography";
+import Typography from "@mui/material/Typography"
 //? Performans acisindan daha mantikli
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import Button from "@mui/material/Button"
+import Box from "@mui/material/Box"
+import Container from "@mui/material/Container"
+import Stack from "@mui/material/Stack"
 
 const Typo = () => {
   return (
-    <Container>
+    <Container maxWidth="md">
       <Box
         sx={{
           padding: "1rem",
@@ -39,9 +40,57 @@ const Typo = () => {
         >
           Button Text
         </Typography>
-      </Box>
-    </Container>
-  );
-};
 
-export default Typo;
+        <Typography variant="h2" mt={2} color={"koyuMor.light"}>
+          Button Text
+        </Typography>
+        <Typography variant="h2" mt={2} color={"koyuMor.main"}>
+          Button Text
+        </Typography>
+        <Typography variant="h2" mt={2} color={"koyuMor.dark"}>
+          Button Text
+        </Typography>
+      </Box>
+
+      <Stack
+        direction="row"
+        spacing={1}
+        mt={4}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Button variant="outlined" color="primary">
+          Click
+        </Button>
+        <Button variant="contained" color="secondary">
+          Click
+        </Button>
+        <Button variant="contained" color="koyuMor">
+          Click
+        </Button>
+        <Button variant="contained" color="warning">
+          Click
+        </Button>
+        <Button variant="contained" color="error">
+          Click
+        </Button>
+
+        <Button
+          variant="contained"
+          sx={{ color: "purple", backgroundColor: "yellow" }}
+        >
+          Click
+        </Button>
+
+        <Button
+          variant="contained"
+          sx={{ color: "error.dark", backgroundColor: "warning.light" }}
+        >
+          Click
+        </Button>
+      </Stack>
+    </Container>
+  )
+}
+
+export default Typo
