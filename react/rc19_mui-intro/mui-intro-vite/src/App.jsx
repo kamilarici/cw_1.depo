@@ -1,5 +1,11 @@
+import Typo from "./components/Typo";
+
 function App() {
-  return <>muı</>;
+  return (
+    <>
+      <Typo />
+    </>
+  );
 }
 
 export default App;
