@@ -3,28 +3,41 @@
 import Typography from "@mui/material/Typography";
 //? Performans acisindan daha mantikli
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 const Typo = () => {
   return (
-    <div>
-      <Typography variant="h5" component="h1" color="lightcoral" mt={4}>
+    <Box
+      sx={{
+        padding: "1rem",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        border: "1px solid tomato",
+      }}
+    >
+      <Typography variant="h6" component="h1" color="lightcoral" mt={4}>
         MUI Typo
       </Typography>
-      <Typography variant="button" color="lightcoral" mt={4}>
+
+      <Typography variant="subtitle2" color="palegreen">
         MUI Typo
       </Typography>
-      <Typography variant="button" color="lightcoral" mt={4}>
-        MUI Typo
+
+      {/* span */}
+      <Typography variant="button" mt={2}>
+        Button Text
       </Typography>
+
+      {/* p */}
       <Typography
-        sx={{ color: "blue", backgroundColor: "red" }}
-        variant="button"
-        color="lightcoral"
-        mt={4}
+        variant="body2"
+        sx={{ color: "blue", backgroundColor: "palevioletred", mt: "1rem" }}
+        align="center"
       >
-        MUI Typo
+        Button Text
       </Typography>
-    </div>
+    </Box>
   );
 };
 
