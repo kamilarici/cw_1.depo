@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import PrivateRouter from "./pages/PrivateRouter";
 import FireBaseProvider from "./context/FireBaseContext";
 import Register from "./pages/Register";
+import MovieProvider from "./context/MovieContext";
 
 function App() {
   // //! Local State
@@ -17,19 +18,21 @@ function App() {
     <BrowserRouter>
       <FireBaseProvider>
         <Navs />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+        <MovieProvider>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
 
-          <Route path="people" element={<PrivateRouter />}>
-            <Route path="" element={<People />} />
-            <Route path=":id" element={<PersonDetail />} />
-          </Route>
+            <Route path="people" element={<PrivateRouter />}>
+              <Route path="" element={<People />} />
+              <Route path=":id" element={<PersonDetail />} />
+            </Route>
 
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </MovieProvider>
         <Footer />
       </FireBaseProvider>
     </BrowserRouter>
