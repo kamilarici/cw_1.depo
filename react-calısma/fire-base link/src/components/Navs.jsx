@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Image from "react-bootstrap/Image";
+
 import { useContext } from "react";
 import { FirebaseContext } from "../context/FireBaseContext";
 
@@ -37,7 +37,9 @@ function Navs() {
               )}
 
               <div>
-                <p className="d-flex align-items-center">{currentUser}</p>
+                <p className="d-flex align-items-center pt-4 p-2">
+                  {currentUser.displayName}
+                </p>
               </div>
             </div>
           </Link>
@@ -45,7 +47,6 @@ function Navs() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link className="fw-bold">{currentUser}</Link>
             <Link className="nav-link" to="/">
               Home
             </Link>
@@ -55,7 +56,7 @@ function Navs() {
             <Link className="nav-link" to="/people">
               People
             </Link>
-            {currentUser ? (
+            {currentUser.displayName ? (
               <Link className="nav-link" to="/login" onClick={LogOutLink}>
                 Logout
               </Link>

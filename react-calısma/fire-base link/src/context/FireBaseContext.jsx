@@ -57,7 +57,8 @@ const FireBaseProvider = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       const { displayName, photoURL } = user;
       if (user) {
-        setCurrentUser(displayName, photoURL);
+        setCurrentUser({ displayName, photoURL });
+        console.log(user);
       } else {
         console.log("user key bos");
       }
@@ -67,7 +68,7 @@ const FireBaseProvider = ({ children }) => {
   const LoginGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.log(error);
     }
