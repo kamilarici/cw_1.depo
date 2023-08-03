@@ -23,9 +23,19 @@ function Navs() {
         <Navbar.Brand>
           <Link className="nav-link" to="/">
             <div className="user-div d-flex align-items-center">
-              <span className="d-flex align-items-center justify-content-center">
-                <i className="fa-regular fa-user fs-4 p-1 border rounded-5   "></i>
-              </span>
+              {currentUser.photoURL ? (
+                <img
+                  src={currentUser.photoURL}
+                  alt=""
+                  width={"50px"}
+                  className="rounded-5"
+                />
+              ) : (
+                <span className="d-flex align-items-center justify-content-center">
+                  <i className="fa-regular fa-user fs-4 p-1 border rounded-5   "></i>
+                </span>
+              )}
+
               <div>
                 <p className="d-flex align-items-center">{currentUser}</p>
               </div>
@@ -47,18 +57,15 @@ function Navs() {
             </Link>
             {currentUser ? (
               <Link className="nav-link" to="/login" onClick={LogOutLink}>
-                {" "}
-                Logout{" "}
+                Logout
               </Link>
             ) : (
               <>
                 <Link className="nav-link" to="/login">
-                  {" "}
-                  Login{" "}
+                  Login
                 </Link>
                 <Link className="nav-link" to="/register">
-                  {" "}
-                  Register{" "}
+                  Register
                 </Link>
               </>
             )}

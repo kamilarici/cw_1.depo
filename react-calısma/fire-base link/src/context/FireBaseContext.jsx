@@ -55,8 +55,9 @@ const FireBaseProvider = ({ children }) => {
 
   const userObserver = () => {
     onAuthStateChanged(auth, (user) => {
+      const { displayName, photoURL } = user;
       if (user) {
-        setCurrentUser(user.displayName);
+        setCurrentUser(displayName, photoURL);
       } else {
         console.log("user key bos");
       }
