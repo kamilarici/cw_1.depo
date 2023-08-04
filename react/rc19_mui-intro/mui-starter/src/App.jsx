@@ -14,7 +14,9 @@ function App() {
         main: deepPurple[200],
       },
       mor: {
-        main: deepPurple[800],
+        main: deepPurple[500],
+        light: deepPurple[200],
+        dark: deepPurple[800],
       },
     },
   });

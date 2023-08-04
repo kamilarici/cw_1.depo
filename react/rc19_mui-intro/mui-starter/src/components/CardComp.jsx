@@ -11,7 +11,7 @@ export default function AppBarComp() {
   console.log(data);
   return (
     <>
-      <Typography variant="h2" align="center" color="mor">
+      <Typography variant="h2" align="center" color="">
         CARD AND GRİD
       </Typography>
       <Grid container spacing={4} justifyContent={"center"}>
