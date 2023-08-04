@@ -3,15 +3,17 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 const Typo = () => {
   return (
-    <Container sx={{ maxWidth: "sm", justifyContent: "center" }}>
+    <Container sx={{ maxWidth: "xl" }}>
       <Box
         sx={{
           padding: "1rem",
           display: "flex",
           flexDirection: "column",
-          gap: "2rem",
+          gap: "",
           border: "1px solid red",
         }}
       >
@@ -50,6 +52,19 @@ const Typo = () => {
           body2
         </Typography>
       </Box>
+      <Stack
+        direction="row"
+        spacing={5}
+        mt={5}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Button variant="contained" color="error">
+          click
+        </Button>
+        <Button variant="contained">click</Button>
+        <Button variant="">click</Button>
+      </Stack>
     </Container>
   );
 };
