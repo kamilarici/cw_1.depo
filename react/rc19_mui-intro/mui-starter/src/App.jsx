@@ -1,7 +1,9 @@
+import Typo from "./components/Typo";
+
 function App() {
   return (
     <>
-      <h1>mui</h1>
+      <Typo />
     </>
   );
 }
