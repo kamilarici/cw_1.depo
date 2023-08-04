@@ -1,32 +1,37 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import axios from "axios";
-const MovieContext = createContext();
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react'
+import { createContext } from 'react'
 
-const API_KEY = "1:233849661111:web:26993405f83f5c8fdc4f32";
+const MovieContext = createContext()
+
+const API_KEY = "b1ad040c8b59ee92603839b9fbbe4adf";
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 
-const MovieProvider = ({ children }) => {
-  const [movies, setMovies] = useState([]);
+const MovieProvider = ({children}) => {
 
-  useEffect(() => {
-    getMovies(FEATURED_API);
-  }, []);
+    const [movies, setMovies] = useState([])
 
-  const getMovies = async (API) => {
-    const res = await axios.get(API);
-  };
+    useEffect(() => {
+        getMovies(FEATURED_API)
+    }, [])
+    
 
-  const values = {
-    movies,
-    setMovies,
-  };
+    const getMovies = async(API) => {
+      const res = await axios(API)
+      setMovies(res.data.results)
+    }
+
+
+
+const values = {movies,getMovies}
+
   return (
     <MovieContext.Provider value={values}>{children}</MovieContext.Provider>
-  );
-};
+  )
+}
 
 export default MovieProvider;
 
 export const useMovieContext = () => {
-  return useContext(MovieContext);
-};
+  return useContext(MovieContext)
+}
