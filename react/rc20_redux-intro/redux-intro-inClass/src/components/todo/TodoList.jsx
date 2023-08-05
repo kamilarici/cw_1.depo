@@ -1,9 +1,9 @@
-import TodoItem from "./TodoItem"
+import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   const handleClearList = () => {
-    dispatch(clearTodo())
-  }
+    dispatch(clearTodo());
+  };
 
   return (
     <div>
@@ -18,7 +18,7 @@ const TodoList = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoList
+export default TodoList;

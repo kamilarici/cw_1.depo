@@ -9,7 +9,10 @@ export const addTodo = (payload) => ({ type: ADD_TODO, payload });
 
 //? baslangic durumlari
 const initialState = {
-  todoList: [{ id: new Date().getTime(), text: "work redux", completed: true }],
+  todoList: [
+    { id: new Date().getTime(), text: "work redux", completed: false },
+    {},
+  ],
 };
 
 export const todoReducer = (state = initialState, { type, payload }) => {
