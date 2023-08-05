@@ -5,12 +5,15 @@ import App from "./App";
 
 import SidebarProvider from "./contexts/SidebarContext";
 import ProductProvider from "./contexts/ProductContext";
+import CardProvider from "./contexts/CardContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <SidebarProvider>
-    <ProductProvider>
-      <App />
-    </ProductProvider>
+    <CardProvider>
+      <ProductProvider>
+        <App />
+      </ProductProvider>
+    </CardProvider>
   </SidebarProvider>
 );
