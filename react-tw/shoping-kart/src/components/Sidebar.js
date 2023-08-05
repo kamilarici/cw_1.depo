@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const { handleClose, isOpen } = useSidebarContext();
 
-  
-
   return (
     <div
       className={`${
@@ -29,9 +27,7 @@ const Sidebar = () => {
       </div>
       {/* sibebar cart items */}
       <div className="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
-      
         <CartItem />;
-
       </div>
 
       <div className=" flex flex-col gap-y-3 py-4 mt-4 px-6">
@@ -39,10 +35,22 @@ const Sidebar = () => {
           <div className="uppercase font-semibold">
             <span className="mr-2">Total:</span>$ 102
           </div>
-          <div className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl"><FiTrash2/></div>
+          <div className="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl">
+            <FiTrash2 />
+          </div>
         </div>
-        <Link to={'/'} className="bg-gray-200 flex p-4 justify-center items-center text-primary w-full font-medium">View Cart</Link>
-        <Link to={'/'} className="bg-primary flex p-4 justify-center items-center text-white w-full font-medium">Checkout</Link>
+        <Link
+          to={"/"}
+          className="bg-gray-200 flex p-4 justify-center items-center text-primary w-full font-medium"
+        >
+          View Cart
+        </Link>
+        <Link
+          to={"/"}
+          className="bg-primary flex p-4 justify-center items-center text-white w-full font-medium"
+        >
+          Checkout
+        </Link>
       </div>
     </div>
   );
