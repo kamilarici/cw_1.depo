@@ -1,8 +1,8 @@
-import "./App.css";
-import Counter from "./components/counter/Counter";
-import Todo from "./components/todo/Todo";
-import { Provider } from "react-redux";
-import { store } from "./store";
+import "./App.css"
+import Counter from "./components/counter/Counter"
+import Todo from "./components/todo/Todo"
+import { Provider } from "react-redux"
+import { store } from "./store"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Todo />
       </Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

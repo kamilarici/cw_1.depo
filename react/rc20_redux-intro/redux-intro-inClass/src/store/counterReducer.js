@@ -1,28 +1,34 @@
-//? todoReducer type declaration
-export const ADD_TODO = "ADD_TODO";
-export const DELETE_TODO = "DELETE_TODO";
-export const TOGGLE_TODO = "TOGGLE_TODO";
-export const CLEAR_TODO = "CLEAR_TODO";
+//? counter type declarations
+//* string'ler hataya meyillidir.Bu hatalari minimize etmek icin string type'lari degiskenlere saklanir ve degisken olarak kullanilabilir.
+export const INC = "INC"
+export const DEC = "DEC"
+export const CLR = "CLR"
 
-//? action function declartion
-export const addTodo = (payload) => ({ type: ADD_TODO, payload });
+//! action islemlerini basitlestirmek icin fonksiyonlar yazilabilir.
+export const increment = () => {
+  return { type: INC }
+}
+export const decrement = () => ({ type: DEC })
+export const clear = () => ({ type: CLR })
 
-//? baslangic durumlari
+//? State'lerin baslangic durumlarinin belirlenmesi
 const initialState = {
-  todoList: [{ id: new Date().getTime(), text: "work redux", completed: true }],
-};
+  count: 0,
+}
 
-export const todoReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case ADD_TODO:
-      return {
-        todoList: [
-          ...state.todoList,
-          { id: new Date().getTime(), text: payload, completed: false },
-        ],
-      };
+//? Pure Function (reducer)
+export const counterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case INC: //? count:  state.count + 1
+      return { count: state.count + 1 }
 
+    case DEC:
+      return { count: state.count - 1 }
+
+    case CLR:
+      return { count: 0 }
     default:
-      return state;
+      return state
+    //! Reducer fonksiyonu muhakkak bir state objesi dondurmelidir. Yanlis bir type gelse bile state'in ilk halini dondurmelidir.
   }
-};
+}
