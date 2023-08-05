@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import "./Counter.css";
+import { CLR } from "../../store/counterReducer";
 
 const Counter = () => {
   //? Global state'in tüketilmesi
@@ -20,7 +21,7 @@ const Counter = () => {
         </button>
         <button
           className="counter-button zero"
-          onClick={() => dispatch({ type: "CLR" })}
+          onClick={() => dispatch({ type: CLR })}
         >
           reset
         </button>

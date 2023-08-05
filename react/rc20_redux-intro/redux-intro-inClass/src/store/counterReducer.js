@@ -1,3 +1,7 @@
+export const INC = "INC";
+export const DEC = "DEC";
+export const CLR = "CLR";
+
 //? State'lerin baslangic durumlarinin belirlenmesi
 const initialState = {
   count: 10,
