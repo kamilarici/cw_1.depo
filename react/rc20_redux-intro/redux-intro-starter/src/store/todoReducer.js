@@ -5,6 +5,8 @@ export const CLEAR_TODO = "CLEAR_TODO";
 
 export const addTodo = (payload) => ({ type: ADD_TODO, payload });
 export const clearTodo = () => ({ type: CLEAR_TODO });
+export const deleteTodo = (id) => ({ type: CLEAR_TODO, id });
+// export const clearTodo = () => ({ type: CLEAR_TODO });
 
 const initialState = {
   todoList: [{ id: new Date().getTime(), text: "work redux", completed: true }],
@@ -23,6 +25,13 @@ export const todoReducer = (state = initialState, { type, payload }) => {
     case CLEAR_TODO:
       //? obje array içine  obje atılacak
       return initialState;
+    case DELETE_TODO:
+      return {
+        // todoList: [{ ...state.todoList.filter((item) => item.id === id) }],
+      };
+    // case TOGGLE_TODO:
+    //   //? obje array içine  obje atılacak
+    //   return initialState;
 
     default:
       return state;
