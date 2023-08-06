@@ -11,7 +11,8 @@ import {
 
 const Counter = () => {
   //? global state okunması
-  const count = useSelector((state) => state.count);
+  // const count = useSelector((state) => state.count);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   return (
     <div className="app">
