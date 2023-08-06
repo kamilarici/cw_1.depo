@@ -1,12 +1,14 @@
 import React from "react";
 import okLogo from "../../assets/ok.png";
 import deleteLogo from "../../assets/delete.png";
-import { deleteTodo } from "../../store/todoReducer";
+import { deleteTodo, toogleTodo } from "../../store/todoReducer";
 import { useDispatch } from "react-redux";
 
 const TodoItem = ({ completed, text, id }) => {
   const dispatch = useDispatch();
-  const handleToggle = () => {};
+  const handleToggle = (id) => {
+    dispatch(toogleTodo(id));
+  };
 
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
@@ -27,7 +29,7 @@ const TodoItem = ({ completed, text, id }) => {
             src={okLogo}
             className="ok-logo"
             alt="ok logo"
-            onClick={handleToggle}
+            onClick={() => handleToggle(id)}
           />
         </span>
         <span>
@@ -36,6 +38,7 @@ const TodoItem = ({ completed, text, id }) => {
             className="delete-logo"
             alt="delete logo"
             onClick={() => handleDelete(id)}
+            // onClick={() => console.log(id)}
           />
         </span>
       </div>
