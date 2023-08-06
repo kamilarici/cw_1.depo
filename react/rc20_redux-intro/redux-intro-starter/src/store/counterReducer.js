@@ -10,7 +10,7 @@ export const increment = () => {
 };
 export const decrement = () => ({ type: DEC });
 export const clear = () => ({ type: CLR });
-
+//? ********111111111**************************
 const initialState = {
   count: 10,
 };
@@ -26,3 +26,5 @@ export const counterReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+//? **************************************

@@ -6,10 +6,12 @@ import { store } from "./store";
 function App() {
   return (
     <div className="app">
+      {/* //? *******3333333********** */}
       <Provider store={store}>
         <Counter />
         <Todo />
       </Provider>
+      {/* //? *******3333333**************** */}
     </div>
   );
 }

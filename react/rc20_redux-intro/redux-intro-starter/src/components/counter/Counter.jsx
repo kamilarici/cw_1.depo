@@ -1,4 +1,6 @@
+//? **********44444444********
 import { useSelector, useDispatch } from "react-redux";
+//? ***********************************************************
 import "./Counter.css";
 import {
   CLR,
@@ -10,8 +12,10 @@ import {
 } from "../../store/counterReducer";
 
 const Counter = () => {
+  //? ??************444444444
   //? global state okunması
   // const count = useSelector((state) => state.count);
+
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   return (
@@ -23,6 +27,7 @@ const Counter = () => {
           className="counter-button positive"
           // onClick={() => dispatch({ type: INC })}
           onClick={() => dispatch(increment())}
+          //? ********************************************
         >
           increase
         </button>
@@ -30,6 +35,7 @@ const Counter = () => {
           className="counter-button zero"
           // onClick={() => dispatch({ type: CLR })}
           onClick={() => dispatch(clear())}
+          //? ********************************************
         >
           reset
         </button>
@@ -37,6 +43,7 @@ const Counter = () => {
           className="counter-button negative"
           // onClick={() => dispatch({ type: DEC })}
           onClick={() => dispatch(decrement())}
+          //? ***********************************************
         >
           decrease
         </button>
