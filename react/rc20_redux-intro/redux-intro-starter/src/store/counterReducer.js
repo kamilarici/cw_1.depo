@@ -10,14 +10,18 @@ export const increment = () => {
 };
 export const decrement = () => ({ type: DEC });
 export const clear = () => ({ type: CLR });
-//? ********111111111**************************
+//? ********111111111*******pure reducer funtion  *******************
+//!başlangıç state 1
 const initialState = {
   count: 10,
 };
+//! 2
+//! action dahili obje
 export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
+    //!3 farklı ihtimal var
     case INC:
-      return { count: state.count + 1 };
+      return { count: state.count + 1 }; //! count:state.count+1
     case DEC:
       return { count: state.count - 1 };
     case CLR:

@@ -1,4 +1,4 @@
-//? **********44444444********
+//? **********44444444**** tüketme kullanma usesellector hook içinde yapılır****
 import { useSelector, useDispatch } from "react-redux";
 //? ***********************************************************
 import "./Counter.css";
@@ -17,7 +17,7 @@ const Counter = () => {
   // const count = useSelector((state) => state.count);
 
   const count = useSelector((state) => state.counter.count);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //kostom redux hook
   return (
     <div className="app">
       <h2 className="counter-header">Counter With Redux</h2>

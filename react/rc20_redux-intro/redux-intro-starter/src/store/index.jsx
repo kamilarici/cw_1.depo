@@ -10,3 +10,12 @@ const rootReducer = combineReducers({
 });
 export const store = createStore(rootReducer);
 //? ************************************
+
+// import { createStore, combineReducers } from "redux";
+// import { counterReducer } from "./counterReducer";
+//
+//
+///
+//
+
+// export const store = createStore(counterReducer);
