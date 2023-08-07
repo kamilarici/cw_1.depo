@@ -5,11 +5,11 @@ const initialState = {
   news: [],
 };
 
-const getNews = createAsyncThunk(
+export const getNews = createAsyncThunk(
   "getNewsFunc", //? action type name
 
   async () => {
-    const API_KEY = "47d350b7a633401694e0fa5b4ddcfd46";
+    const API_KEY = "1a1a999e0d7240a6bd2dead87bcca78e";
     const url = `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${API_KEY}`;
     const { data } = await axios(url);
     console.log(data);
