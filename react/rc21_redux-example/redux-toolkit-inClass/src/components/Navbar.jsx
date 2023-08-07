@@ -30,12 +30,12 @@ export default function Navbar() {
             Clarusway News
           </Typography>
 
-          {user.email && (
+          {user?.email && (
             <Button color="inherit" onClick={handleLogout}>
               Logout
             </Button>
           )}
-          {!user.email && <Button color="inherit">Login</Button>}
+          {!user?.email && <Button color="inherit">Login</Button>}
         </Toolbar>
       </AppBar>
     </Box>
