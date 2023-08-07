@@ -11,6 +11,7 @@ import { useEffect } from "react"
 
 const News = () => {
   const dispatch = useDispatch()
+  const {news,error}
 
   useEffect(() => {
     dispatch(getNews())
