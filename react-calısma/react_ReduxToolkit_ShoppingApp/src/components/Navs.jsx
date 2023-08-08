@@ -1,10 +1,13 @@
 import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Rozet from "./Rozet";
+import { useSelector } from "react-redux";
 
 function Navs() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(false);
+
+  // const user =useSelector(state)=> state.auth.user
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -53,6 +56,7 @@ function Navs() {
 
             <ul className="flex justify-center items-end">
               <li>
+                {/* {user?.email && } */}
                 <Link
                   className="text-md hover:bg-slate-200 hover:rounded-sm p-3"
                   to="/login"
