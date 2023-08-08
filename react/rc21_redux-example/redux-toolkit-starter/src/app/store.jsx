@@ -6,4 +6,5 @@ export const store = configureStore({
     auth: authReducer,
     // api:newsReducer
   },
+  devTools: process.env.NODE_ENV !== "production",
 });
