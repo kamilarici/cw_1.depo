@@ -7,6 +7,8 @@ const initialState = {
 const getNews = createAsyncThunk("getNewsFunc", async () => {
   const API_KEY = "47d350b7a633401694e0fa5b4ddcfd46";
   const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+  const data = awaitaxios(url);
+  console.log(data);
 });
 
 const newsSlice = createSlice({
