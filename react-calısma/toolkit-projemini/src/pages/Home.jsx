@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 
 const Home = () => {
   useEffect(() => {
-    const getProducts = async () => {
-      const data = await fetch("https://fakestoreapi.com/products");
-      const result = await data.json();
-      console.log(result);
-    };
+    // const getProducts = async () => {
+    //   const data = await fetch("https://fakestoreapi.com/products");
+    //   const result = await data.json();
+    //   console.log(result);
+    // };
 
-    getProducts();
+    dispatch(getProducts());
   }, []);
 
   return (
