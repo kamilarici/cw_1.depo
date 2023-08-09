@@ -20,6 +20,7 @@ const ProductsSlice = createSlice({
     // state.products=action.payload
     //     }
   },
+  extraReducers:
 });
 
 export const {} = ProductsSlice.actions;
