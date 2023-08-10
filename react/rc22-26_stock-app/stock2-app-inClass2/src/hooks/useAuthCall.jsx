@@ -90,9 +90,9 @@ const useAuthCall = () => {
       toastSuccessNotify("kayit islemi basarili");
       navigate("/stock");
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.non_field_errors[0]);
+      toastErrorNotify("Kayit islemi basarisiz olmustur.");
     }
   };
 
