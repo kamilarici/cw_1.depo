@@ -1,15 +1,18 @@
-import Container from "@mui/material/Container"
-import Typography from "@mui/material/Typography"
-import Avatar from "@mui/material/Avatar"
-import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
-import Grid from "@mui/material/Grid"
-import Box from "@mui/material/Box"
-import { Link } from "react-router-dom"
-import RegisterForm, { registerSchema } from "../components/RegisterForm"
-import { Formik } from "formik"
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import LockIcon from "@mui/icons-material/Lock";
+import image from "../assets/result.svg";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
+import RegisterForm, { registerSchema } from "../components/RegisterForm";
+import { Formik } from "formik";
+import useAuthCall from "../hooks/useAuthCall";
 
 const Register = () => {
+  const { register } = useAuthCall();
+
   return (
     <Container maxWidth="lg">
       <Grid
@@ -58,9 +61,9 @@ const Register = () => {
             }}
             validationSchema={registerSchema}
             onSubmit={(values, actions) => {
-              //TODO register(values)
-              actions.resetForm()
-              actions.setSubmitting(false)
+              register({ ...values, password2: values.password });
+              actions.resetForm();
+              actions.setSubmitting(false);
             }}
             component={(props) => <RegisterForm {...props} />}
           ></Formik>
@@ -77,7 +80,7 @@ const Register = () => {
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
