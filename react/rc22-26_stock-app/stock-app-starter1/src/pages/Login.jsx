@@ -1,16 +1,18 @@
-import Avatar from "@mui/material/Avatar"
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
-import { Link, useNavigate } from "react-router-dom"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import { Button } from "@mui/material"
+import Avatar from "@mui/material/Avatar";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import LockIcon from "@mui/icons-material/Lock";
+import image from "../assets/result.svg";
+import { Link, useNavigate } from "react-router-dom";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
+import { Formik } from "formik";
 
 const Login = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const loginSchema = {};
 
   return (
     <Container maxWidth="lg">
@@ -48,7 +50,15 @@ const Login = () => {
           >
             Login
           </Typography>
-
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={loginSchema}
+            onSubmit={(values, action) => {
+              //todo login()
+              action.resetForm();
+              action.setSubmitting(false);
+            }}
+          ></Formik>
           <Box
             component="form"
             sx={{ display: "flex", flexDirection: "column", gap: 2 }}
@@ -84,7 +94,7 @@ const Login = () => {
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
