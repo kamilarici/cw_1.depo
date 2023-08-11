@@ -12,10 +12,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuListItems from "../components/MenuListItems";
 import { Outlet } from "react-router-dom";
+import { Button } from "@mui/material";
+import useAuthCall from "../hooks/useAuthCall";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
+  const { logout } = useAuthCall();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -54,9 +57,12 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+            Stock App
           </Typography>
+          <Button variant="contained" onClick={() => logout()}>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Box
@@ -78,6 +84,8 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "secondary.main",
+              color: "white",
             },
           }}
         >
@@ -90,6 +98,7 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "secondary.main",
             },
           }}
           open
@@ -111,13 +120,5 @@ function Dashboard(props) {
     </Box>
   );
 }
-
-// Dashboard.propTypes = {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
 
 export default Dashboard;
