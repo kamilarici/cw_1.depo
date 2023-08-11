@@ -27,7 +27,7 @@
 //   }
 // }
 //? custom hook yazdık
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -48,6 +48,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.post(
+        // `${import.meta.env.VITE_BASE_URL}/account/auth/login/`,
         `${BASE_URL}/account/auth/login/`,
         userData
       );
@@ -68,6 +69,7 @@ const useAuthCall = () => {
 
     dispatch(fetchStart());
     try {
+      // await axios.post(`${import.meta.env.VITE_BASE_URL}/account/auth/logout/`);
       await axios.post(`${BASE_URL}/account/auth/logout/`);
       dispatch(logoutSuccess());
       toastSuccessNotify("logout islemi basarili");
