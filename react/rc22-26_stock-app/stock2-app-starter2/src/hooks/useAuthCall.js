@@ -37,6 +37,7 @@ import {
   fetchStart,
   loginSuccess,
   logoutSuccess,
+  registerSuccess,
 } from "../features/authSlice";
 const useAuthCall = () => {
   const navigate = useNavigate();
