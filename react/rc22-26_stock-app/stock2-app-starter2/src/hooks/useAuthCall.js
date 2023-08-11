@@ -80,7 +80,29 @@ const useAuthCall = () => {
       toastErrorNotify("logout işlemi başarisiz");
     }
   };
-  return { login, logout };
+  const register = async (userData) => {
+    const BASE_URL = "https://14108.fullstack.clarusway.com";
+
+    dispatch(fetchStart());
+    try {
+      const { data } = await axios.post(
+        // `${import.meta.env.VITE_BASE_URL}/account/auth/login/`,
+        `${BASE_URL}/account/register/`,
+        userData
+      );
+      dispatch(registerSuccess(data));
+      toastSuccessNotify("kayit islemi basarili");
+      navigate("/stock");
+    } catch (error) {
+      //?alternatif hata mesajları
+      // console.log(error.message);
+      console.log(error);
+      dispatch(fetchFail());
+      toastErrorNotify("kayıt işlemi başarisiz");
+      // toastErrorNotify(error.response.data.non_field_errors[0]);
+    }
+  };
+  return { login, logout, register };
 };
 
 export default useAuthCall;
