@@ -55,9 +55,12 @@ const useAuthCall = () => {
       toastSuccessNotify("login islemi basarili");
       navigate("/stock");
     } catch (error) {
+      //?alternatif hata mesajları
+      // console.log(error.message);
       console.log(error);
       dispatch(fetchFail());
       toastErrorNotify("login işlemi başarisiz");
+      // toastErrorNotify(error.response.data.non_field_errors[0]);
     }
   };
   const logout = async () => {
