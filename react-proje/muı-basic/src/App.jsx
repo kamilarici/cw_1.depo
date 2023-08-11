@@ -7,6 +7,7 @@ import logo1 from "./img/1972.jpg";
 import logo2 from "./img/1995.jpg";
 import logo3 from "./img/2005.jpg";
 import logo4 from "./img/2009.jpg";
+import TypographyDers from "./TypographyDers";
 function App() {
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
             />
           </Grid>
         </Grid>
+        <TypographyDers />
       </Container>
     </>
   );
