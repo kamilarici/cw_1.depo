@@ -51,6 +51,7 @@ const icons = [
     url: "https://10001.fullstack.clarusway.com/admin",
   },
 ];
+// window.location.href=item.url
 const MenuListItems = () => {
   const navigate = useNavigate();
   return (
@@ -60,12 +61,18 @@ const MenuListItems = () => {
           <ListItem
             key={index}
             disablePadding
-            onClick={() => navigate(item.url)}
+            onClick={() => {
+              item.url.includes("https" || "www")
+                ? window.open(item.url, "_blank")
+                : navigate(item.url);
+            }}
             sx={{
+              //?  *************
               color: "white",
               "& .MuiSvgIcon-root": { color: "white" },
               "&:hover": { color: "red" },
               "&:hover .MuiSvgIcon-root": { color: "red" },
+              //? ********************
             }}
           >
             <ListItemButton>
