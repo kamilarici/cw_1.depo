@@ -1,17 +1,15 @@
 import { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import axios from "axios";
-// import { fetchFail, fetchStart, getFirmsSuccess } from "../features/stockSlice"
+
 import { useDispatch, useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
+// import axios from "axios"
+// import { fetchFail, fetchStart, getFirmsSuccess } from "../features/stockSlice"
 
 const Firms = () => {
   // const { token } = useSelector((state) => state.auth)
   // const dispatch = useDispatch()
-
-  const { getFirms } = useStockCall();
-  const { firms } = useSelector((state) => state.stock);
 
   // const getFirms = async () => {
   //   dispatch(fetchStart())
@@ -30,8 +28,12 @@ const Firms = () => {
   //   }
   // }
 
+  const { getStockData } = useStockCall();
+  const { firms } = useSelector((state) => state.stock);
+
   useEffect(() => {
-    getFirms();
+    // getFirms()
+    getStockData("firms");
   }, []);
 
   console.log(firms);
