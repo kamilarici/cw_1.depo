@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-
-import { useDispatch, useSelector } from "react-redux";
+import Grid from "@mui/material/Grid";
+import { useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
+import FirmCard from "../components/FirmCard";
 // import axios from "axios"
+// import { useDispatch } from "react-redux"
 // import { fetchFail, fetchStart, getFirmsSuccess } from "../features/stockSlice"
 
 const Firms = () => {
@@ -43,6 +45,14 @@ const Firms = () => {
         Firms
       </Typography>
       <Button variant="contained">NEW FIRM</Button>
+
+      <Grid container justifyContent={"center"} spacing={2}>
+        {firms?.map((firm) => (
+          <Grid item key={firm.id}>
+            <FirmCard firm={firm} />
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 };
