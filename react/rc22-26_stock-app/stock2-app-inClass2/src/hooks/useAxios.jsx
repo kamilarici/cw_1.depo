@@ -4,7 +4,7 @@ import axios from "axios";
 const useAxios = () => {
   const { token } = useSelector((state) => state.auth);
   const axiosWithToken = axios.create({
-    baseURL: `${import.meta.env.VITE_BASE_URL}`,
+    baseURL: `${"https://14108.fullstack.clarusway.com"}`,
     headers: { Authorization: `Token ${token}` },
   });
 
