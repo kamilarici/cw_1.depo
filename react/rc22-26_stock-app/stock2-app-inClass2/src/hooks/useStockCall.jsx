@@ -6,6 +6,26 @@ const useStockCall = () => {
   const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
+  // getStockData("firms")
+  // getStockData("sales")
+
+  const getStockData = async (url) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axios(
+        `${import.meta.env.VITE_BASE_URL}/stock/${url}/`,
+        {
+          headers: { Authorization: `Token ${token}` },
+        }
+      );
+      dispatch(getStockSuccess({ data, url }));
+      console.log(data);
+    } catch (error) {
+      dispatch(fetchFail());
+      console.log(error);
+    }
+  };
+
   const getFirms = async () => {
     dispatch(fetchStart());
     try {
@@ -23,7 +43,24 @@ const useStockCall = () => {
     }
   };
 
-  return { getFirms };
+  const getSales = async () => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axios(
+        `${import.meta.env.VITE_BASE_URL}/stock/sales/`,
+        {
+          headers: { Authorization: `Token ${token}` },
+        }
+      );
+      dispatch(getSalesSuccess(data));
+      console.log(data);
+    } catch (error) {
+      dispatch(fetchFail());
+      console.log(error);
+    }
+  };
+
+  return { getFirms, getSales };
 };
 
 export default useStockCall;
