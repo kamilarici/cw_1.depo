@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import DeleteOutLineIcon from "@mui/icons-material/DeleteOutLine";
 import EditIcon from "@mui/icons-material/Edit";
+import { btnStyle } from "../styles/globalStyles";
 
 export default function FirmCard({ firm }) {
   console.log(firm);
@@ -39,8 +40,8 @@ export default function FirmCard({ firm }) {
         {firm.phone}
       </Typography>
       <CardActions>
-        <EditIcon />
-        <DeleteOutLineIcon />
+        <EditIcon sx={btnStyle} />
+        <DeleteOutLineIcon sx={btnStyle} />
       </CardActions>
     </Card>
   );
