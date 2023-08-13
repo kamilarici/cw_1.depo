@@ -1,18 +1,19 @@
-import Avatar from "@mui/material/Avatar"
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
-import { Link } from "react-router-dom"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import Button from "@mui/material/Button"
-import { Formik, Form } from "formik"
-import { object, string } from "yup"
-import { login } from "../hooks/authApiCall"
-
+import Avatar from "@mui/material/Avatar";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import LockIcon from "@mui/icons-material/Lock";
+import image from "../assets/result.svg";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { Formik, Form } from "formik";
+import { object, string } from "yup";
+// import { login } from "../hooks/useAuthCall"
+import useAuthCall from "../hooks/useAuthCall";
 const Login = () => {
+  const { login } = useAuthCall();
   //? harici validasyon şemasi
   const loginSchema = object({
     email: string()
@@ -26,7 +27,7 @@ const Login = () => {
       .matches(/[a-z]/, "En az bir küçük harf içermelidir.")
       .matches(/[A-Z]/, "En az bir büyük harf içermelidir.")
       .matches(/[!,?{}><%&$#£+-.]+/, "En az bir özel karekter içermelidir."),
-  })
+  });
 
   return (
     <Container maxWidth="lg">
@@ -69,9 +70,9 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, action) => {
-              login(values)
-              action.resetForm()
-              action.setSubmitting(false)
+              login(values);
+              action.resetForm();
+              action.setSubmitting(false);
             }}
           >
             {({ handleChange, handleBlur, values, touched, errors }) => (
@@ -121,7 +122,7 @@ const Login = () => {
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
