@@ -7,8 +7,7 @@ import useStockCall from "../hooks/useStockCall";
 const Firms = () => {
   // const { token } = useSelector((state) => state.auth);
   // const dispatch = useDispatch();
-  const { getFirms } = useStockCall();
-  // const { firms } = useSelector((state) => state.stock);
+
   // const getFirms = async () => {
   //   dispatch(fetchStart());
   //   const BASE_URL = "https://14108.fullstack.clarusway.com";
@@ -24,11 +23,13 @@ const Firms = () => {
   //     console.log(error);
   //   }
   // };
+  const { firms } = useSelector((state) => state.stock);
+  const { getStockData } = useStockCall();
 
   useEffect(() => {
-    getFirms();
+    getStockData("firms");
   }, []);
-
+  console.log(firms);
   return (
     <div>
       <Typography variant="h4" color={"error"} mb={4}>

@@ -18,10 +18,14 @@ const stockSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+    //? 6 farklı fonksiyon yazmak yerine tek fonksiyon ile hallettik(stock.firms.product vs yerine ) use stockcall da parametre geçtik buraya
+
     getStockSuccess: (state, { payload }) => {
       state.loading = false;
-      state[url] = payload;
+      state[payload.url] = payload.data;
+      // ? x[y] demek x in içindeki y yi bana getir
     },
+
     // getFirmsSuccess: (state, { payload }) => {
     //   state.loading = false;
     //   state.firms = payload;
@@ -45,8 +49,10 @@ const stockSlice = createSlice({
 export const {
   fetchStart,
   fetchFail,
-  getFirmsSuccess,
-  getBrandsSuccess,
-  getSalesSuccess,
+  getStockSuccess,
+
+  // getFirmsSuccess,
+  // getBrandsSuccess,
+  // getSalesSuccess,
 } = stockSlice.actions;
 export default stockSlice.reducer;
