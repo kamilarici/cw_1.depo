@@ -18,14 +18,22 @@ const stockSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
-    getFirmsSuccess: (state, { payload }) => {
+    getStockSuccess: (state, { payload }) => {
       state.loading = false;
-      state.firms = payload;
+      state[url] = payload;
     },
-    getBrandsSuccess: (state, { payload }) => {
-      state.loading = false;
-      state.brands = payload;
-    },
+    // getFirmsSuccess: (state, { payload }) => {
+    //   state.loading = false;
+    //   state.firms = payload;
+    // },
+    // getBrandsSuccess: (state, { payload }) => {
+    //   state.loading = false;
+    //   state.brands = payload;
+    // },
+    // getSalesSuccess: (state, { payload }) => {
+    //   state.loading = false;
+    //   state.brands = payload;
+    // },
 
     fetchFail: (state) => {
       state.loading = false;
@@ -34,6 +42,11 @@ const stockSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail, getFirmsSuccess, getBrandsSuccess } =
-  stockSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  getFirmsSuccess,
+  getBrandsSuccess,
+  getSalesSuccess,
+} = stockSlice.actions;
 export default stockSlice.reducer;
