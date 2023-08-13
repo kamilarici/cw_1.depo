@@ -10,7 +10,6 @@ const useStockCall = () => {
   //? ******************************************
   const getStockData = async (url) => {
     dispatch(fetchStart());
-    const BASE_URL = "https://14108.fullstack.clarusway.com";
 
     try {
       const { data } = await axiosWithToken(`/stock/${url}/`);
@@ -25,7 +24,6 @@ const useStockCall = () => {
   //?önce sil sonra get isteği atmak lazım sayfadaki güncellemeyi yapmak için
   const deleteStockData = async (url, id) => {
     dispatch(fetchStart());
-    const BASE_URL = "https://14108.fullstack.clarusway.com";
 
     try {
       await axiosWithToken.delete(`/stock/${url}/${id}/`);
