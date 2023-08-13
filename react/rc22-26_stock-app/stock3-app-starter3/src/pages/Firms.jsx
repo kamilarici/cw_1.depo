@@ -8,7 +8,7 @@ const Firms = () => {
   // const { token } = useSelector((state) => state.auth);
   // const dispatch = useDispatch();
   const { getFirms } = useStockCall();
-  const { firms } = useSelector((state) => state.stock);
+  // const { firms } = useSelector((state) => state.stock);
   // const getFirms = async () => {
   //   dispatch(fetchStart());
   //   const BASE_URL = "https://14108.fullstack.clarusway.com";
@@ -28,7 +28,7 @@ const Firms = () => {
   useEffect(() => {
     getFirms();
   }, []);
-  console.log(firms);
+
   return (
     <div>
       <Typography variant="h4" color={"error"} mb={4}>
