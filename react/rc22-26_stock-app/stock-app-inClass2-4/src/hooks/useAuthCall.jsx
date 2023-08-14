@@ -61,7 +61,7 @@ const useAuthCall = () => {
     } catch (error) {
       console.log(error.message);
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.non_field_errors[0]);
+      toastErrorNotify(error.message);
     }
   };
 
