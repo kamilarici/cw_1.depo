@@ -8,7 +8,7 @@ import { modalStyle } from "../styles/globalStyles";
 import useStockCall from "../hooks/useStockCall";
 
 export default function FirmModal({ open, handleClose, info, setInfo }) {
-  const { postStockData } = useStockCall();
+  const { postStockData, putStockData } = useStockCall();
   //   const [info, setInfo] = useState({
   //     name: "",
   //     phone: "",
@@ -23,7 +23,13 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postStockData("firms", info);
+    console.log(info.id);
+    if (info.id) {
+      putStockData("firms", info);
+    } else {
+      postStockData("firms", info);
+    }
+
     handleClose();
   };
   return (

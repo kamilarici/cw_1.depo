@@ -53,7 +53,6 @@ const Firms = () => {
     getStockData("firms");
   }, []);
 
-  console.log(firms);
   return (
     <div>
       <Typography variant="h4" color={"error"} mb={3}>
