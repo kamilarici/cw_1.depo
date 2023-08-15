@@ -35,7 +35,7 @@ import {
   fetchFail,
   fetchStart,
   loginSuccess,
-  logoutSuccess,
+  // logoutSuccess,
   registerSuccess,
 } from "../features/authSlice";
 
@@ -61,7 +61,7 @@ const useAuthCall = () => {
     } catch (error) {
       console.log(error.message);
       dispatch(fetchFail());
-      toastErrorNotify(error.message);
+      toastErrorNotify(error);
     }
   };
 
