@@ -3,34 +3,43 @@ import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: "id", headerName: "#", headerAlign: "center", flex: 0.5 },
+
   {
-    field: "firstName",
-    headerName: "First name",
-    width: 150,
-    editable: true,
+    field: "category",
+    headerName: "Category",
+
+    flex: 2,
   },
   {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "age",
-    headerName: "Age",
+    field: "brand",
+    headerName: "Brand",
     type: "number",
-    width: 110,
-    editable: true,
+
+    flex: 2,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
+    field: "name",
+    headerName: "Name",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    width: 160,
+
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+  },
+  {
+    field: "stock",
+    headerName: "Stock",
+    type: "number",
+
+    flex: 1,
+  },
+  {
+    field: "actions",
+    headerName: "Actions",
+    type: "number",
+
+    flex: 1,
   },
 ];
 
@@ -46,7 +55,8 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function DataGridDemo() {
+export default function ProductTable() {
+  const { products } = useSelector((state) => state.stock);
   return (
     <Box sx={{ height: 400, width: "100%" }}>
       <DataGrid
@@ -60,7 +70,6 @@ export default function DataGridDemo() {
           },
         }}
         pageSizeOptions={[5]}
-        checkboxSelection
         disableRowSelectionOnClick
       />
     </Box>

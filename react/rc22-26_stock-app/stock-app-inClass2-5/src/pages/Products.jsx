@@ -4,11 +4,10 @@ import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
 import ProductModal from "../components/ProductModal";
-import ProductTable from "../components/ProductTable";
+import ProductTable from "../components/Producttable";
 
 const Products = () => {
   const { getStockData } = useStockCall();
-  const { products } = useSelector((state) => state.stock);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -16,6 +15,8 @@ const Products = () => {
 
   useEffect(() => {
     getStockData("products");
+    getStockData("categories");
+    getStockData("brands");
   }, []);
 
   return (
