@@ -9,7 +9,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { btnStyle } from "../styles/globalStyles";
 import useStockCall from "../hooks/useStockCall_old";
 
-export default function FirmCard({ firm, handleOpen }) {
+export default function FirmCard({ firm, handleOpen, info, setInfo }) {
   const { deleteStockData } = useStockCall();
   return (
     <Card
@@ -43,7 +43,14 @@ export default function FirmCard({ firm, handleOpen }) {
       </Typography>
 
       <CardActions>
-        <EditIcon sx={btnStyle} onClick={handleOpen} />
+        <EditIcon
+          sx={btnStyle}
+          onClick={() => {
+            handleOpen();
+            // ? edite tıklandığında modal dolması için tıklanılan yerin verilerini infoya atarız
+            setInfo(firm);
+          }}
+        />
         <DeleteOutlineIcon
           sx={btnStyle}
           onClick={() => deleteStockData("firms", firm.id)}

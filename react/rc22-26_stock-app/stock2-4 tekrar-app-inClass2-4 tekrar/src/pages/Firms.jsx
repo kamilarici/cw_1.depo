@@ -35,7 +35,21 @@ const Firms = () => {
   const { firms } = useSelector((state) => state.stock);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setInfo({
+      name: "",
+      phone: "",
+      addres: "",
+      image: "",
+    });
+  };
+  const [info, setInfo] = useState({
+    name: "",
+    phone: "",
+    addres: "",
+    image: "",
+  });
   useEffect(() => {
     // getFirms()
     getStockData("firms");
@@ -50,12 +64,22 @@ const Firms = () => {
       <Button variant="contained" onClick={handleOpen}>
         NEW FIRM
       </Button>
-      <FirmModal open={open} handleClose={handleClose} />
+      <FirmModal
+        open={open}
+        handleClose={handleClose}
+        info={info}
+        setInfo={setInfo}
+      />
 
       <Grid container justifyContent={"center"} spacing={2}>
         {firms?.map((firm) => (
           <Grid item key={firm.id}>
-            <FirmCard firm={firm} handleOpen={handleOpen} />
+            <FirmCard
+              firm={firm}
+              handleOpen={handleOpen}
+              info={info}
+              setInfo={setInfo}
+            />
           </Grid>
         ))}
       </Grid>
