@@ -55,7 +55,7 @@ const Firms = () => {
       <Grid container justifyContent={"center"} spacing={2}>
         {firms?.map((firm) => (
           <Grid item key={firm.id}>
-            <FirmCard firm={firm} />
+            <FirmCard firm={firm} handleOpen={handleOpen} />
           </Grid>
         ))}
       </Grid>
