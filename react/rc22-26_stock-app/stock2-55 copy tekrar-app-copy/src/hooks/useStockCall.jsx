@@ -4,7 +4,6 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify"
 import useAxios from "./useAxios"
 
 const useStockCall = () => {
-
   const dispatch = useDispatch()
   const { axiosWithToken } = useAxios()
 
@@ -23,7 +22,7 @@ const useStockCall = () => {
   const deleteStockData = async (url, id) => {
     dispatch(fetchStart())
     try {
-      await axiosWithToken.delete(`/stock/${url}/${id}/`) 
+      await axiosWithToken.delete(`/stock/${url}/${id}/`)
       toastSuccessNotify(`${url} succesfuly deleted`)
       getStockData(url)
     } catch (error) {
@@ -33,7 +32,20 @@ const useStockCall = () => {
     }
   }
 
-  return { getStockData, deleteStockData }
+  const postStockData = async (url, info) => {
+    dispatch(fetchStart())
+    try {
+      await axiosWithToken.post(`/stock/${url}/`, info)
+      toastSuccessNotify(`${url} succesfuly posted`)
+      getStockData(url)
+    } catch (error) {
+      dispatch(fetchFail())
+      toastErrorNotify(`${url} can not be posted`)
+      console.log(error)
+    }
+  }
+
+  return { getStockData, deleteStockData, postStockData }
 }
 
 export default useStockCall
