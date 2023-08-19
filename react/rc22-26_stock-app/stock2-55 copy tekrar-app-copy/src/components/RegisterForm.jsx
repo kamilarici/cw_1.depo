@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import { Form } from "formik";
 import { object, string } from "yup";
 //? bu yapı yup da n gelmektedir
+//? buradan export ediyoruz çekmek istediğimiz yerde çağırmamız gerekiyor
 export const registerSchema = object({
   username: string()
     .max(20, "Kullanıcı adı 10 karakterden az olmalıdır.")
