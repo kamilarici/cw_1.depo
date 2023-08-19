@@ -6,6 +6,7 @@ const PrivateRouter = () => {
 
   // const currentUser = true
   //? user varsa child göster
+  //? user yoksa home yoll
   return currentUser ? <Outlet /> : <Navigate to="/" />;
 };
 
