@@ -12,7 +12,7 @@ const Products = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  // ? bilgileri apiden çekiyoruz
   useEffect(() => {
     getStockData("products");
     getStockData("categories");
