@@ -45,6 +45,7 @@ const KpiCards = () => {
 
   return (
     <Grid container justifyContent="center" spacing={2}>
+      //?iconları map ile dolanıyoruz dinamik oluyor
       {cardData.map((item) => (
         <Grid item key={item.id}>
           <Paper
