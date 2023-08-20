@@ -5,6 +5,7 @@ import { deepPurple, pink, amber } from "@mui/material/colors";
 import { Paper, Grid, Avatar, Typography, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 const KpiCards = () => {
+  //? useselector den çağırıyoruz  redux toolkit aracılığıyla
   const { sales, purchases } = useSelector((state) => state.stock);
 
   const totalSales = sales
