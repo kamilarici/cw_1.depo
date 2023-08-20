@@ -7,9 +7,8 @@ const Home = () => {
       <Typography variant="h4" color="error" mb={2}>
         Dashboard
       </Typography>
-
+      //? istatistik tablo kısmı
       <KpiCards />
-
       <Charts />
     </div>
   );
