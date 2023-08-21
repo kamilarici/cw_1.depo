@@ -1,45 +1,45 @@
-import React from "react"
-import Box from "@mui/material/Box"
-import Modal from "@mui/material/Modal"
+import React from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
-import TextField from "@mui/material/TextField"
-import { Button } from "@mui/material"
-import useStockCall from "../hooks/useStockCall"
-import { MenuItem, Select, InputLabel, FormControl } from "@mui/material"
-import { useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import { modalStyle } from "../styles/globalStyles"
+import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
+import useStockCall from "../hooks/useStockCall";
+import { MenuItem, Select, InputLabel, FormControl } from "@mui/material";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { modalStyle } from "../styles/globalStyles";
 
 export default function PurchaseModal({ open, handleClose, info, setInfo }) {
-  const navigate = useNavigate()
-  const { postStockData, putStockData } = useStockCall()
-  const { firms, products, brands } = useSelector((state) => state.stock)
+  const navigate = useNavigate();
+  const { postStockData, putStockData } = useStockCall();
+  const { firms, products, brands } = useSelector((state) => state.stock);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setInfo({ ...info, [name]: Number(value) })
-  }
+    const { name, value } = e.target;
+    setInfo({ ...info, [name]: Number(value) });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (info.id) {
-      putStockData("purchases", info)
+      putStockData("purchases", info);
     } else {
-      postStockData("purchases", info)
+      postStockData("purchases", info);
     }
 
-    handleClose()
-    setInfo({})
-  }
+    handleClose();
+    setInfo({});
+  };
 
   return (
     <div>
       <Modal
         open={open}
         onClose={() => {
-          handleClose()
-          setInfo({})
+          handleClose();
+          setInfo({});
         }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -71,7 +71,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                     <MenuItem key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
-                  )
+                  );
                 })}
               </Select>
             </FormControl>
@@ -97,7 +97,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                     <MenuItem key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
-                  )
+                  );
                 })}
               </Select>
             </FormControl>
@@ -123,7 +123,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                     <MenuItem key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
-                  )
+                  );
                 })}
               </Select>
             </FormControl>
@@ -156,5 +156,5 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
         </Box>
       </Modal>
     </div>
-  )
+  );
 }
