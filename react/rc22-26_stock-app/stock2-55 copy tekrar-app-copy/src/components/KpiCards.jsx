@@ -4,7 +4,15 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import PaymentsIcon from "@mui/icons-material/Payments";
 import { Grid, Paper, Avatar, Box, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 const KpiCards = () => {
+  const { sales, purchases } = useSelector((state) => state.stock);
+  const totalSales = sales
+    ?.map((item) => Number(item.price_total))
+    .reduce((acc, sale) => acc + sale, 0);
+  const totalPurchases = purchases
+    ?.map((item) => Number(item.price_total))
+    .reduce((acc, sale) => acc + sale, 0);
   const cardData = [
     {
       id: 1,
@@ -12,7 +20,7 @@ const KpiCards = () => {
       bgColor: deepPurple[200],
       color: deepPurple[700],
       title: "sales",
-      value: "$48000",
+      value: `$${totalSales}`,
     },
     {
       id: 1,
@@ -20,7 +28,7 @@ const KpiCards = () => {
       bgColor: pink[200],
       color: pink[700],
       title: "profit",
-      value: "$32000",
+      value: `$${totalSales - totalPurchases}`,
     },
     {
       id: 1,
@@ -28,7 +36,7 @@ const KpiCards = () => {
       bgColor: amber[200],
       color: amber[700],
       title: "purchases",
-      value: "$4800",
+      value: `$${totalPurchases}`,
     },
   ];
   return (
@@ -41,7 +49,7 @@ const KpiCards = () => {
               gap: 4,
               p: 2,
               alignItems: "center",
-              width: "300px",
+              width: "280px",
               justifyContent: "center",
             }}
             elevation={5}
