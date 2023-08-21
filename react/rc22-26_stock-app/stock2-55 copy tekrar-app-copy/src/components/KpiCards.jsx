@@ -8,7 +8,7 @@ const KpiCards = () => {
   const cardData = [
     {
       id: 1,
-      icon: <MonetizationOnIcon />,
+      icon: <MonetizationOnIcon sx={{ fontSize: "2rem" }} />,
       bgColor: deepPurple[200],
       color: deepPurple[700],
       title: "sales",
@@ -16,7 +16,7 @@ const KpiCards = () => {
     },
     {
       id: 1,
-      icon: <ShoppingCartIcon />,
+      icon: <ShoppingCartIcon sx={{ fontSize: "2rem" }} />,
       bgColor: pink[200],
       color: pink[700],
       title: "profit",
@@ -24,7 +24,7 @@ const KpiCards = () => {
     },
     {
       id: 1,
-      icon: <PaymentsIcon />,
+      icon: <PaymentsIcon sx={{ fontSize: "2rem" }} />,
       bgColor: amber[200],
       color: amber[700],
       title: "purchases",
@@ -37,7 +37,14 @@ const KpiCards = () => {
         {cardData.map((item) => (
           <Grid item>
             <Paper>
-              <Avatar sx={{ bgcolor: item.bgColor, color: item.color, width: }}>
+              <Avatar
+                sx={{
+                  bgcolor: item.bgColor,
+                  color: item.color,
+                  width: 70,
+                  height: 70,
+                }}
+              >
                 {item.icon}
               </Avatar>
             </Paper>
