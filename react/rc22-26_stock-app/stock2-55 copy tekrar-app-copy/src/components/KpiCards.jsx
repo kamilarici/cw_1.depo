@@ -3,7 +3,7 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import PaymentsIcon from "@mui/icons-material/Payments";
-import { Grid } from "@mui/material";
+import { Grid, Paper, Avatar } from "@mui/material";
 const KpiCards = () => {
   const cardData = [
     {
@@ -35,7 +35,13 @@ const KpiCards = () => {
     <div>
       <Grid container>
         {cardData.map((item) => (
-          <Grid item></Grid>
+          <Grid item>
+            <Paper>
+              <Avatar sx={{ bgcolor: item.bgColor, color: item.color, width: }}>
+                {item.icon}
+              </Avatar>
+            </Paper>
+          </Grid>
         ))}
       </Grid>
     </div>
