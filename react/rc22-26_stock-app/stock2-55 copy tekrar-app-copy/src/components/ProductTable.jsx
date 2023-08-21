@@ -1,14 +1,14 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { DataGrid, GridActionsCellItem, GridToolbar } from "@mui/x-data-grid";
-import { useSelector } from "react-redux";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { btnStyle } from "../styles/globalStyles";
-import useStockCall from "../hooks/useStockCall";
+import * as React from "react"
+import Box from "@mui/material/Box"
+import { DataGrid, GridActionsCellItem, GridToolbar } from "@mui/x-data-grid"
+import { useSelector } from "react-redux"
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
+import { btnStyle } from "../styles/globalStyles"
+import useStockCall from "../hooks/useStockCall"
 
 export default function ProductTable() {
-  const { products } = useSelector((state) => state.stock);
-  const { deleteStockData } = useStockCall();
+  const { products } = useSelector((state) => state.stock)
+  const { deleteStockData } = useStockCall()
 
   const columns = [
     {
@@ -64,7 +64,7 @@ export default function ProductTable() {
         />,
       ],
     },
-  ];
+  ]
 
   //? api'Den gelmeyen colum bilgileri icin getActions veya renderCell islevleri kullanilabilir.
   //? bu islevler aslinda isimsiz bir fonksiyon cagirirlar ve bu fonksiyon aldigi parametre (params) ile bir cok veriye (rows,columns gibi) erisebilir.
@@ -76,9 +76,9 @@ export default function ProductTable() {
         rows={products}
         columns={columns}
         pageSizeOptions={[20, 50, 75, 100]} //? sayfa basina satir sayisi
-        // disableRowSelectionOnClick
+        disableRowSelectionOnClick
         slots={{ toolbar: GridToolbar }}
       />
     </Box>
-  );
+  )
 }

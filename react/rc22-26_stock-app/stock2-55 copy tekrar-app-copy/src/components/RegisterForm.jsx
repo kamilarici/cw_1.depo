@@ -1,10 +1,9 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import { Form } from "formik";
-import { object, string } from "yup";
-//? bu yapı yup da n gelmektedir
-//? buradan export ediyoruz çekmek istediğimiz yerde çağırmamız gerekiyor
+import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import { Form } from "formik"
+import { object, string } from "yup"
+
 export const registerSchema = object({
   username: string()
     .max(20, "Kullanıcı adı 10 karakterden az olmalıdır.")
@@ -25,7 +24,7 @@ export const registerSchema = object({
     .matches(/[a-z]/, "Password bir küçük harf içermelidir")
     .matches(/[A-Z]/, "Password bir büyük harf içermelidir")
     .matches(/[!,?{}><%&$#£+-.]+/, "Password bir özel karakter içermelidir"),
-});
+})
 
 const RegisterForm = ({
   values,
@@ -104,7 +103,7 @@ const RegisterForm = ({
         </Box>
       </Form>
     </div>
-  );
-};
+  )
+}
 
-export default RegisterForm;
+export default RegisterForm

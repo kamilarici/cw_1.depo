@@ -1,42 +1,41 @@
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import { useState } from "react"
+import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import Modal from "@mui/material/Modal"
+import InputLabel from "@mui/material/InputLabel"
+import MenuItem from "@mui/material/MenuItem"
+import FormControl from "@mui/material/FormControl"
+import Select from "@mui/material/Select"
 
-import TextField from "@mui/material/TextField";
-import Modal from "@mui/material/Modal";
-import { modalStyle } from "../styles/globalStyles";
-import useStockCall from "../hooks/useStockCall";
-
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { modalStyle } from "../styles/globalStyles"
+import useStockCall from "../hooks/useStockCall"
+import { useSelector } from "react-redux"
 
 export default function ProductModal({ open, handleClose }) {
-  const { postStockData } = useStockCall();
-  const [info, setInfo] = useState({
-    name: "",
-    phone: "",
-    address: "",
-    image: "",
-  });
+  const { postStockData } = useStockCall()
+  const { categories, brands } = useSelector((state) => state.stock)
+
+  const [info, setInfo] = useState({ name: "", category_id: "", brand_id: "" })
 
   const handleChange = (e) => {
-    setInfo({ ...info, [e.target.name]: e.target.value });
-  };
+    setInfo({ ...info, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    postStockData("products", products);
-
-    handleClose();
-  };
+    e.preventDefault()
+    postStockData("products", info)
+    handleClose()
+    setInfo({ name: "", category_id: "", brand_id: "" })
+  }
   return (
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={() => {
+          setInfo({ name: "", category_id: "", brand_id: "" })
+          handleClose()
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -47,17 +46,38 @@ export default function ProductModal({ open, handleClose }) {
             onSubmit={handleSubmit}
           >
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <InputLabel id="category">Categories</InputLabel>
               <Select
-                labelId="Categories"
-                id="demo-simple-select"
-                // value={age}
-                label="Age"
+                labelId="category"
+                id="category"
+                name="category_id"
+                value={info?.category_id || ""}
+                label="category"
                 onChange={handleChange}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                {categories?.map(({ id, name }) => (
+                  <MenuItem key={id} value={id}>
+                    {name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl fullWidth>
+              <InputLabel id="brand">Brands</InputLabel>
+              <Select
+                labelId="brand"
+                id="brand"
+                name="brand_id"
+                value={info?.brand_id || ""}
+                label="brand"
+                onChange={handleChange}
+              >
+                {brands?.map(({ id, name }) => (
+                  <MenuItem key={id} value={id}>
+                    {name}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
             <TextField
@@ -66,7 +86,7 @@ export default function ProductModal({ open, handleClose }) {
               id="name"
               type="text"
               variant="outlined"
-              value={info?.name}
+              value={info?.name || ""}
               required
               onChange={handleChange}
             />
@@ -78,5 +98,5 @@ export default function ProductModal({ open, handleClose }) {
         </Box>
       </Modal>
     </div>
-  );
+  )
 }
