@@ -1,15 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login"
-import Register from "../pages/Register"
-import PrivateRouter from "./PrivateRouter"
-import Dashboard from "../pages/Dashboard"
-import Home from "../pages/Home"
-import Purchases from "../pages/Purchases"
-import Sales from "../pages/Sales"
-import Products from "../pages/Products"
-import Firms from "../pages/Firms"
-import Brands from "../pages/Brands"
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import PrivateRouter from "./PrivateRouter";
+import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
+import Purchases from "../pages/Purchases";
+import Sales from "../pages/Sales";
+import Products from "../pages/Products";
+import Firms from "../pages/Firms";
+import Brands from "../pages/Brands";
 
 const AppRouter = () => {
   return (
@@ -18,6 +18,7 @@ const AppRouter = () => {
         <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="stock" element={<PrivateRouter />}>
+          {/* //?nested yapı içinde nasted yapı  */}
           <Route path="" element={<Dashboard />}>
             <Route index element={<Home />} />
             <Route path="purchases" element={<Purchases />} />
@@ -29,7 +30,7 @@ const AppRouter = () => {
         </Route>
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default AppRouter
+export default AppRouter;
