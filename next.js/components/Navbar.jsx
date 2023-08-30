@@ -6,7 +6,7 @@ import React, { Fragment } from "react";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
+// deneme commit
 const Navbar = () => {
   const currentUser = { displayName: "felix franko" };
   return (
