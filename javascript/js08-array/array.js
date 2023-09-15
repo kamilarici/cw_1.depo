@@ -300,3 +300,4 @@ arr.sort();
 // const arr = ['Red','Green',,,,,'Blue']
 
 console.log(arr);
+console.log("object");
