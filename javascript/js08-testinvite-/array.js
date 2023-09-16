@@ -78,22 +78,37 @@
 
 // var foo = new Y();
 
-// console.log(foo.__proto__ == Y.prototype); // true
+// // console.log(foo.__proto__ == Y.prototype); // true
 
-function user(name) {
-  this.name = name;
-}
+// function user(name) {
+//   this.name = name;
+// }
 
-user.prototype.greet = function () {
-  return "hello, " + this.name;
-};
+// user.prototype.greet = function () {
+//   return "hello, " + this.name;
+// };
 
-var mustafa = new user("Mustafa");
-console.log(mustafa);
+// var mustafa = new user("Mustafa");
+// console.log(mustafa);
 
-var cengiz = new user("Cengiz");
+// var cengiz = new user("Cengiz");
 
-console.log(cengiz.greet());
+// console.log(cengiz.greet());
 
-var hep = "25";
-console.log(hep);
+// var hep = "25";
+// console.log(hep);
+
+// console.log("(*)");
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add);
+// var a = ["blue", "black", "white"];
+// a.length = undefined;
+//
+// console.log(typeof null);
+var myf = Function("x", "y", "return x + y;");
+console.log(myf);
+// (function add(x, y) {
+//   return x + y;
+// }).toString();
