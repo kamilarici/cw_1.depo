@@ -56,14 +56,26 @@
 // let a = 0;
 //let a = 0; //-> SyntaxError: Identifier 'a' has already been declared
 
-console.log(typeof "Mustafa");
-console.log(typeof String("Mustafa"));
-console.log(typeof Number(100));
+// console.log(typeof "Mustafa");
+// console.log(typeof String("Mustafa"));
+// console.log(typeof Number(100));
 
-console.log(String("Mustafa") == String("Mustafa"));
-console.log(Number(100) == Number(100));
-console.log(Boolean(true) == Boolean(true));
+// console.log(String("Mustafa") == String("Mustafa"));
+// console.log(Number(100) == Number(100));
+// console.log(Boolean(true) == Boolean(true));
 
-console.log(new Object() == new Object());
+// console.log(new Object() == new Object());
 
-console.log(typeof new String("Mustafa"));
+// console.log(typeof new String("Mustafa"));
+
+// function go() {
+//   console.log(arguments);
+// }
+
+// var arr = ["mustafa", "ekim"];
+// go(arr.map((a) => "***" + a));
+function Y() {}
+
+var foo = new Y();
+
+console.log(foo.__proto__ == Y.prototype); // true
