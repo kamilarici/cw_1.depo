@@ -74,8 +74,26 @@
 
 // var arr = ["mustafa", "ekim"];
 // go(arr.map((a) => "***" + a));
-function Y() {}
+// function Y() {}
 
-var foo = new Y();
+// var foo = new Y();
 
-console.log(foo.__proto__ == Y.prototype); // true
+// console.log(foo.__proto__ == Y.prototype); // true
+
+function user(name) {
+  this.name = name;
+}
+
+user.prototype.greet = function () {
+  return "hello, " + this.name;
+};
+
+var mustafa = new user("Mustafa");
+console.log(mustafa);
+
+var cengiz = new user("Cengiz");
+
+console.log(cengiz.greet());
+
+var hep = "25";
+console.log(hep);
