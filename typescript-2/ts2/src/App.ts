@@ -1,57 +1,57 @@
-interface Person {
-  name: string;
-}
+// interface Person {
+//   name: string;
+// }
 
-const person1: Person = {
-  name: "kamil",
-};
+// const person1: Person = {
+//   name: "kamil",
+// };
 
-interface Calender {
-  events: string[];
-  addEvents(event: string): void;
-}
-class LSMCalender implements Calender {
-  constructor(public events: string[]) {
-    this.events;
-  }
-  addEvents(event: string): void {
-    this.events.push(event);
-  }
-}
+// interface Calender {
+//   events: string[];
+//   addEvents(event: string): void;
+// }
+// class LSMCalender implements Calender {
+//   constructor(public events: string[]) {
+//     this.events;
+//   }
+//   addEvents(event: string): void {
+//     this.events.push(event);
+//   }
+// }
 
-const cohort14 = new LSMCalender(["HTML", "JS"]);
+// const cohort14 = new LSMCalender(["HTML", "JS"]);
 
-cohort14.addEvents("react");
-console.log(cohort14);
+// cohort14.addEvents("react");
+// console.log(cohort14);
 
-interface Point {
-  x: number;
-}
+// interface Point {
+//   x: number;
+// }
 
-interface Point {
-  y: number;
-}
-const point1: Point = { x: 50, y: 30 };
+// interface Point {
+//   y: number;
+// }
+// const point1: Point = { x: 50, y: 30 };
 
-type Pointx = { x: number };
-type Pointy = { y: number };
-type PointI = Pointx & Pointy;
+// type Pointx = { x: number };
+// type Pointy = { y: number };
+// type PointI = Pointx & Pointy;
 
-const point2: PointI = { x: 50, y: 30 };
+// const point2: PointI = { x: 50, y: 30 };
 
-// fonksiyon imzası
-interface Sum {
-  (num1: number, num2: number): number;
-}
-function add(n1: number, n2: number): number {
-  return n1 + n2;
-}
-function conC(n1: string, n2: string): string {
-  return n1 + n2;
-}
+ // fonksiyon imzası
+// interface Sum {
+//   (num1: number, num2: number): number;
+// }
+// function add(n1: number, n2: number): number {
+//   return n1 + n2;
+// }
+// function conC(n1: string, n2: string): string {
+//   return n1 + n2;
+// }
 
-let arithmeticAdd: Sum = add;
-console.log(arithmeticAdd(2, 8)); //10 verir hata yok
+// let arithmeticAdd: Sum = add;
+// console.log(arithmeticAdd(2, 8)); //10 verir hata yok
 
 // arithmeticAdd=conC //hata verir çünkü type lar eşitleyemez
 

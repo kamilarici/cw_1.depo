@@ -1,28 +1,47 @@
-const person1 = {
-    name: "kamil",
-};
-class LSMCalender {
-    constructor(events) {
-        this.events = events;
-        this.events;
-    }
-    addEvents(event) {
-        this.events.push(event);
-    }
-}
-const cohort14 = new LSMCalender(["HTML", "JS"]);
-cohort14.addEvents("react");
-console.log(cohort14);
-const point1 = { x: 50, y: 30 };
-const point2 = { x: 50, y: 30 };
-function add(n1, n2) {
-    return n1 + n2;
-}
-function conC(n1, n2) {
-    return n1 + n2;
-}
-let arithmeticAdd = add;
-console.log(arithmeticAdd(2, 8)); //10 verir hata yok
+// interface Person {
+//   name: string;
+// }
+// const person1: Person = {
+//   name: "kamil",
+// };
+// interface Calender {
+//   events: string[];
+//   addEvents(event: string): void;
+// }
+// class LSMCalender implements Calender {
+//   constructor(public events: string[]) {
+//     this.events;
+//   }
+//   addEvents(event: string): void {
+//     this.events.push(event);
+//   }
+// }
+// const cohort14 = new LSMCalender(["HTML", "JS"]);
+// cohort14.addEvents("react");
+// console.log(cohort14);
+// interface Point {
+//   x: number;
+// }
+// interface Point {
+//   y: number;
+// }
+// const point1: Point = { x: 50, y: 30 };
+// type Pointx = { x: number };
+// type Pointy = { y: number };
+// type PointI = Pointx & Pointy;
+// const point2: PointI = { x: 50, y: 30 };
+// fonksiyon imzası
+// interface Sum {
+//   (num1: number, num2: number): number;
+// }
+// function add(n1: number, n2: number): number {
+//   return n1 + n2;
+// }
+// function conC(n1: string, n2: string): string {
+//   return n1 + n2;
+// }
+// let arithmeticAdd: Sum = add;
+// console.log(arithmeticAdd(2, 8)); //10 verir hata yok
 // arithmeticAdd=conC //hata verir çünkü type lar eşitleyemez
 //! GENERİCS
 // build in generic
