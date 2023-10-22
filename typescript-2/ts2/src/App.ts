@@ -27,5 +27,10 @@ console.log(cohort14)
 
 
 interface Point{
-    x:Number;
+    x:number;
 }
+
+interface Point{
+    y:number
+}
+const point1:Point={x:50,y:30}

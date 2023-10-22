@@ -13,3 +13,4 @@ class LSMCalender {
 const cohort14 = new LSMCalender(['HTML', 'JS']);
 cohort14.addEvents('react');
 console.log(cohort14);
+const point1 = { x: 50, y: 30 };
